@@ -62,20 +62,33 @@
             margin-bottom: 20px;
         }
 
-        .button i {
-            font-size: 5rem;
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            /* Fundo transparente para o botão */
+            border: none;
+            margin-top: 20px;
+            font-size: 2rem;
+            /* Tamanho do texto do botão */
             color: darkolivegreen;
-            /* Cor verde oliva para o ícone */
-            transition: color 0.3s ease, transform 0.3s ease;
-            /* Adicionando transição para a cor e transformação */
+            /* Cor do texto do botão */
+            transition: color 0.3s ease;
+            /* Transição suave de cor */
             text-decoration: none;
         }
 
-        .button:hover i {
+        .button i {
+            font-size: 4rem;
+            /* Tamanho do ícone do botão */
+            margin-right: 10px;
+            /* Espaçamento à direita do ícone */
+        }
+
+        .button:hover {
             color: forestgreen;
             /* Mudança de cor ao passar o mouse */
-            transform: scale(1.2);
-            /* Aumenta o ícone em 20% ao passar o mouse */
         }
 
         a {
@@ -103,6 +116,11 @@
                 font-size: 3rem;
                 /* Reduz o tamanho do ícone para telas menores */
             }
+
+            .button {
+                font-size: 1.8rem;
+                /* Reduz o tamanho do texto do botão para telas menores */
+            }
         }
     </style>
     <!-- Link para a fonte Satisfy (versão hospedada do Google Fonts) -->
@@ -115,6 +133,7 @@
         <div class="subtitle">CONVIDAM PARA A CELEBRAÇÃO DE SEU CASAMENTO</div>
         <a href="home.html" class="button">
             <i class="far fa-envelope"></i> <!-- Ícone do Font Awesome para um envelope vazio -->
+            RSVP
         </a>
     </div>
 </body>

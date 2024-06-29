@@ -17,8 +17,6 @@
             align-items: center;
             height: 100vh;
             text-align: center;
-            overflow-y: hidden;
-            /* Esconde a barra de rolagem vertical */
         }
 
         .content {
@@ -39,8 +37,6 @@
             align-items: center;
             margin: auto;
             /* Centraliza horizontalmente */
-            margin-top: 20vh;
-            /* Desloca para baixo para centralizar verticalmente */
             overflow: hidden;
             /* Para esconder as partes do contêiner que ultrapassam os limites dos cantos arredondados */
         }
@@ -77,10 +73,14 @@
             transition: color 0.3s ease;
             /* Transição suave de cor */
             text-decoration: none;
+            max-width: 300px;
+            /* Define a largura máxima do botão para evitar que fique muito largo */
+            padding: 15px 30px;
+            /* Adiciona um padding interno para melhorar o toque */
         }
 
         .button i {
-            font-size: 4rem;
+            font-size: 3rem;
             /* Tamanho do ícone do botão */
             margin-right: 10px;
             /* Espaçamento à direita do ícone */
@@ -108,18 +108,20 @@
             }
 
             .subtitle {
-                font-size: 1.2rem;
+                font-size: 1rem;
                 /* Reduz o tamanho do subtítulo para telas menores */
             }
 
             .button i {
-                font-size: 3rem;
+                font-size: 2.5rem;
                 /* Reduz o tamanho do ícone para telas menores */
             }
 
             .button {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
                 /* Reduz o tamanho do texto do botão para telas menores */
+                padding: 10px 20px;
+                /* Reduz o padding do botão para telas menores */
             }
         }
     </style>
@@ -133,7 +135,6 @@
         <div class="subtitle">CONVIDAM PARA A CELEBRAÇÃO DE SEU CASAMENTO</div>
         <a href="home.html" class="button">
             <i class="far fa-envelope"></i> <!-- Ícone do Font Awesome para um envelope vazio -->
-            RSVP
         </a>
     </div>
 </body>

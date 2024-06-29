@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Casamento</title>
+    <!-- Adicione o link para o Font Awesome (versão hospedada) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 250px;
+            /* Ajuste conforme necessário para o espaço do botão */
+            height: 100px;
+            background-color: white;
+            /* Fundo branco */
+            color: darkolivegreen;
+            /* Cor do texto */
+            border: 2px solid darkolivegreen;
+            /* Borda verde oliva */
+            border-radius: 50px;
+            /* Ajuste conforme necessário para a borda do botão */
+            font-size: 1.5rem;
+            /* Tamanho da fonte da descrição */
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            /* Para esconder a borda que ultrapassa o botão */
+        }
+
+        .button:hover {
+            background-color: darkolivegreen;
+            color: white;
+            /* Altera a cor do texto ao passar o mouse */
+        }
+
+        .button i {
+            font-size: 2rem;
+            /* Tamanho do ícone */
+            color: darkolivegreen;
+            /* Cor do ícone */
+            transition: color 0.3s ease;
+        }
+
+        .button:hover i {
+            color: white;
+            /* Altera a cor do ícone ao passar o mouse */
+        }
+
+        .button span {
+            margin-left: 10px;
+            /* Espaçamento à esquerda da descrição */
+            font-size: 1.2rem;
+            /* Tamanho da fonte da descrição */
+            white-space: nowrap;
+            /* Evita quebrar a linha */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="buttons-container">
+        <a href="#" target="_blank" class="button">
+            <i class="fas fa-check"></i> <!-- Ícone do Font Awesome para um check -->
+            <span>Confirmação</span>
+        </a>
+        <a href="https://www.google.com/maps/dir/Rod.+Jo%C3%A3o+Marcelo+-+Vila+S%C3%A3o+Jos%C3%A9,+I%C3%A7ara+-+SC,+88820-000/@-28.7430005,-49.3913991,12z/"
+            target="_blank" class="button">
+            <i class="fas fa-map-marker-alt"></i> <!-- Ícone do Font Awesome para localização -->
+            <span>Localização</span>
+        </a>
+        <a href="https://www.finalfeliz.de/filipe-querino-nathielly-jorge" target="_blank" class="button">
+            <i class="fas fa-gift"></i> <!-- Ícone do Font Awesome para presente -->
+            <span>Lista de Presentes</span>
+        </a>
+        <a href="dress-code.html" target="_blank" class="button">
+            <i class="fas fa-tshirt"></i> <!-- Ícone do Font Awesome para uma camiseta -->
+            <span>Código de Vestimenta</span>
+        </a>
+    </div>
+</body>
+
+</html>

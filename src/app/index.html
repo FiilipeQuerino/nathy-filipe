@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casamento de Nathielly e Filipe</title>
+    <!-- Link para o Font Awesome (versão hospedada) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: forestgreen;
+            /* Cor de fundo verde floresta para o corpo */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow-y: hidden;
+            /* Esconde a barra de rolagem vertical */
+        }
+
+        .content {
+            background-color: white;
+            padding: 20px;
+            border-top-left-radius: 50% 20%;
+            /* Achatando o canto superior esquerdo */
+            border-top-right-radius: 50% 20%;
+            /* Achatando o canto superior direito */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            min-height: 100vh;
+            /* Altura mínima para ocupar toda a tela */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            /* Centraliza horizontalmente */
+            margin-top: 20vh;
+            /* Desloca para baixo para centralizar verticalmente */
+            overflow: hidden;
+            /* Para esconder as partes do contêiner que ultrapassam os limites dos cantos arredondados */
+        }
+
+        .title {
+            font-family: 'Satisfy', cursive;
+            /* Aplicando a fonte Satisfy */
+            font-size: 7rem;
+            /* Tamanho maior para o nome */
+            color: darkolivegreen;
+            /* Cor verde oliva para o título */
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: darkolivegreen;
+            /* Cor verde oliva para o subtítulo */
+            margin-bottom: 20px;
+        }
+
+        .button i {
+            font-size: 5rem;
+            color: darkolivegreen;
+            /* Cor verde oliva para o ícone */
+            transition: color 0.3s ease, transform 0.3s ease;
+            /* Adicionando transição para a cor e transformação */
+            text-decoration: none;
+        }
+
+        .button:hover i {
+            color: forestgreen;
+            /* Mudança de cor ao passar o mouse */
+            transform: scale(1.2);
+            /* Aumenta o ícone em 20% ao passar o mouse */
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Media query para telas menores, como celulares */
+        @media only screen and (max-width: 600px) {
+            .content {
+                width: 90%;
+                /* Reduz a largura do conteúdo para ajustar melhor em telas menores */
+            }
+
+            .title {
+                font-size: 5rem;
+                /* Reduz o tamanho do título para telas menores */
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+                /* Reduz o tamanho do subtítulo para telas menores */
+            }
+
+            .button i {
+                font-size: 3rem;
+                /* Reduz o tamanho do ícone para telas menores */
+            }
+        }
+    </style>
+    <!-- Link para a fonte Satisfy (versão hospedada do Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="content">
+        <div class="title">Nathielly e Filipe</div>
+        <div class="subtitle">CONVIDAM PARA A CELEBRAÇÃO DE SEU CASAMENTO</div>
+        <a href="home.html" class="button">
+            <i class="far fa-envelope"></i> <!-- Ícone do Font Awesome para um envelope vazio -->
+        </a>
+    </div>
+</body>
+
+</html>

@@ -9,12 +9,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
                 transform: translateY(0);
             }
+
             40% {
                 transform: translateY(-20px);
             }
+
             60% {
                 transform: translateY(-10px);
             }
@@ -57,7 +64,7 @@
         }
 
         .title {
-            font-family: 'Satisfy', cursive;
+            font-family: "Great Vibes", cursive;
             /* Aplicando a fonte Satisfy */
             font-size: 5rem;
             /* Tamanho maior para o nome */
@@ -68,6 +75,14 @@
 
         .subtitle {
             font-size: 1.4rem;
+            color: darkolivegreen;
+            /* Cor verde oliva para o subtítulo */
+            margin-bottom: 20px;
+        }
+        
+        .date {
+            font-family: "Cormorant SC", serif;
+            font-size: 4rem;
             color: darkolivegreen;
             /* Cor verde oliva para o subtítulo */
             margin-bottom: 20px;
@@ -131,6 +146,11 @@
                 /* Reduz o tamanho do subtítulo para telas menores */
             }
 
+            .date {
+                font-size: 2rem;
+                /* Reduz o tamanho do subtítulo para telas menores */
+            }
+
             .button i {
                 font-size: 5rem;
                 /* Reduz o tamanho do ícone para telas menores */
@@ -144,14 +164,16 @@
             }
         }
     </style>
-    <!-- Link para a fonte Satisfy (versão hospedada do Google Fonts) -->
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Parisienne&family=Sacramento&family=Cormorant+SC&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <div class="content">
+    <div class=" content">
         <div class="title">Nathielly e Filipe</div>
         <div class="subtitle">CONVIDAM PARA A CELEBRAÇÃO DE SEU CASAMENTO</div>
+        <div class="date">08 • 03 • 25</div>
         <a href="home.html" class="button">
             <i class="far fa-envelope"></i> <!-- Ícone do Font Awesome para um envelope vazio -->
         </a>

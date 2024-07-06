@@ -8,6 +8,18 @@
     <!-- Link para o Font Awesome (versão hospedada) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
         body {
             background-image: url('./assets/fundo.jpg');
             background-size: cover;
@@ -87,6 +99,8 @@
             /* Tamanho do ícone do botão */
             margin-right: 10px;
             /* Espaçamento à direita do ícone */
+            animation: bounce 2s infinite;
+            /* Adiciona a animação ao ícone */
         }
 
         .button:hover {

@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         @keyframes bounce {
-
             0%,
             20%,
             50%,
@@ -37,54 +36,44 @@
             align-items: center;
             height: 100vh;
             text-align: center;
+            position: relative;
         }
 
         .content {
             background-color: white;
             padding: 20px;
             border-top-left-radius: 50% 20%;
-            /* Achatando o canto superior esquerdo */
             border-top-right-radius: 50% 20%;
-            /* Achatando o canto superior direito */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
-            /* Adicionando uma sombra mais pronunciada */
             width: 80%;
             max-width: 600px;
             min-height: 80vh;
-            /* Altura mínima para ocupar toda a tela */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             margin: auto;
-            /* Centraliza horizontalmente */
             overflow: hidden;
-            /* Para esconder as partes do contêiner que ultrapassam os limites dos cantos arredondados */
-            margin-bottom: 0px;
+            position: relative;
         }
 
         .title {
             font-family: "Great Vibes", cursive;
-            /* Aplicando a fonte Satisfy */
             font-size: 5rem;
-            /* Tamanho maior para o nome */
             color: darkolivegreen;
-            /* Cor verde oliva para o título */
             margin-bottom: 20px;
         }
 
         .subtitle {
             font-size: 1.4rem;
             color: darkolivegreen;
-            /* Cor verde oliva para o subtítulo */
             margin-bottom: 20px;
         }
-        
+
         .date {
             font-family: "Cormorant SC", serif;
             font-size: 4rem;
             color: darkolivegreen;
-            /* Cor verde oliva para o subtítulo */
             margin-bottom: 20px;
         }
 
@@ -93,91 +82,87 @@
             align-items: center;
             justify-content: center;
             background-color: transparent;
-            /* Fundo transparente para o botão */
             border: none;
             margin-top: 20px;
             font-size: 5rem;
-            /* Tamanho do texto do botão */
             color: darkolivegreen;
-            /* Cor do texto do botão */
             transition: color 0.3s ease;
-            /* Transição suave de cor */
             text-decoration: none;
             max-width: 300px;
-            /* Define a largura máxima do botão para evitar que fique muito largo */
             padding: 15px 30px;
-            /* Adiciona um padding interno para melhorar o toque */
         }
 
         .button i {
             font-size: 7rem;
-            /* Tamanho do ícone do botão */
             margin-right: 10px;
-            /* Espaçamento à direita do ícone */
             animation: bounce 2s infinite;
-            /* Adiciona a animação ao ícone */
         }
 
         .button:hover {
             color: forestgreen;
-            /* Mudança de cor ao passar o mouse */
         }
 
         a {
             text-decoration: none;
         }
 
+        .footer-img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('./assets/mato.png') repeat-x;
+            background-size: contain;
+        }
+
         /* Media query para telas menores, como celulares */
         @media only screen and (max-width: 500px) {
             .content {
                 width: 80%;
-                /* Reduz a largura do conteúdo para ajustar melhor em telas menores */
                 margin-bottom: 0px;
                 max-height: 50vh;
             }
 
             .title {
                 font-size: 2rem;
-                /* Reduz o tamanho do título para telas menores */
             }
 
             .subtitle {
                 font-size: 0.6rem;
-                /* Reduz o tamanho do subtítulo para telas menores */
             }
 
             .date {
                 font-size: 2rem;
-                /* Reduz o tamanho do subtítulo para telas menores */
             }
 
             .button i {
                 font-size: 5rem;
-                /* Reduz o tamanho do ícone para telas menores */
             }
 
             .button {
                 font-size: 3rem;
-                /* Reduz o tamanho do texto do botão para telas menores */
                 padding: 10px 20px;
-                /* Reduz o padding do botão para telas menores */
+            }
+
+            .footer-img {
+                height: 50px;
             }
         }
     </style>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Parisienne&family=Sacramento&family=Cormorant+SC&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Parisienne&family=Sacramento&family=Cormorant+SC&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class=" content">
+    <div class="content">
         <div class="title">Nathielly e Filipe</div>
         <div class="subtitle">CONVIDAM PARA A CELEBRAÇÃO DE SEU CASAMENTO</div>
         <div class="date">08 • 03 • 25</div>
         <a href="home.html" class="button">
-            <i class="far fa-envelope"></i> <!-- Ícone do Font Awesome para um envelope vazio -->
+            <i class="far fa-envelope"></i>
         </a>
     </div>
+    <div class="footer-img"></div>
 </body>
 
 </html>

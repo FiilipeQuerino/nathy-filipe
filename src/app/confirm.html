@@ -23,6 +23,8 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
+            width: 90%; /* Largura adaptável */
+            max-width: 500px; /* Largura máxima para telas grandes */
         }
 
         .form-container input, .form-container button {
@@ -43,6 +45,21 @@
 
         .form-container button:hover {
             background-color: darkgreen;
+        }
+
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 15px;
+            }
+
+            .form-container input, .form-container button {
+                padding: 8px;
+                font-size: 1rem;
+            }
+
+            .form-container button {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>

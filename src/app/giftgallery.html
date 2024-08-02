@@ -32,7 +32,7 @@
 
         .gallery-item {
             background-color: white;
-            border: 2px solid darkolivegreen;
+            border: 2px solid #556B2F;
             border-radius: 10px;
             width: 200px;
             padding: 10px;
@@ -48,20 +48,20 @@
         .gallery-item h3 {
             margin: 10px 0;
             font-size: 1.2rem;
-            color: darkolivegreen;
+            color: #556B2F;
         }
 
         .gallery-item p {
             margin: 5px 0;
             font-size: 1rem;
-            color: darkolivegreen;
+            color: #556B2F;
         }
 
         .gallery-item a {
             display: inline-block;
             margin-top: 10px;
             padding: 10px 20px;
-            background-color: darkolivegreen;
+            background-color: #556B2F;
             color: white;
             text-decoration: none;
             border-radius: 5px;
@@ -69,7 +69,7 @@
         }
 
         .gallery-item a:hover {
-            background-color: #556b2f;
+            background-color: #6b8e23;
         }
 
         .gallery-item:hover {
@@ -82,11 +82,49 @@
             margin-bottom: 20px;
             border-radius: 10px;
             background-color: rgba(255, 255, 255, 0); /* Fundo transparente */
-            color: darkolivegreen; /* Cor do texto */
+            color: #556B2F; /* Cor do texto */
         }
 
         header h1, header p, footer p {
             margin: 0;
+        }
+
+        /* Estilos para o modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -101,25 +139,59 @@
             <img src="https://via.placeholder.com/200" alt="Item 1">
             <h3>Item 1</h3>
             <p>Descrição do Item 1</p>
-            <a href="#">Comprar</a>
+            <a href="#" onclick="showQRCode('qrcode-ai.png')">Comprar</a>
         </div>
         <div class="gallery-item">
             <img src="https://via.placeholder.com/200" alt="Item 2">
             <h3>Item 2</h3>
             <p>Descrição do Item 2</p>
-            <a href="#">Comprar</a>
+            <a href="#" onclick="showQRCode('qrcode-ai.png')">Comprar</a>
         </div>
         <div class="gallery-item">
             <img src="https://via.placeholder.com/200" alt="Item 3">
             <h3>Item 3</h3>
             <p>Descrição do Item 3</p>
-            <a href="#">Comprar</a>
+            <a href="#" onclick="showQRCode('qrcode-ai.png')">Comprar</a>
         </div>
         <!-- Adicione mais itens conforme necessário -->
     </div>
     <footer>
         <p>Obrigado por fazer parte do nosso grande dia!</p>
     </footer>
+
+    <!-- Modal -->
+    <div id="qrCodeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>QR Code para Compra</h2>
+            <img id="qrCodeImage" src="assets/qrcode-ai.png" alt="QR Code">
+        </div>
+    </div>
+
+    <script>
+        // Função para mostrar o modal com o QR code
+        function showQRCode(imageSrc) {
+            var modal = document.getElementById("qrCodeModal");
+            var img = document.getElementById("qrCodeImage");
+            img.src = imageSrc;
+            modal.style.display = "block";
+        }
+
+        // Fechar o modal ao clicar no "X"
+        var closeBtn = document.getElementsByClassName("close")[0];
+        closeBtn.onclick = function () {
+            var modal = document.getElementById("qrCodeModal");
+            modal.style.display = "none";
+        }
+
+        // Fechar o modal ao clicar fora do conteúdo do modal
+        window.onclick = function (event) {
+            var modal = document.getElementById("qrCodeModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria de Presentes</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             background-image: url('./assets/fundo.jpg');
@@ -83,9 +83,7 @@
             margin-bottom: 20px;
             border-radius: 10px;
             background-color: rgba(255, 255, 255, 0);
-            /* Fundo transparente */
             color: #556B2F;
-            /* Cor do texto */
         }
 
         header h1,
@@ -94,7 +92,6 @@
             margin: 0;
         }
 
-        /* Estilos para o modal */
         .modal {
             display: none;
             position: fixed;
@@ -132,9 +129,47 @@
             cursor: pointer;
         }
 
-        .modal-content img {
-            max-width: 100%;
-            height: auto;
+        .modal-content p {
+            margin-bottom: 20px;
+        }
+
+        .icon-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            color: #556B2F;
+            border-radius: 50%;
+            border: 2px solid #556B2F;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .icon-button:hover {
+            background-color: #556B2F;
+            color: #fff;
+        }
+
+        .qr-button {
+            background: none;
+        }
+
+        .copy-button {
+            background: none;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .button-container i {
+            font-size: 24px;
         }
     </style>
 </head>
@@ -149,19 +184,19 @@
             <img src="https://via.placeholder.com/200" alt="Item 1">
             <h3>Item 1</h3>
             <p>Descrição do Item 1</p>
-            <a href="#" onclick="showQRCode('assets/qrcode-ai.png')">Comprar</a>
+            <a href="#" onclick="showPaymentOptions('https://example.com/pix-link')">Comprar</a>
         </div>
         <div class="gallery-item">
             <img src="https://via.placeholder.com/200" alt="Item 2">
             <h3>Item 2</h3>
             <p>Descrição do Item 2</p>
-            <a href="#" onclick="showQRCode('assets/qrcode-ai.png')">Comprar</a>
+            <a href="#" onclick="showPaymentOptions('https://example.com/pix-link')">Comprar</a>
         </div>
         <div class="gallery-item">
             <img src="https://via.placeholder.com/200" alt="Item 3">
             <h3>Item 3</h3>
             <p>Descrição do Item 3</p>
-            <a href="#" onclick="showQRCode('assets/qrcode-ai.png')">Comprar</a>
+            <a href="#" onclick="showPaymentOptions('https://example.com/pix-link')">Comprar</a>
         </div>
         <!-- Adicione mais itens conforme necessário -->
     </div>
@@ -170,33 +205,58 @@
     </footer>
 
     <!-- Modal -->
-    <div id="qrCodeModal" class="modal">
+    <div id="paymentModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>QR Code para Compra</h2>
-            <img id="qrCodeImage" src="" alt="QR Code">
+            <h2>Formas de Pagamento</h2>
+            <p>Você pode pagar usando o QR Code Pix abaixo ou copiar o link do Pix.</p>
+            <div class="button-container">
+                <button class="icon-button qr-button" onclick="showQRCode()">
+                    <i class="fas fa-qrcode"></i>
+                </button>
+                <button class="icon-button copy-button" onclick="copyToClipboard()">
+                    <i class="fas fa-copy"></i>
+                </button>
+            </div>
+            <div id="qrCodeContainer" style="display: none;">
+                <img src="assets/qrcode-ai.png" alt="QR Code" style="max-width: 100%; height: auto; margin-top: 20px;">
+            </div>
         </div>
     </div>
 
     <script>
-        // Função para mostrar o modal com o QR code
-        function showQRCode(imageSrc) {
-            var modal = document.getElementById("qrCodeModal");
-            var img = document.getElementById("qrCodeImage");
-            img.src = imageSrc;
+        // Função para mostrar o modal com as opções de pagamento
+        function showPaymentOptions(pixLink) {
+            var modal = document.getElementById("paymentModal");
+            window.currentPixLink = pixLink; // Armazena o link do Pix para copiar
             modal.style.display = "block";
+        }
+
+        // Função para copiar o link do Pix para a área de transferência
+        function copyToClipboard() {
+            navigator.clipboard.writeText(window.currentPixLink).then(function () {
+                alert('Link do Pix copiado para a área de transferência!');
+            }, function (err) {
+                alert('Falha ao copiar o link: ', err);
+            });
+        }
+
+        // Função para mostrar o QR Code
+        function showQRCode() {
+            var qrCodeContainer = document.getElementById("qrCodeContainer");
+            qrCodeContainer.style.display = "block";
         }
 
         // Fechar o modal ao clicar no "X"
         var closeBtn = document.getElementsByClassName("close")[0];
         closeBtn.onclick = function () {
-            var modal = document.getElementById("qrCodeModal");
+            var modal = document.getElementById("paymentModal");
             modal.style.display = "none";
         }
 
         // Fechar o modal ao clicar fora do conteúdo do modal
         window.onclick = function (event) {
-            var modal = document.getElementById("qrCodeModal");
+            var modal = document.getElementById("paymentModal");
             if (event.target == modal) {
                 modal.style.display = "none";
             }

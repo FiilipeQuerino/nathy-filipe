@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Presença</title>
+    <style>
+        body {
+            background-image: url('./assets/fundo.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .form-container input, .form-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid darkolivegreen;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            background-color: darkolivegreen;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="rsvp-form">
+            <h2>Confirmação de Presença</h2>
+            <input type="text" name="name" id="name" placeholder="Nome" required>
+            <input type="text" name="phone" id="phone" placeholder="Telefone" required>
+            <button type="submit">Confirmar Presença</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+
+            fetch('https://script.google.com/macros/s/AKfycbx1lz26tFUsSn8DXNOu62Pm3lvJsgVVqa-HHfMs4DsUOVBVN5pZjBndrIJPtTCAPPG3-Q/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({name, phone})
+            })
+            .then(response => {
+                alert('Confirmação enviada com sucesso!');
+                window.location.href = `https://wa.me/55${phone}?text=Olá%2C+${name}%21+Obrigado+por+confirmar+sua+presença+em+nosso+casamento.`;
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                alert('Houve um erro ao enviar a confirmação. Por favor, tente novamente.');
+            });
+        });
+    </script>
+</body>
+</html>

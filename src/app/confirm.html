@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmação de Presença</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             background-image: url('./assets/fundo.jpg');
@@ -19,57 +20,68 @@
         }
 
         .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 90%;
+            max-width: 500px;
             background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
-            width: 90%; /* Largura adaptável */
-            max-width: 500px; /* Largura máxima para telas grandes */
         }
 
         .form-container input, .form-container button {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid darkolivegreen;
-            border-radius: 5px;
+            border: 2px solid darkolivegreen;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            box-sizing: border-box;
+        }
+
+        .form-container input {
+            border: 2px solid darkolivegreen;
         }
 
         .form-container button {
-            background-color: darkolivegreen;
-            color: white;
-            font-size: 1.2rem;
-            border: none;
+            background-color: white;
+            color: darkolivegreen;
+            border: 2px solid darkolivegreen;
             cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .form-container button:hover {
-            background-color: darkgreen;
+            background-color: darkolivegreen;
+            color: white;
+        }
+
+        .form-container button i {
+            font-size: 1.5rem;
+            color: darkolivegreen;
+            margin-right: 10px;
         }
 
         @media (max-width: 600px) {
-            .form-container {
-                padding: 15px;
-            }
-
             .form-container input, .form-container button {
                 padding: 8px;
                 font-size: 1rem;
-            }
-
-            .form-container button {
-                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="form-container">
+        <h2>Confirmação de Presença</h2>
         <form id="rsvp-form">
-            <h2>Confirmação de Presença</h2>
             <input type="text" name="name" id="name" placeholder="Nome" required>
             <input type="text" name="phone" id="phone" placeholder="Telefone" required>
-            <button type="submit">Confirmar Presença</button>
+            <button type="submit">
+                <i class="fas fa-check"></i> Confirmar Presença
+            </button>
         </form>
     </div>
     <script>

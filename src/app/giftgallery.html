@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Presentes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-image: url('./assets/fundo.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+
+        .gallery-item {
+            background-color: white;
+            border: 2px solid darkolivegreen;
+            border-radius: 10px;
+            width: 200px;
+            padding: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .gallery-item h3 {
+            margin: 10px 0;
+            font-size: 1.2rem;
+            color: darkolivegreen;
+        }
+
+        .gallery-item p {
+            margin: 5px 0;
+            font-size: 1rem;
+            color: darkolivegreen;
+        }
+
+        .gallery-item a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: darkolivegreen;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .gallery-item a:hover {
+            background-color: #556b2f;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        header, footer {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0); /* Fundo transparente */
+            color: darkolivegreen; /* Cor do texto */
+        }
+
+        header h1, header p, footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Galeria de Presentes</h1>
+        <p>Escolha um presente para nosso casamento</p>
+    </header>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/200" alt="Item 1">
+            <h3>Item 1</h3>
+            <p>Descrição do Item 1</p>
+            <a href="#">Comprar</a>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/200" alt="Item 2">
+            <h3>Item 2</h3>
+            <p>Descrição do Item 2</p>
+            <a href="#">Comprar</a>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/200" alt="Item 3">
+            <h3>Item 3</h3>
+            <p>Descrição do Item 3</p>
+            <a href="#">Comprar</a>
+        </div>
+        <!-- Adicione mais itens conforme necessário -->
+    </div>
+    <footer>
+        <p>Obrigado por fazer parte do nosso grande dia!</p>
+    </footer>
+</body>
+
+</html>

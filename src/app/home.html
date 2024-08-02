@@ -32,65 +32,97 @@
             align-items: center;
             justify-content: center;
             width: 250px;
-            /* Ajuste conforme necessário para o espaço do botão */
             height: 100px;
             background-color: white;
-            /* Fundo branco */
             color: darkolivegreen;
-            /* Cor do texto */
             border: 2px solid darkolivegreen;
-            /* Borda verde oliva */
             border-radius: 50px;
-            /* Ajuste conforme necessário para a borda do botão */
             font-size: 1.5rem;
-            /* Tamanho da fonte da descrição */
             text-decoration: none;
             transition: background-color 0.3s ease, color 0.3s ease;
             position: relative;
             overflow: hidden;
-            /* Para esconder a borda que ultrapassa o botão */
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
-            /* Adicionando uma sombra mais pronunciada */
         }
 
         .button:hover {
             background-color: darkolivegreen;
             color: white;
-            /* Altera a cor do texto ao passar o mouse */
         }
 
         .button i {
             font-size: 2rem;
-            /* Tamanho do ícone */
             color: darkolivegreen;
-            /* Cor do ícone */
             transition: color 0.3s ease;
         }
 
         .button:hover i {
             color: white;
-            /* Altera a cor do ícone ao passar o mouse */
         }
 
         .button span {
             margin-left: 10px;
-            /* Espaçamento à esquerda da descrição */
             font-size: 1.2rem;
-            /* Tamanho da fonte da descrição */
             white-space: nowrap;
-            /* Evita quebrar a linha */
+        }
+
+        /* Estilos para o modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: darkolivegreen;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .modal-button:hover {
+            background-color: #556b2f;
         }
     </style>
-    <script>
-        function showAlert() {
-            alert('A funcionalidade de confirmação de presença ainda não foi implementada.');
-        }
-    </script>
 </head>
 
 <body>
     <div class="buttons-container">
-        <!-- <a href="confirm.html" target="_blank" class="button" onclick="showAlert()"> -->
         <a href="confirm.html" target="_blank" class="button">
             <i class="fas fa-check"></i> <!-- Ícone do Font Awesome para um check -->
             <span>Confirmação</span>
@@ -99,15 +131,45 @@
             <i class="fas fa-map-marker-alt"></i> <!-- Ícone do Font Awesome para localização -->
             <span>Localização</span>
         </a>
-        <a href="https://www.finalfeliz.de/filipe-querino-nathielly-jorge" target="_blank" class="button">
+        <a href="#" class="button" id="giftListButton">
             <i class="fas fa-gift"></i> <!-- Ícone do Font Awesome para presente -->
             <span>Lista de Presentes</span>
         </a>
         <a href="dress-code.html" target="_blank" class="button">
             <i class="fas fa-tshirt"></i> <!-- Ícone do Font Awesome para uma camiseta -->
-            <span>Código de Vestimenta</span>
+            <span>Dress Code</span>
         </a>
     </div>
+
+    <!-- Modal -->
+    <div id="giftListModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Escolha uma opção de presente</h2>
+            <a href="https://www.magazineluiza.com.br" target="_blank" class="modal-button">Magalu</a>
+            <a href="giftgallery.html" target="_blank" class="modal-button">Outro Site</a>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("giftListModal");
+        var btn = document.getElementById("giftListButton");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>

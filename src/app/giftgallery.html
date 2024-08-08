@@ -171,6 +171,76 @@
         .button-container i {
             font-size: 24px;
         }
+
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+        }
+
+        .toast.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @-webkit-keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadein {
+            from {
+                bottom: 0;
+                opacity: 0;
+            }
+
+            to {
+                bottom: 30px;
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeout {
+            from {
+                bottom: 30px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: 0;
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 
@@ -184,19 +254,19 @@
             <img src="https://via.placeholder.com/200" alt="Item 1">
             <h3>Item 1</h3>
             <p>Descrição do Item 1</p>
-            <a href="#" onclick="showPaymentOptions('https://example.com/pix-link')">Comprar</a>
+            <a href="#" onclick="showPaymentOptions()">Comprar</a>
         </div>
         <div class="gallery-item">
             <img src="https://via.placeholder.com/200" alt="Item 2">
             <h3>Item 2</h3>
             <p>Descrição do Item 2</p>
-            <a href="#" onclick="showPaymentOptions('https://example.com/pix-link')">Comprar</a>
+            <a href="#" onclick="showPaymentOptions()">Comprar</a>
         </div>
         <div class="gallery-item">
             <img src="https://via.placeholder.com/200" alt="Item 3">
             <h3>Item 3</h3>
             <p>Descrição do Item 3</p>
-            <a href="#" onclick="showPaymentOptions('https://example.com/pix-link')">Comprar</a>
+            <a href="#" onclick="showPaymentOptions()">Comprar</a>
         </div>
         <!-- Adicione mais itens conforme necessário -->
     </div>
@@ -209,7 +279,7 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Formas de Pagamento</h2>
-            <p>Você pode pagar usando o QR Code Pix abaixo ou copiar o link do Pix.</p>
+            <p>Você pode pagar usando o QR Code Pix, copiar o link do Pix ou usar seu cartão.</p>
             <div class="button-container">
                 <button class="icon-button qr-button" onclick="showQRCode()">
                     <i class="fas fa-qrcode"></i>
@@ -221,46 +291,102 @@
             <div id="qrCodeContainer" style="display: none;">
                 <img src="assets/qrcode-ai.png" alt="QR Code" style="max-width: 100%; height: auto; margin-top: 20px;">
             </div>
+            <!-- Formulário de pagamento -->
+            <form id="payment-form">
+                <input type="text" id="cardNumber" placeholder="Número do Cartão" required>
+                <input type="text" id="cardHolder" placeholder="Nome no Cartão" required>
+                <input type="text" id="cardExpiry" placeholder="MM/AA" required>
+                <input type="text" id="cardCVC" placeholder="CVC" required>
+                <button type="submit">Pagar</button>
+            </form>
+            <div id="payment-errors" role="alert"></div>
         </div>
     </div>
 
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Link do Pix copiado para a área de transferência!</div>
+
     <script>
-        // Função para mostrar o modal com as opções de pagamento
-        function showPaymentOptions(pixLink) {
+        function showPaymentOptions() {
             var modal = document.getElementById("paymentModal");
-            window.currentPixLink = pixLink; // Armazena o link do Pix para copiar
+            window.currentPixLink = '19885326948'; // Usar CPF para Pix
             modal.style.display = "block";
         }
 
-        // Função para copiar o link do Pix para a área de transferência
         function copyToClipboard() {
             navigator.clipboard.writeText(window.currentPixLink).then(function () {
-                alert('Link do Pix copiado para a área de transferência!');
+                showToast('Link do Pix copiado para a área de transferência!');
+                closeModal();
             }, function (err) {
-                alert('Falha ao copiar o link: ', err);
+                showToast('Falha ao copiar o link: ' + err);
+                closeModal();
             });
         }
 
-        // Função para mostrar o QR Code
         function showQRCode() {
             var qrCodeContainer = document.getElementById("qrCodeContainer");
             qrCodeContainer.style.display = "block";
         }
 
+        function closeModal() {
+            var modal = document.getElementById("paymentModal");
+            modal.style.display = "none";
+        }
+
         // Fechar o modal ao clicar no "X"
         var closeBtn = document.getElementsByClassName("close")[0];
         closeBtn.onclick = function () {
-            var modal = document.getElementById("paymentModal");
-            modal.style.display = "none";
+            closeModal();
         }
 
         // Fechar o modal ao clicar fora do conteúdo do modal
         window.onclick = function (event) {
             var modal = document.getElementById("paymentModal");
             if (event.target == modal) {
-                modal.style.display = "none";
+                closeModal();
             }
         }
+
+        function showToast(message) {
+            var toast = document.getElementById("toast");
+            toast.textContent = message;
+            toast.className = "toast show";
+            setTimeout(function () {
+                toast.className = toast.className.replace("show", "");
+            }, 3000);
+        }
+
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var cardNumber = document.getElementById('cardNumber').value;
+            var cardHolder = document.getElementById('cardHolder').value;
+            var cardExpiry = document.getElementById('cardExpiry').value;
+            var cardCVC = document.getElementById('cardCVC').value;
+
+            // Criar hash do cartão (isso é apenas um exemplo, a Stone pode ter um método específico)
+            // var cardHash = btoa(${cardNumber}|${cardHolder}|${cardExpiry}|${cardCVC});
+
+            fetch('/api/start-transaction', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    amount: 5000, // valor em centavos
+                    cardHash: cardHash
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                showToast('Pagamento realizado com sucesso!');
+                closeModal();
+            })
+            .catch(error => {
+                console.error('Erro ao processar pagamento:', error);
+                document.getElementById('payment-errors').textContent = 'Erro ao processar pagamento. Tente novamente.';
+            });
+        });
     </script>
 </body>
 

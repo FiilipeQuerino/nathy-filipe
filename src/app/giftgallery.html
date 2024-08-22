@@ -291,14 +291,6 @@
             <div id="qrCodeContainer" style="display: none;">
                 <img src="assets/qrcode-ai.png" alt="QR Code" style="max-width: 100%; height: auto; margin-top: 20px;">
             </div>
-            <!-- Formulário de pagamento -->
-            <form id="payment-form">
-                <input type="text" id="cardNumber" placeholder="Número do Cartão" required>
-                <input type="text" id="cardHolder" placeholder="Nome no Cartão" required>
-                <input type="text" id="cardExpiry" placeholder="MM/AA" required>
-                <input type="text" id="cardCVC" placeholder="CVC" required>
-                <button type="submit">Pagar</button>
-            </form>
             <div id="payment-errors" role="alert"></div>
         </div>
     </div>
@@ -355,38 +347,6 @@
                 toast.className = toast.className.replace("show", "");
             }, 3000);
         }
-
-        document.getElementById('payment-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            var cardNumber = document.getElementById('cardNumber').value;
-            var cardHolder = document.getElementById('cardHolder').value;
-            var cardExpiry = document.getElementById('cardExpiry').value;
-            var cardCVC = document.getElementById('cardCVC').value;
-
-            // Criar hash do cartão (isso é apenas um exemplo, a Stone pode ter um método específico)
-            // var cardHash = btoa(${cardNumber}|${cardHolder}|${cardExpiry}|${cardCVC});
-
-            fetch('/api/start-transaction', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    amount: 5000, // valor em centavos
-                    cardHash: cardHash
-                })
-            })
-            .then(response => response.json())
-            .then(data => {
-                showToast('Pagamento realizado com sucesso!');
-                closeModal();
-            })
-            .catch(error => {
-                console.error('Erro ao processar pagamento:', error);
-                document.getElementById('payment-errors').textContent = 'Erro ao processar pagamento. Tente novamente.';
-            });
-        });
     </script>
 </body>
 

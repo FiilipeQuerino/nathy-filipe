@@ -1,20 +1,62 @@
 [
     {
-        "name": "Item 1",
-        "description": "Descrição do Item 1",
-        "image": "https://via.placeholder.com/200",
-        "price": 200
-    },
-    {
-        "name": "Item 2",
-        "description": "Descrição do Item 2",
+        "name": "Contribuição para o Jogo de Panela",
+        "description": "Ajudar a comprar aquele conjunto de panelas top para evitar o delivery todo mês.",
         "image": "https://via.placeholder.com/200",
         "price": 150
     },
     {
-        "name": "Item 3",
-        "description": "Descrição do Item 3",
+        "name": "Assinatura de Netflix por um ano",
+        "description": "Garanta nossas maratonas de séries sem interrupções. 😅",
         "image": "https://via.placeholder.com/200",
-        "price": 100
+        "price": 500
+    },
+    {
+        "name": "Um ano de barbearia para o noivo",
+        "description": "Para manter o visual na régua o ano todo! ✂️",
+        "image": "https://via.placeholder.com/200",
+        "price": 1000
+    },
+    {
+        "name": "Churrasco completo para o casal",
+        "description": "Porque nada melhor do que um bom churrasco no final de semana. 🥩",
+        "image": "https://via.placeholder.com/200",
+        "price": 800
+    },
+    {
+        "name": "Cadeira de escritório gamer",
+        "description": "Para o noivo trabalhar (ou jogar) com estilo e conforto. 🎮",
+        "image": "https://via.placeholder.com/200",
+        "price": 1200
+    },
+    {
+        "name": "Um ano de passeios no shopping",
+        "description": "Para garantir os finais de semana ocupados e algumas compras a mais. 🛍️",
+        "image": "https://via.placeholder.com/200",
+        "price": 1500
+    },
+    {
+        "name": "Contribuição para a Lua de Mel dos sonhos",
+        "description": "Ajude a tornar nossa viagem inesquecível! 🌴✈️",
+        "image": "https://via.placeholder.com/200",
+        "price": 2500
+    },
+    {
+        "name": "TV 4K para maratonar séries",
+        "description": "Porque assistir em alta definição é outro nível. 📺",
+        "image": "https://via.placeholder.com/200",
+        "price": 3000
+    },
+    {
+        "name": "Contribuição para a reforma do apê",
+        "description": "Para dar aquele toque especial no nosso cantinho. 🏠",
+        "image": "https://via.placeholder.com/200",
+        "price": 3500
+    },
+    {
+        "name": "Lua de Mel dos Sonhos",
+        "description": "Apoie nosso grande sonho de viajar e curtir momentos inesquecíveis juntos. 🌅",
+        "image": "https://via.placeholder.com/200",
+        "price": 4000
     }
 ]

@@ -6,7 +6,7 @@ function showPaymentOptions() {
 
 function copyToClipboard() {
     navigator.clipboard.writeText(window.currentPixLink).then(function () {
-        showToast('Link do Pix copiado para a área de transferência!');
+        showToast('Presente escolhido, agora é só fazer o Pix!');
         closeModal();
     }, function (err) {
         showToast('Falha ao copiar o link: ' + err);
@@ -24,13 +24,11 @@ function closeModal() {
     modal.style.display = "none";
 }
 
-// Fechar o modal ao clicar no "X"
 var closeBtn = document.getElementsByClassName("close")[0];
 closeBtn.onclick = function () {
     closeModal();
 }
 
-// Fechar o modal ao clicar fora do conteúdo do modal
 window.onclick = function (event) {
     var modal = document.getElementById("paymentModal");
     if (event.target == modal) {

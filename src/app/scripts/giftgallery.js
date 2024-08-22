@@ -1,7 +1,17 @@
-function showPaymentOptions() {
+function showPaymentOptions(productValue) {
     var modal = document.getElementById("paymentModal");
-    window.currentPixLink = '00020126330014BR.GOV.BCB.PIX0111109853269485204000053039865802BR5925Filipe Querino dos Santos6009SAO PAULO62140510Y6cu90lb2g630496C1'; // Código PIX completo
+
+    // Gerar o código Pix dinâmico com o valor específico do produto
+    const pixCode = generatePixCode(productValue);
+
+    window.currentPixLink = pixCode;
     modal.style.display = "block";
+}
+
+function generatePixCode(value) {
+    // Gera o código Pix dinâmico com o valor inserido
+    // Você pode ajustar o código Pix conforme necessário
+    return `00020126330014BR.GOV.BCB.PIX011110985326948520400005303${value}5802BR5925Filipe Querino dos Santos6009SAO PAULO62140510Y6cu90lb2g630496C1`;
 }
 
 function copyToClipboard() {
@@ -24,11 +34,13 @@ function closeModal() {
     modal.style.display = "none";
 }
 
+// Fechar o modal ao clicar no "X"
 var closeBtn = document.getElementsByClassName("close")[0];
 closeBtn.onclick = function () {
     closeModal();
 }
 
+// Fechar o modal ao clicar fora do conteúdo do modal
 window.onclick = function (event) {
     var modal = document.getElementById("paymentModal");
     if (event.target == modal) {
@@ -42,5 +54,5 @@ function showToast(message) {
     toast.className = "toast show";
     setTimeout(function () {
         toast.className = toast.className.replace("show", "");
-    }, 3000);
+    }, 3000); // Duração de 3 segundos
 }

@@ -1,5 +1,5 @@
 body {
-    background-image: url('../assets/fundo.jpg');
+    background-image: url('../assets/fundo.jpg'); /* Restaurando o fundo */
     background-size: cover;
     background-position: center;
     font-family: Arial, sans-serif;
@@ -45,6 +45,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-top: 20px; /* Adicionado para ajustar o espaçamento */
 }
 
 .button {

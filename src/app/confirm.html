@@ -4,74 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmação de Presença</title>
+    <link rel="stylesheet" href="../styles/confirm.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        body {
-            background-image: url('./assets/fundo.jpg');
-            background-size: cover;
-            background-position: center;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-
-        .form-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            width: 90%;
-            max-width: 500px;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
-        }
-
-        .form-container input, .form-container button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 2px solid darkolivegreen;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            box-sizing: border-box;
-        }
-
-        .form-container input {
-            border: 2px solid darkolivegreen;
-        }
-
-        .form-container button {
-            background-color: white;
-            color: darkolivegreen;
-            border: 2px solid darkolivegreen;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .form-container button:hover {
-            background-color: darkolivegreen;
-            color: white;
-        }
-
-        .form-container button i {
-            font-size: 1.5rem;
-            color: darkolivegreen;
-            margin-right: 10px;
-        }
-
-        @media (max-width: 600px) {
-            .form-container input, .form-container button {
-                padding: 8px;
-                font-size: 1rem;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="form-container">
@@ -83,29 +17,6 @@
             </button>
         </form>
     </div>
-    <script>
-        document.getElementById('rsvp-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value;
-
-            fetch('https://script.google.com/macros/s/AKfycbx1lz26tFUsSn8DXNOu62Pm3lvJsgVVqa-HHfMs4DsUOVBVN5pZjBndrIJPtTCAPPG3-Q/exec', {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({name})
-            })
-            .then(response => {
-                alert('Confirmação enviada com sucesso!');
-                window.location.href = `https://wa.me/5548996193227?text=Olá%2C+meu+nome+é+${name}+e+confirmo+minha+presença+no+casamento.+Obrigado+por+me+convidar.`;
-            })
-            .catch(error => {
-                console.error('Erro:', error);
-                alert('Houve um erro ao enviar a confirmação. Por favor, tente novamente.');
-            });
-        });
-    </script>
+    <script src="../scripts/confirm.js"></script>
 </body>
 </html>

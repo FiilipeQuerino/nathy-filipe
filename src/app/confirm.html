@@ -78,7 +78,6 @@
         <h2>Confirmação de Presença</h2>
         <form id="rsvp-form">
             <input type="text" name="name" id="name" placeholder="Nome" required>
-            <input type="text" name="phone" id="phone" placeholder="Telefone" required>
             <button type="submit">
                 <i class="fas fa-check"></i> Confirmar Presença
             </button>
@@ -89,7 +88,6 @@
             e.preventDefault();
 
             const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
 
             fetch('https://script.google.com/macros/s/AKfycbx1lz26tFUsSn8DXNOu62Pm3lvJsgVVqa-HHfMs4DsUOVBVN5pZjBndrIJPtTCAPPG3-Q/exec', {
                 method: 'POST',
@@ -97,7 +95,7 @@
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({name, phone})
+                body: JSON.stringify({name})
             })
             .then(response => {
                 alert('Confirmação enviada com sucesso!');

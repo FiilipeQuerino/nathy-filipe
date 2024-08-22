@@ -58,5 +58,29 @@
         "description": "Apoie nosso grande sonho de viajar e curtir momentos inesquecíveis juntos. 🌅",
         "image": "https://via.placeholder.com/200",
         "price": 4000
+    },
+    {
+        "name": "Sessão de Spa e Massagem",
+        "description": "Para a noiva relaxar depois de organizar cada detalhe do casamento. 💆‍♀️",
+        "image": "https://via.placeholder.com/200",
+        "price": 300
+    },
+    {
+        "name": "Um dia de compras no shopping",
+        "description": "Porque uma tarde de compras nunca é demais, né? 🛒",
+        "image": "https://via.placeholder.com/200",
+        "price": 220
+    },
+    {
+        "name": "Vale Manicure por um mês",
+        "description": "Unhas sempre impecáveis para qualquer ocasião! 💅",
+        "image": "https://via.placeholder.com/200",
+        "price": 250
+    },
+    {
+        "name": "Kit de maquiagem profissional",
+        "description": "Para a noiva brilhar ainda mais em qualquer evento. 💄✨",
+        "image": "https://via.placeholder.com/200",
+        "price": 400
     }
 ]

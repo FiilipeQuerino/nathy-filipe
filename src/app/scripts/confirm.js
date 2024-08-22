@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Envia para o Google Sheets
         fetch('https://script.google.com/macros/s/AKfycbx1lz26tFUsSn8DXNOu62Pm3lvJsgVVqa-HHfMs4DsUOVBVN5pZjBndrIJPtTCAPPG3-Q/exec', {
             method: 'POST',
+            mode: 'no-cors',  // Adiciona o modo no-cors
             headers: {
                 'Content-Type': 'application/json'
             },

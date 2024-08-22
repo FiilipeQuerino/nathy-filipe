@@ -1,5 +1,5 @@
 body {
-    background-image: url('../assets/fundo.jpg'); /* Restaurando o fundo */
+    background-image: url('../assets/fundo.jpg');
     background-size: cover;
     background-position: center;
     font-family: Arial, sans-serif;
@@ -14,12 +14,31 @@ body {
 
 .countdown-container {
     margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 #countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     font-size: 2rem;
     color: darkolivegreen;
-    margin-bottom: 20px;
+}
+
+.countdown-item {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.countdown-item span {
+    display: block;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #556B2F;
 }
 
 .buttons-container {

@@ -36,12 +36,6 @@
         "price": 4000
     },
     {
-        "name": "Sessão de Spa e Massagem",
-        "description": "Para a noiva relaxar depois de organizar cada detalhe do casamento. 💆‍♀️",
-        "image": "https://images.unsplash.com/photo-1554284126-5e4dcc844ec2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200",
-        "price": 300
-    },
-    {
         "name": "Um dia de compras no shopping",
         "description": "Porque uma tarde de compras nunca é demais, né? 🛒",
         "image": "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -50,13 +44,7 @@
     {
         "name": "Vale Manicure por um mês",
         "description": "Unhas sempre impecáveis para qualquer ocasião! 💅",
-        "image": "https://images.unsplash.com/photo-1616627451929-0f8385500b16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200",
+        "image": "https://images.unsplash.com/photo-1581016793537-613987c89aad?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "price": 250
-    },
-    {
-        "name": "Kit de maquiagem profissional",
-        "description": "Para a noiva brilhar ainda mais em qualquer evento. 💄✨",
-        "image": "https://images.unsplash.com/photo-1601709012353-39958899c02d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200",
-        "price": 400
     }
 ]

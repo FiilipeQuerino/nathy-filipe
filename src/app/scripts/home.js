@@ -27,8 +27,6 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("countdown").innerHTML = "O grande dia chegou!";
         }
     }, 1000);
-});
-
 
     // Controle dos modais
     var giftModal = document.getElementById("giftListModal");

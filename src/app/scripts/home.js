@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     const weddingDate = new Date("2025-03-08T15:00:00").getTime();
-    const countdownElement = document.getElementById("countdown");
+
+    const countdownElement = {
+        days: document.getElementById("days"),
+        hours: document.getElementById("hours"),
+        minutes: document.getElementById("minutes"),
+        seconds: document.getElementById("seconds")
+    };
 
     setInterval(function() {
         const now = new Date().getTime();
@@ -11,13 +17,18 @@ document.addEventListener("DOMContentLoaded", function() {
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        countdownElement.days.textContent = days;
+        countdownElement.hours.textContent = hours;
+        countdownElement.minutes.textContent = minutes;
+        countdownElement.seconds.textContent = seconds;
 
         if (distance < 0) {
             clearInterval(interval);
-            countdownElement.innerHTML = "O grande dia chegou!";
+            document.getElementById("countdown").innerHTML = "O grande dia chegou!";
         }
     }, 1000);
+});
+
 
     // Controle dos modais
     var giftModal = document.getElementById("giftListModal");

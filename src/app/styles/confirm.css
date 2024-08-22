@@ -72,10 +72,40 @@ body {
     margin-right: 10px;
 }
 
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    transition: visibility 0s, opacity 0.5s ease, bottom 0.5s ease;
+    opacity: 0;
+}
+
+.toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px; /* Ajusta para melhor visualização em dispositivos móveis */
+}
 
 @media (max-width: 600px) {
     .form-container input, .form-container button {
         padding: 8px;
         font-size: 1rem;
+    }
+
+    .toast {
+        min-width: 200px;
+        margin-left: -100px;
+        font-size: 15px;
+        padding: 12px;
     }
 }

@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Configurar a data do casamento
-    const weddingDate = new Date("2024-12-31T00:00:00").getTime(); // Ajuste para a data do casamento
-
-    // Atualizar a contagem regressiva a cada segundo
+    const weddingDate = new Date("2025-03-08T15:00:00").getTime();
     const countdownElement = document.getElementById("countdown");
+
     setInterval(function() {
         const now = new Date().getTime();
         const distance = weddingDate - now;
@@ -21,22 +19,37 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }, 1000);
 
-    // Controle do modal
-    var modal = document.getElementById("giftListModal");
-    var btn = document.getElementById("giftListButton");
-    var span = document.getElementsByClassName("close")[0];
+    // Controle do modal para a Lista de Presentes
+    var giftModal = document.getElementById("giftListModal");
+    var giftBtn = document.getElementById("giftListButton");
+    var giftClose = document.getElementsByClassName("close")[0];
 
-    btn.onclick = function() {
-        modal.style.display = "block";
+    giftBtn.onclick = function() {
+        giftModal.style.display = "block";
     }
 
-    span.onclick = function() {
-        modal.style.display = "none";
+    giftClose.onclick = function() {
+        giftModal.style.display = "none";
+    }
+
+    // Controle do modal para a Localização
+    var locationModal = document.getElementById("locationModal");
+    var locationBtn = document.getElementById("locationButton");
+    var locationClose = document.getElementsByClassName("close-location")[0];
+
+    locationBtn.onclick = function() {
+        locationModal.style.display = "block";
+    }
+
+    locationClose.onclick = function() {
+        locationModal.style.display = "none";
     }
 
     window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+        if (event.target == giftModal) {
+            giftModal.style.display = "none";
+        } else if (event.target == locationModal) {
+            locationModal.style.display = "none";
         }
     }
 });

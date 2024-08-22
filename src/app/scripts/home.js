@@ -19,30 +19,26 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }, 1000);
 
-    // Controle do modal para a Lista de Presentes
+    // Controle dos modais
     var giftModal = document.getElementById("giftListModal");
+    var locationModal = document.getElementById("locationModal");
     var giftBtn = document.getElementById("giftListButton");
-    var giftClose = document.getElementsByClassName("close")[0];
+    var locationBtn = document.getElementById("locationButton");
+    var closeBtns = document.getElementsByClassName("close");
 
     giftBtn.onclick = function() {
         giftModal.style.display = "block";
     }
 
-    giftClose.onclick = function() {
-        giftModal.style.display = "none";
-    }
-
-    // Controle do modal para a Localização
-    var locationModal = document.getElementById("locationModal");
-    var locationBtn = document.getElementById("locationButton");
-    var locationClose = document.getElementsByClassName("close-location")[0];
-
     locationBtn.onclick = function() {
         locationModal.style.display = "block";
     }
 
-    locationClose.onclick = function() {
-        locationModal.style.display = "none";
+    for (let i = 0; i < closeBtns.length; i++) {
+        closeBtns[i].onclick = function() {
+            giftModal.style.display = "none";
+            locationModal.style.display = "none";
+        }
     }
 
     window.onclick = function(event) {

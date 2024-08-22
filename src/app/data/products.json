@@ -2,85 +2,61 @@
     {
         "name": "Contribuição para o Jogo de Panela",
         "description": "Ajudar a comprar aquele conjunto de panelas top para evitar o delivery todo mês.",
-        "image": "https://via.placeholder.com/200",
+        "image": "https://images.unsplash.com/photo-1601324461686-76817c9e02c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200",
         "price": 150
     },
     {
         "name": "Assinatura de Netflix por um ano",
         "description": "Garanta nossas maratonas de séries sem interrupções. 😅",
-        "image": "https://via.placeholder.com/200",
+        "image": "https://images.unsplash.com/photo-1526498460520-4c246339dccb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200",
         "price": 500
     },
     {
         "name": "Um ano de barbearia para o noivo",
         "description": "Para manter o visual na régua o ano todo! ✂️",
-        "image": "https://via.placeholder.com/200",
+        "image": "https://images.unsplash.com/photo-1590044065807-8b374471aa1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200",
         "price": 1000
     },
     {
-        "name": "Churrasco completo para o casal",
-        "description": "Porque nada melhor do que um bom churrasco no final de semana. 🥩",
-        "image": "https://via.placeholder.com/200",
-        "price": 800
+        "name": "Sessão de Spa e Massagem",
+        "description": "Para a noiva relaxar depois de organizar cada detalhe do casamento. 💆‍♀️",
+        "image": "https://images.unsplash.com/photo-1554284126-5e4dcc844ec2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200",
+        "price": 300
     },
     {
-        "name": "Cadeira de escritório gamer",
-        "description": "Para o noivo trabalhar (ou jogar) com estilo e conforto. 🎮",
-        "image": "https://via.placeholder.com/200",
-        "price": 1200
-    },
-    {
-        "name": "Um ano de passeios no shopping",
-        "description": "Para garantir os finais de semana ocupados e algumas compras a mais. 🛍️",
-        "image": "https://via.placeholder.com/200",
-        "price": 1500
-    },
-    {
-        "name": "Contribuição para a Lua de Mel dos sonhos",
-        "description": "Ajude a tornar nossa viagem inesquecível! 🌴✈️",
-        "image": "https://via.placeholder.com/200",
-        "price": 2500
-    },
-    {
-        "name": "TV 4K para maratonar séries",
-        "description": "Porque assistir em alta definição é outro nível. 📺",
-        "image": "https://via.placeholder.com/200",
-        "price": 3000
-    },
-    {
-        "name": "Contribuição para a contrução da nossa casa",
-        "description": "Para dar aquele toque especial no nosso cantinho. 🏠",
-        "image": "https://via.placeholder.com/200",
-        "price": 3500
+        "name": "Kit de maquiagem profissional",
+        "description": "Para a noiva brilhar ainda mais em qualquer evento. 💄✨",
+        "image": "https://images.unsplash.com/photo-1601709012353-39958899c02d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200",
+        "price": 400
     },
     {
         "name": "Lua de Mel dos Sonhos",
         "description": "Apoie nosso grande sonho de viajar e curtir momentos inesquecíveis juntos. 🌅",
-        "image": "https://via.placeholder.com/200",
+        "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200",
         "price": 4000
     },
     {
         "name": "Sessão de Spa e Massagem",
         "description": "Para a noiva relaxar depois de organizar cada detalhe do casamento. 💆‍♀️",
-        "image": "https://via.placeholder.com/200",
+        "image": "https://images.unsplash.com/photo-1554284126-5e4dcc844ec2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200",
         "price": 300
     },
     {
         "name": "Um dia de compras no shopping",
         "description": "Porque uma tarde de compras nunca é demais, né? 🛒",
-        "image": "https://via.placeholder.com/200",
+        "image": "https://images.unsplash.com/photo-1556761175-4b46a572b786?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200",
         "price": 220
     },
     {
         "name": "Vale Manicure por um mês",
         "description": "Unhas sempre impecáveis para qualquer ocasião! 💅",
-        "image": "https://via.placeholder.com/200",
+        "image": "https://images.unsplash.com/photo-1616627451929-0f8385500b16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200",
         "price": 250
     },
     {
         "name": "Kit de maquiagem profissional",
         "description": "Para a noiva brilhar ainda mais em qualquer evento. 💄✨",
-        "image": "https://via.placeholder.com/200",
+        "image": "https://images.unsplash.com/photo-1601709012353-39958899c02d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=200",
         "price": 400
     }
 ]

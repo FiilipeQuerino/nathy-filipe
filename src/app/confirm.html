@@ -12,8 +12,16 @@
         <h2>Confirmação de Presença</h2>
         <form id="rsvp-form">
             <input type="text" name="name" id="name" placeholder="Nome" required>
+            <div class="response-options">
+                <label>
+                    <input type="radio" name="response" value="Sim" required> Sim
+                </label>
+                <label>
+                    <input type="radio" name="response" value="Não" required> Não
+                </label>
+            </div>
             <button type="submit">
-                <i class="fas fa-check"></i> Confirmar Presença
+                <i class="fas fa-check"></i> Confirmar Resposta
             </button>
         </form>
     </div>

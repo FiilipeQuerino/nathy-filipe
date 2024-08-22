@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Item 1",
+        "description": "Descrição do Item 1",
+        "image": "https://via.placeholder.com/200",
+        "price": 200
+    },
+    {
+        "name": "Item 2",
+        "description": "Descrição do Item 2",
+        "image": "https://via.placeholder.com/200",
+        "price": 150
+    },
+    {
+        "name": "Item 3",
+        "description": "Descrição do Item 3",
+        "image": "https://via.placeholder.com/200",
+        "price": 100
+    }
+]

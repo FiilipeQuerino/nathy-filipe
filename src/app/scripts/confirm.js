@@ -4,6 +4,11 @@ document.getElementById('rsvp-form').addEventListener('submit', function(e) {
     const name = document.getElementById('name').value;
     const response = document.querySelector('input[name="response"]:checked').value;
 
+    if (!name || !response) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+    }
+
     // Envia para o Google Sheets
     fetch('https://script.google.com/macros/s/AKfycbx1lz26tFUsSn8DXNOu62Pm3lvJsgVVqa-HHfMs4DsUOVBVN5pZjBndrIJPtTCAPPG3-Q/exec', {
         method: 'POST',

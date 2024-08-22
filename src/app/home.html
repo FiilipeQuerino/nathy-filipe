@@ -8,7 +8,6 @@
     <!-- Adicione o link para o Font Awesome (versão hospedada) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        /* Estilos pré-existentes */
         body {
             background-image: url('./assets/fundo.jpg');
             background-size: cover;
@@ -119,34 +118,6 @@
         .modal-button:hover {
             background-color: #556b2f;
         }
-
-        .copy-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 10px auto;
-            padding: 10px 20px;
-            background-color: darkolivegreen;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .copy-button:hover {
-            background-color: #556b2f;
-        }
-
-        .copy-button i {
-            margin-right: 10px;
-        }
-
-        .success-message {
-            display: none;
-            color: green;
-            margin-top: 10px;
-        }
     </style>
 </head>
 
@@ -176,11 +147,7 @@
             <span class="close">&times;</span>
             <h2>Escolha uma opção de presente</h2>
             <a href="https://www.magazineluiza.com.br" target="_blank" class="modal-button">Magalu</a>
-            <div class="copy-button" onclick="copyPixCode()">
-                <i class="fas fa-copy"></i> <!-- Ícone do Font Awesome para copiar -->
-                <span>Copiar Código PIX</span>
-            </div>
-            <p class="success-message" id="successMessage">Código PIX copiado!</p>
+            <a href="giftgallery.html" target="_blank" class="modal-button">PIX</a>
         </div>
     </div>
 
@@ -188,7 +155,6 @@
         var modal = document.getElementById("giftListModal");
         var btn = document.getElementById("giftListButton");
         var span = document.getElementsByClassName("close")[0];
-        var successMessage = document.getElementById("successMessage");
 
         btn.onclick = function () {
             modal.style.display = "block";
@@ -202,18 +168,6 @@
             if (event.target == modal) {
                 modal.style.display = "none";
             }
-        }
-
-        function copyPixCode() {
-            const pixCode = "00020126330014BR.GOV.BCB.PIX0111109853269485204000053039865802BR5925Filipe Querino dos Santos6009SAO PAULO62140510Y6cu90lb2g630496C1";
-            navigator.clipboard.writeText(pixCode).then(() => {
-                successMessage.style.display = "block";
-                setTimeout(() => {
-                    successMessage.style.display = "none";
-                }, 2000);
-            }).catch(err => {
-                console.log('Erro ao copiar o código PIX', err);
-            });
         }
     </script>
 </body>

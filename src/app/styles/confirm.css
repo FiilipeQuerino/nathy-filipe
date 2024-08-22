@@ -57,6 +57,22 @@ body {
     margin-right: 10px;
 }
 
+.response-options {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+
+.response-options label {
+    font-size: 1.2rem;
+    color: darkolivegreen;
+}
+
+.response-options input {
+    margin-right: 10px;
+}
+
+
 @media (max-width: 600px) {
     .form-container input, .form-container button {
         padding: 8px;

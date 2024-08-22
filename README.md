@@ -2,7 +2,10 @@
 
 Bem-vindo ao site do casamento de Nathielly e Filipe. Este site foi criado para fornecer todas as informações necessárias para os convidados do nosso casamento, incluindo a localização, confirmação de presença, código de vestimenta e uma galeria de presentes.
 
-[https://vercel.com/querinos-projects/nathy-filipe](https://nathy-filipe.vercel.app/)
+🌐 Acesse o Site
+Explore todas as informações sobre nosso casamento e confirme sua presença diretamente em nosso site:
+
+🌍 Nathy & Filipe - Site Oficial
 
 ## 📂 Estrutura do Projeto
 

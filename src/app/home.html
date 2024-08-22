@@ -5,138 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Casamento</title>
-    <!-- Adicione o link para o Font Awesome (versão hospedada) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        body {
-            background-image: url('./assets/fundo.jpg');
-            background-size: cover;
-            background-position: center;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-
-        .buttons-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 250px;
-            height: 100px;
-            background-color: white;
-            color: darkolivegreen;
-            border: 2px solid darkolivegreen;
-            border-radius: 50px;
-            font-size: 1.5rem;
-            text-decoration: none;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
-        }
-
-        .button:hover {
-            background-color: darkolivegreen;
-            color: white;
-        }
-
-        .button i {
-            font-size: 2rem;
-            color: darkolivegreen;
-            transition: color 0.3s ease;
-        }
-
-        .button:hover i {
-            color: white;
-        }
-
-        .button span {
-            margin-left: 10px;
-            font-size: 1.2rem;
-            white-space: nowrap;
-        }
-
-        /* Estilos para o modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 400px;
-            text-align: center;
-            border-radius: 10px;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .modal-button {
-            display: block;
-            margin: 10px auto;
-            padding: 10px 20px;
-            background-color: darkolivegreen;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .modal-button:hover {
-            background-color: #556b2f;
-        }
-    </style>
+    <link rel="stylesheet" href="../styles/home.css"> <!-- Link para o CSS separado -->
 </head>
 
 <body>
+    <div class="countdown-container">
+        <h2>Contagem Regressiva para o Grande Dia</h2>
+        <div id="countdown"></div>
+    </div>
+
     <div class="buttons-container">
         <a href="confirm.html" target="_blank" class="button">
-            <i class="fas fa-check"></i> <!-- Ícone do Font Awesome para um check -->
+            <i class="fas fa-check"></i>
             <span>Confirmação</span>
         </a>
         <a href="https://abrir.link/zjsDp" target="_blank" class="button">
-            <i class="fas fa-map-marker-alt"></i> <!-- Ícone do Font Awesome para localização -->
+            <i class="fas fa-map-marker-alt"></i>
             <span>Localização</span>
         </a>
         <a href="#" class="button" id="giftListButton">
-            <i class="fas fa-gift"></i> <!-- Ícone do Font Awesome para presente -->
+            <i class="fas fa-gift"></i>
             <span>Lista de Presentes</span>
         </a>
         <a href="dress-code.html" target="_blank" class="button">
-            <i class="fas fa-tshirt"></i> <!-- Ícone do Font Awesome para uma camiseta -->
+            <i class="fas fa-tshirt"></i>
             <span>Dress Code</span>
         </a>
     </div>
@@ -151,25 +44,7 @@
         </div>
     </div>
 
-    <script>
-        var modal = document.getElementById("giftListModal");
-        var btn = document.getElementById("giftListButton");
-        var span = document.getElementsByClassName("close")[0];
-
-        btn.onclick = function () {
-            modal.style.display = "block";
-        }
-
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
+    <script src="../scripts/home.js"></script> <!-- Link para o JavaScript separado -->
 </body>
 
 </html>

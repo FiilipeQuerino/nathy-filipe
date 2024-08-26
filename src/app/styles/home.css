@@ -18,6 +18,9 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
+    max-width: 90%; /* Limita a largura máxima do contêiner */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #countdown {

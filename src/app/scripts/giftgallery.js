@@ -25,30 +25,36 @@ function showPaymentOptions(productValue) {
     var modal = document.getElementById("paymentModal");
 
     // Gerar o código Pix dinâmico com o valor específico do produto
-    const pixCode = generatePixCode(productValue);
+    const pixCode = generatePixCode(productValue); // Você deve implementar essa função ou usar uma chave fixa.
 
-    window.currentPixLink = pixCode;
-    modal.style.display = "block";
+    window.currentPixLink = pixCode; // Define o Pix link como a chave Pix gerada
+    modal.style.display = "block"; // Exibe a modal
 }
 
-function copyToClipboard() {
-    navigator.clipboard.writeText(window.currentPixLink).then(function () {
-        showToast('Presente escolhido, agora é só fazer o Pix!');
+function copyPix() {
+    const pixKey = "109853269-48"; // Chave Pix fixa
+    navigator.clipboard.writeText(pixKey).then(function () {
+        showToast('Pix copiado: ' + pixKey);
         closeModal();
-    }, function (err) {
-        showToast('Falha ao copiar o link: ' + err);
-        closeModal();
+    }).catch(function (err) {
+        showToast('Erro ao copiar Pix: ' + err);
     });
 }
 
 function showQRCode() {
     var qrCodeContainer = document.getElementById("qrCodeContainer");
-    qrCodeContainer.style.display = "block";
+    qrCodeContainer.style.display = "block"; // Exibe o QR Code
+}
+
+function cardPaymentOption() {
+    showToast('Opção de pagamento com cartão em breve!');
 }
 
 function closeModal() {
     var modal = document.getElementById("paymentModal");
     modal.style.display = "none";
+    var qrCodeContainer = document.getElementById("qrCodeContainer");
+    qrCodeContainer.style.display = "none"; // Esconde o QR Code ao fechar o modal
 }
 
 // Fechar o modal ao clicar no "X"

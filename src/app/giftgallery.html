@@ -24,19 +24,20 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2>Formas de Pagamento</h2>
-            <p>Você pode pagar usando o QR Code Pix, copiar o link do Pix ou usar seu cartão.</p>
             <div class="button-container">
-                <button class="icon-button qr-button" onclick="showQRCode()">
+                <button class="icon-button" onclick="copyPix()">
+                    <i class="fas fa-money-bill-wave"></i>
+                </button>
+                <button class="icon-button" onclick="showQRCode()">
                     <i class="fas fa-qrcode"></i>
                 </button>
-                <button class="icon-button copy-button" onclick="copyToClipboard()">
-                    <i class="fas fa-copy"></i>
+                <button class="icon-button" onclick="cardPaymentOption()">
+                    <i class="fas fa-credit-card"></i>
                 </button>
             </div>
             <div id="qrCodeContainer" style="display: none;">
-                <img src="assets/qrcode-ai.png" alt="QR Code" style="max-width: 100%; height: auto; margin-top: 20px;">
+                <img src="../assets/qrcode-ai.png" alt="QR Code" style="max-width: 100%; height: auto; margin-top: 20px;">
             </div>
-            <div id="payment-errors" role="alert"></div>
         </div>
     </div>
 

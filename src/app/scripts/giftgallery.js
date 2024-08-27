@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
                     <p><strong>Valor: R$${product.price},00</strong></p>
-                    <a href="#" onclick="showPaymentOptions('${product.linkPix}'); return false;">Comprar</a>
+                    <a href="#" onclick="showPaymentOptions('${product.linkPix}', '${product.name}', ${product.price}); return false;">Comprar</a>
                 `;
                 
                 gallery.appendChild(item);

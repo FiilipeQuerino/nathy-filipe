@@ -7,8 +7,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    flex-direction: column;
     text-align: center;
+    height: 100vh;
+}
+
+.page-title {
+    font-size: 2rem;
+    color: darkolivegreen;
+    margin-bottom: 20px;
 }
 
 .form-container {
@@ -79,7 +86,7 @@ body {
 
 .response-options label {
     display: flex;
-    align-items: center; /* Alinha o texto com o checkbox */
+    align-items: center;
     font-size: 1.2rem;
     color: darkolivegreen;
 }

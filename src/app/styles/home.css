@@ -127,3 +127,56 @@ h2 {
         font-size: 1rem;
     }
 }
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000; /* Aumentado para garantir que o modal esteja sobreposto */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo escuro */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto; /* 10% de margem superior para centralizar verticalmente */
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: darkolivegreen;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.modal-button:hover {
+    background-color: #455d27;
+}

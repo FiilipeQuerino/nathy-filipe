@@ -32,9 +32,10 @@ function showPaymentOptions(productValue) {
 }
 
 function copyPix() {
-    navigator.clipboard.writeText(window.currentPixLink).then(function () {
-        showToast('Pix copiado: ' + window.currentPixLink);
-        closeModal();
+    const pixKey = window.currentPixLink; // Usa o Pix dinâmico gerado
+    navigator.clipboard.writeText(pixKey).then(function () {
+        showToast('Pix copiado: ' + pixKey);
+        closeModal(); // Fecha a modal automaticamente após copiar
     }).catch(function (err) {
         showToast('Erro ao copiar Pix: ' + err);
     });

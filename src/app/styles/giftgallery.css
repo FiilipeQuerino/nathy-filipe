@@ -2,7 +2,7 @@ body {
     background-image: url('./assets/fundo.jpg');
     background-size: cover;
     background-position: center;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     display: flex;
     justify-content: center;
@@ -10,6 +10,17 @@ body {
     flex-direction: column;
     text-align: center;
     padding: 20px;
+}
+
+header, footer {
+    width: 100%;
+    padding: 10px;
+    color: #3d5226;
+}
+
+header h1, header p, footer p {
+    margin: 0;
+    font-family: 'Cormorant SC', serif;
 }
 
 .gallery {
@@ -22,93 +33,77 @@ body {
 }
 
 .gallery-item {
-    background-color: white;
-    border: 2px solid #556B2F;
-    border-radius: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
     width: 200px;
-    padding: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
-    transition: transform 0.3s ease;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery-item img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 .gallery-item h3 {
-    margin: 10px 0;
-    font-size: 1.2rem;
-    color: #556B2F;
+    font-size: 1.1rem;
+    color: #3d5226;
+    margin-bottom: 5px;
 }
 
 .gallery-item p {
-    margin: 5px 0;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #556B2F;
+    margin-bottom: 10px;
 }
 
 .gallery-item a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
+    display: block;
+    padding: 10px;
     background-color: #556B2F;
     color: white;
+    text-align: center;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .gallery-item a:hover {
-    background-color: #6b8e23;
+    background-color: #3d5226;
 }
 
 .gallery-item:hover {
     transform: scale(1.05);
-}
-
-header,
-footer {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0);
-    color: #556B2F;
-}
-
-header h1,
-header p,
-footer p {
-    margin: 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
+    background-color: #ffffff;
+    margin: 10% auto;
     padding: 20px;
-    border: 2px solid #556B2F;
+    border-radius: 10px;
     width: 80%;
-    max-width: 500px;
+    max-width: 400px;
     text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .close {
-    color: #556B2F;
+    color: #3d5226;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -117,56 +112,48 @@ footer p {
 
 .close:hover,
 .close:focus {
-    color: #3d5226;
-    text-decoration: none;
+    color: #556B2F;
 }
 
 .modal-content h2 {
     color: #556B2F;
     font-family: 'Cormorant SC', serif;
     margin-bottom: 20px;
-    font-size: 2rem;
 }
 
 .modal-content p {
-    color: #3d5226;
-    font-size: 1.1rem;
+    color: #556B2F;
+    font-size: 1rem;
     margin-bottom: 20px;
 }
 
-.modal-content select {
+.modal-content select,
+.modal-content button {
     width: 100%;
     padding: 10px;
-    margin: 15px 0;
-    border: 2px solid #556B2F;
-    border-radius: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
     font-size: 1rem;
-    background-color: #fff;
-    color: #556B2F;
+    border: 1px solid #556B2F;
 }
 
-.modal-content select:focus {
-    outline: none;
-    border-color: #3d5226;
+.modal-content select {
+    background-color: #ffffff;
+    color: #3d5226;
 }
 
-.modal-content #purchaseButton {
-    padding: 10px 20px;
+.modal-content button {
     background-color: #556B2F;
     color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.modal-content #purchaseButton:disabled {
+.modal-content button:disabled {
     background-color: #ccc;
-    cursor: not-allowed;
 }
 
-.modal-content #purchaseButton:hover:not(:disabled) {
+.modal-content button:hover:not(:disabled) {
     background-color: #3d5226;
 }
 
@@ -191,92 +178,28 @@ footer p {
     color: #fff;
 }
 
-.qr-button {
-    background: none;
-}
-
-.copy-button {
-    background: none;
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.button-container i {
-    font-size: 24px;
-}
-
 .toast {
     visibility: hidden;
     min-width: 250px;
-    margin-left: -125px;
     background-color: #333;
-    color: #fff;
+    color: white;
     text-align: center;
-    border-radius: 2px;
+    border-radius: 5px;
     padding: 16px;
     position: fixed;
-    z-index: 1;
+    z-index: 1001;
     left: 50%;
     bottom: 30px;
     font-size: 17px;
+    transform: translateX(-50%);
+    transition: visibility 0s, opacity 0.5s ease, bottom 0.5s ease;
+    opacity: 0;
 }
 
 .toast.show {
     visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-@-webkit-keyframes fadein {
-    from {
-        bottom: 0;
-        opacity: 0;
-    }
-
-    to {
-        bottom: 30px;
-        opacity: 1;
-    }
-}
-
-@keyframes fadein {
-    from {
-        bottom: 0;
-        opacity: 0;
-    }
-
-    to {
-        bottom: 30px;
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes fadeout {
-    from {
-        bottom: 30px;
-        opacity: 1;
-    }
-
-    to {
-        bottom: 0;
-        opacity: 0;
-    }
-}
-
-@keyframes fadeout {
-    from {
-        bottom: 30px;
-        opacity: 1;
-    }
-
-    to {
-        bottom: 0;
-        opacity: 0;
-    }
+    opacity: 1;
+    bottom: 50px;
 }
 
 @media (max-width: 500px) {
@@ -293,7 +216,7 @@ footer p {
         font-size: 1rem;
     }
 
-    .modal-content #purchaseButton {
+    .modal-content button {
         font-size: 1rem;
     }
 }

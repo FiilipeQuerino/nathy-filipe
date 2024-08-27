@@ -4,80 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes do Casamento</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="../styles/home.css">
+    <title>Galeria de Presentes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../styles/giftgallery.css">
 </head>
 
 <body>
-    <h2>Contagem Regressiva</h2>
-    <div class="countdown-container">
-        <div class="countdown-box">
-            <div class="modal-small">
-                <div id="days" class="countdown-number">24</div>
-                <div class="countdown-label">Dias</div>
-            </div>
-        </div>
-        <div class="countdown-box">
-            <div class="modal-small">
-                <div id="hours" class="countdown-number">07</div>
-                <div class="countdown-label">Horas</div>
-            </div>
-        </div>
-        <div class="countdown-box">
-            <div class="modal-small">
-                <div id="minutes" class="countdown-number">53</div>
-                <div class="countdown-label">Minutos</div>
-            </div>
-        </div>
-        <div class="countdown-box">
-            <div class="modal-small">
-                <div id="seconds" class="countdown-number">50</div>
-                <div class="countdown-label">Segundos</div>
-            </div>
-        </div>
-    </div>
+    <header>
+        <h1>Galeria de Presentes</h1>
+        <p>Escolha um presente para nosso casamento</p>
+    </header>
+    <div class="gallery" id="gallery"></div>
+    <footer>
+        <p>Obrigado por fazer parte do nosso grande dia!</p>
+    </footer>
 
-    <div class="buttons-container">
-        <a href="confirm.html" target="_blank" class="button">
-            <i class="fas fa-check"></i>
-            <span>Confirmação</span>
-        </a>
-        <a href="#" class="button" id="locationButton">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Localização</span>
-        </a>
-        <a href="#" class="button" id="giftListButton">
-            <i class="fas fa-gift"></i>
-            <span>Lista de Presentes</span>
-        </a>
-        <a href="dress-code.html" target="_blank" class="button">
-            <i class="fas fa-tshirt"></i>
-            <span>Dress Code</span>
-        </a>
-    </div>
-
-    <!-- Modal para a Lista de Presentes -->
-    <div id="giftListModal" class="modal">
+    <!-- Modal -->
+    <div id="paymentModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Escolha uma opção de presente</h2>
-            <a href="https://www.finalfeliz.de/filipe-querino-nathielly-jorge" target="_blank" class="modal-button">Magalu</a>
-            <a href="giftgallery.html" target="_blank" class="modal-button">PIX</a>
+            <h2>Formas de Pagamento</h2>
+            <div class="button-container">
+                <button class="icon-button" onclick="copyPix()">
+                    <i class="fas fa-paste"></i>
+                </button>
+                <button class="icon-button" onclick="showQRCodeModal()">
+                    <i class="fas fa-qrcode"></i>
+                </button>
+                <button class="icon-button" onclick="showCardPaymentModal()">
+                    <i class="fas fa-credit-card"></i>
+                </button>
+            </div>
+            <div id="qrCodeContainer" style="display: none;">
+                <img src="../assets/qrcode-ai.png" alt="QR Code" style="max-width: 100%; height: auto; margin-top: 20px;">
+            </div>
         </div>
     </div>
 
-    <!-- Modal para Localização -->
-    <div id="locationModal" class="modal">
+    <!-- Modal do QR Code -->
+    <div id="qrCodeModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Escolha uma opção de localização</h2>
-            <a href="https://abrir.link/zjsDp" target="_blank" class="modal-button">Localização no Mapa</a>
-            <a href="https://santacatarina360.github.io/KiosqueDigoeMoni/" target="_blank" class="modal-button">Ver Local em 3D</a>
+            <div id="qrCodeContainer">
+                <img src="../assets/qrcode-ai.png" alt="QR Code" style="max-width: 100%; height: auto;">
+            </div>
         </div>
     </div>
 
-    <script src="../scripts/home.js"></script>
+    <!-- Modal de Cartão de Crédito -->
+    <div id="cardPaymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Parcelamento</h2>
+            <select id="installments" onchange="enablePurchaseButton()">
+                <option value="" disabled selected>Selecione o número de parcelas</option>
+                <option value="1">1 vez</option>
+                <option value="2">2 vezes</option>
+                <option value="3">3 vezes</option>
+                <option value="4">4 vezes</option>
+                <option value="5">5 vezes</option>
+            </select>
+            <p>Com teste teste</p>
+            <button id="purchaseButton" disabled onclick="makePurchase()">Comprar</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Presente escolhido, agora é só fazer o Pix!</div>
+
+    <script src="../scripts/giftgallery.js"></script>
 </body>
 
 </html>

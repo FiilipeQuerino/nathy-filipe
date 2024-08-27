@@ -143,6 +143,14 @@ window.onclick = function(event) {
     }
 };
 
+function showPaymentOptions(linkPix, productName, productPrice) {
+    window.currentPixLink = linkPix || "Código Pix padrão";
+    window.currentProductName = productName; // Armazena o nome do produto
+    window.currentProductPrice = productPrice; // Armazena o valor do produto
+    var modal = document.getElementById("paymentModal");
+    modal.style.display = "block";
+}
+
 function closeModal() {
     var modal = document.getElementById("paymentModal");
     modal.style.display = "none";

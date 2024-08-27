@@ -46,6 +46,39 @@ function showQRCode() {
     qrCodeContainer.style.display = "block"; // Exibe o QR Code
 }
 
+function showQRCodeModal() {
+    // Fecha a modal atual
+    closeModal();
+
+    // Abre a nova modal do QR Code
+    var qrCodeModal = document.getElementById("qrCodeModal");
+    qrCodeModal.style.display = "block";
+}
+
+// Fecha a modal ao clicar no "X" em ambas as modais
+document.querySelectorAll('.close').forEach(closeBtn => {
+    closeBtn.onclick = function() {
+        closeModal();
+        closeQRCodeModal();
+    }
+});
+
+function closeQRCodeModal() {
+    var qrCodeModal = document.getElementById("qrCodeModal");
+    qrCodeModal.style.display = "none";
+}
+
+// Fecha a modal ao clicar fora do conteúdo da modal
+window.onclick = function(event) {
+    var paymentModal = document.getElementById("paymentModal");
+    var qrCodeModal = document.getElementById("qrCodeModal");
+    if (event.target == paymentModal) {
+        closeModal();
+    } else if (event.target == qrCodeModal) {
+        closeQRCodeModal();
+    }
+}
+
 function cardPaymentOption() {
     showToast('Opção de pagamento com cartão em breve!');
 }

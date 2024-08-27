@@ -31,7 +31,7 @@
                 <button class="icon-button" onclick="showQRCodeModal()">
                     <i class="fas fa-qrcode"></i>
                 </button>
-                <button class="icon-button" onclick="cardPaymentOption()">
+                <button class="icon-button" onclick="showCardPaymentModal()">
                     <i class="fas fa-credit-card"></i>
                 </button>
             </div>
@@ -48,6 +48,24 @@
             <div id="qrCodeContainer">
                 <img src="../assets/qrcode-ai.png" alt="QR Code" style="max-width: 100%; height: auto; margin-top: 20px;">
             </div>
+        </div>
+    </div>
+
+    <!-- Modal de Cartão de Crédito -->
+    <div id="cardPaymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Parcelamento</h2>
+            <select id="installments" onchange="enablePurchaseButton()">
+                <option value="" disabled selected>Selecione o número de parcelas</option>
+                <option value="1">1 vez</option>
+                <option value="2">2 vezes</option>
+                <option value="3">3 vezes</option>
+                <option value="4">4 vezes</option>
+                <option value="5">5 vezes</option>
+            </select>
+            <p>Com teste teste</p> <!-- Descrição de teste -->
+            <button id="purchaseButton" disabled onclick="makePurchase()">Comprar</button>
         </div>
     </div>
 

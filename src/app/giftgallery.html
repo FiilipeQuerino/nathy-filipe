@@ -14,7 +14,7 @@
         <h1>Galeria de Presentes</h1>
         <p>Escolha um presente para nosso casamento</p>
     </header>
-    <div class="gallery" id="gallery"></div> <!-- A galeria será gerada dinamicamente via JavaScript -->
+    <div class="gallery" id="gallery"></div>
     <footer>
         <p>Obrigado por fazer parte do nosso grande dia!</p>
     </footer>
@@ -26,7 +26,7 @@
             <h2>Formas de Pagamento</h2>
             <div class="button-container">
                 <button class="icon-button" onclick="copyPix()">
-                    <i class="fas fa-paste"></i> <!-- Ícone de 'copia e cola' ou substitua por algo relacionado ao Pix -->
+                    <i class="fas fa-paste"></i>
                 </button>
                 <button class="icon-button" onclick="showQRCodeModal()">
                     <i class="fas fa-qrcode"></i>
@@ -46,7 +46,7 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div id="qrCodeContainer">
-                <img src="../assets/qrcode-ai.png" alt="QR Code" style="max-width: 100%; height: auto; margin-top: 20px;">
+                <img src="../assets/qrcode-ai.png" alt="QR Code" style="max-width: 100%; height: auto;">
             </div>
         </div>
     </div>
@@ -64,7 +64,7 @@
                 <option value="4">4 vezes</option>
                 <option value="5">5 vezes</option>
             </select>
-            <p>Com teste teste</p> <!-- Descrição de teste -->
+            <p>Com teste teste</p>
             <button id="purchaseButton" disabled onclick="makePurchase()">Comprar</button>
         </div>
     </div>

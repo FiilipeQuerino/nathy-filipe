@@ -21,26 +21,25 @@ h2 {
 .countdown-container {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 5px; /* Diminuir o espaçamento entre as caixas */
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Permite que os elementos quebrem linha */
+    flex-wrap: nowrap; /* Garante que as caixas fiquem em uma única linha */
 }
 
 .countdown-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-basis: calc(50% - 10px); /* Cada caixa ocupa 50% da largura com espaço de 10px entre elas */
-    margin-bottom: 10px; /* Espaçamento entre as linhas */
+    flex-basis: 20%; /* Ajusta a largura de cada caixa para caberem lado a lado */
 }
 
 .modal-small {
     background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
+    padding: 10px; /* Reduz o padding para caixas menores */
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
-    min-width: 100px;
-    min-height: 100px;
+    min-width: 60px; /* Reduz o tamanho mínimo das caixas */
+    min-height: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,16 +47,16 @@ h2 {
 }
 
 .countdown-number {
-    font-size: 2.5rem;
+    font-size: 1.5rem; /* Reduz o tamanho da fonte */
     font-weight: bold;
     color: darkolivegreen;
 }
 
 .countdown-label {
-    font-size: 1rem;
+    font-size: 0.8rem; /* Reduz o tamanho da fonte */
     font-weight: normal;
     color: #556B2F;
-    margin-top: 5px;
+    margin-top: 3px; /* Reduz o espaçamento superior */
 }
 
 /* Botões da página */
@@ -110,26 +109,21 @@ h2 {
 /* Adaptações para dispositivos móveis */
 @media (max-width: 600px) {
     .countdown-container {
-        gap: 10px;
-    }
-
-    .countdown-box {
-        flex-basis: calc(50% - 5px); /* Cada caixa ocupa 50% da largura, com menos espaço entre elas */
-        margin-bottom: 5px; /* Espaçamento reduzido entre as linhas */
+        gap: 3px; /* Reduz ainda mais o espaçamento entre as caixas */
     }
 
     .modal-small {
-        padding: 15px;
-        min-width: 80px;
-        min-height: 80px;
+        padding: 8px;
+        min-width: 50px; /* Tamanho mínimo das caixas ainda menor */
+        min-height: 50px;
     }
 
     .countdown-number {
-        font-size: 2rem;
+        font-size: 1.3rem; /* Fonte menor para números */
     }
 
     .countdown-label {
-        font-size: 0.9rem;
+        font-size: 0.7rem; /* Fonte menor para os rótulos */
     }
 
     .button {

@@ -46,8 +46,8 @@
         }
 
         .gallery img {
-            width: 280px;
-            height: 350px;
+            width: 220px;
+            height: 280px;
             object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -69,7 +69,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            overflow: auto;
+            overflow: hidden;
             background-color: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
@@ -106,10 +106,39 @@
             color: #bbb;
         }
 
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
         @media (max-width: 600px) {
             .gallery img {
-                width: 100%;
-                height: auto;
+                width: 150px;
+                height: 200px;
             }
 
             .modal-content {
@@ -131,6 +160,10 @@
                 top: 5px;
                 right: 10px;
             }
+
+            .prev, .next {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
@@ -142,32 +175,53 @@
         <p>Queridos convidados, para harmonizar com a paleta de cores do nosso casamento, pedimos que escolham roupas em tons de <strong>verde oliva, bege, dourado</strong> ou <strong>tons pastéis</strong>. <strong>Por favor, evitem o branco</strong>, que é reservado exclusivamente para a noiva.</p>
     </div>
 
-    <div class="gallery">
-        <img src="https://via.placeholder.com/280x350.png?text=Roupa+1" alt="Roupa 1" onclick="expandImage(this)">
-        <img src="https://via.placeholder.com/280x350.png?text=Roupa+2" alt="Roupa 2" onclick="expandImage(this)">
-        <img src="https://via.placeholder.com/280x350.png?text=Roupa+3" alt="Roupa 3" onclick="expandImage(this)">
-        <img src="https://via.placeholder.com/280x350.png?text=Roupa+4" alt="Roupa 4" onclick="expandImage(this)">
-        <img src="https://via.placeholder.com/280x350.png?text=Roupa+5" alt="Roupa 5" onclick="expandImage(this)">
-        <img src="https://via.placeholder.com/280x350.png?text=Roupa+6" alt="Roupa 6" onclick="expandImage(this)">
+    <div class="gallery" id="gallery">
+        <img src="https://via.placeholder.com/280x350.png?text=Roupa+1" alt="Roupa 1">
+        <img src="https://via.placeholder.com/280x350.png?text=Roupa+2" alt="Roupa 2">
+        <img src="https://via.placeholder.com/280x350.png?text=Roupa+3" alt="Roupa 3">
+        <img src="https://via.placeholder.com/280x350.png?text=Roupa+4" alt="Roupa 4">
+        <img src="https://via.placeholder.com/280x350.png?text=Roupa+5" alt="Roupa 5">
+        <img src="https://via.placeholder.com/280x350.png?text=Roupa+6" alt="Roupa 6">
     </div>
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
+        <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
         <img class="modal-content" id="img01">
+        <span class="next" onclick="changeSlide(1)">&#10095;</span>
     </div>
 
     <script>
-        function expandImage(img) {
-            var modal = document.getElementById("myModal");
-            var modalImg = document.getElementById("img01");
+        let currentSlideIndex = 0;
+        const galleryImages = document.querySelectorAll('.gallery img');
+        const modal = document.getElementById("myModal");
+        const modalImg = document.getElementById("img01");
+
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', function () {
+                openModal(index);
+            });
+        });
+
+        function openModal(index) {
+            currentSlideIndex = index;
             modal.style.display = "flex";
-            modalImg.src = img.src;
+            modalImg.src = galleryImages[currentSlideIndex].src;
         }
 
         function closeModal() {
-            var modal = document.getElementById("myModal");
             modal.style.display = "none";
+        }
+
+        function changeSlide(direction) {
+            currentSlideIndex += direction;
+            if (currentSlideIndex >= galleryImages.length) {
+                currentSlideIndex = 0;
+            } else if (currentSlideIndex < 0) {
+                currentSlideIndex = galleryImages.length - 1;
+            }
+            modalImg.src = galleryImages[currentSlideIndex].src;
         }
     </script>
 </body>

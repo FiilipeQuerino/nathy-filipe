@@ -1,18 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('../data/products.json') // Caminho para o arquivo JSON
+    fetch('../data/products.json')
         .then(response => response.json())
         .then(products => {
             const gallery = document.getElementById('gallery');
             products.forEach(product => {
                 const item = document.createElement('div');
                 item.classList.add('gallery-item');
-                
+
                 item.innerHTML = `
                     <img src="${product.image}" alt="${product.name}">
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
                     <p><strong>Valor: R$${product.price},00</strong></p>
-                    <a href="#" onclick="showPaymentOptions(${product.price}); return false;">Comprar</a>
+                    <a href="#" onclick="showPaymentOptions('${product.linkPix}'); return false;">Comprar</a>
                 `;
                 
                 gallery.appendChild(item);
@@ -21,21 +21,19 @@ document.addEventListener("DOMContentLoaded", function() {
         .catch(error => console.error('Erro ao carregar os produtos:', error));
 });
 
-function showPaymentOptions(productValue) {
+function showPaymentOptions(linkPix) {
     var modal = document.getElementById("paymentModal");
 
-    // Simulação da geração do código Pix dinâmico com o valor do produto
-    const pixCode = `00020126330014BR.GOV.BCB.PIX0111109853269485204000053039865802BR5925Nome Exemplo6009SAO PAULO${productValue}00`;
-
-    window.currentPixLink = pixCode; // Define o Pix link como a chave Pix gerada
-    modal.style.display = "block"; // Exibe o modal
+    // Definindo o linkPix como o código do Pix atual
+    window.currentPixLink = linkPix || "Código Pix padrão caso o campo esteja vazio";
+    
+    modal.style.display = "block";
 }
 
 function copyPix() {
-    const pixKey = window.currentPixLink; // Usa o Pix dinâmico gerado
-    navigator.clipboard.writeText(pixKey).then(function () {
-        showToast('Pix copiado: ' + pixKey);
-        closeModal(); // Fecha a modal automaticamente após copiar
+    navigator.clipboard.writeText(window.currentPixLink).then(function () {
+        showToast('Pix copiado: ' + window.currentPixLink);
+        closeModal();
     }).catch(function (err) {
         showToast('Erro ao copiar Pix: ' + err);
     });

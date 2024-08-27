@@ -99,29 +99,75 @@ footer p {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 2px solid #556B2F;
     width: 80%;
-    max-width: 400px;
+    max-width: 500px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .close {
-    color: #aaa;
+    color: #556B2F;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #3d5226;
     text-decoration: none;
-    cursor: pointer;
+}
+
+.modal-content h2 {
+    color: #556B2F;
+    font-family: 'Cormorant SC', serif;
+    margin-bottom: 20px;
+    font-size: 2rem;
 }
 
 .modal-content p {
+    color: #3d5226;
+    font-size: 1.1rem;
     margin-bottom: 20px;
+}
+
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 2px solid #556B2F;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #556B2F;
+}
+
+.modal-content select:focus {
+    outline: none;
+    border-color: #3d5226;
+}
+
+.modal-content #purchaseButton {
+    padding: 10px 20px;
+    background-color: #556B2F;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content #purchaseButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.modal-content #purchaseButton:hover:not(:disabled) {
+    background-color: #3d5226;
 }
 
 .icon-button {
@@ -230,5 +276,24 @@ footer p {
     to {
         bottom: 0;
         opacity: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content p {
+        font-size: 1rem;
+    }
+
+    .modal-content #purchaseButton {
+        font-size: 1rem;
     }
 }

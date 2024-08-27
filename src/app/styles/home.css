@@ -23,14 +23,15 @@ h2 {
     justify-content: center;
     gap: 15px;
     margin-bottom: 20px;
-    flex-wrap: wrap; /* Adiciona flexibilidade para dispositivos menores */
+    flex-wrap: wrap; /* Permite que os elementos quebrem linha */
 }
 
 .countdown-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-basis: 100px;
+    flex-basis: calc(50% - 10px); /* Cada caixa ocupa 50% da largura com espaço de 10px entre elas */
+    margin-bottom: 10px; /* Espaçamento entre as linhas */
 }
 
 .modal-small {
@@ -110,7 +111,11 @@ h2 {
 @media (max-width: 600px) {
     .countdown-container {
         gap: 10px;
-        flex-wrap: wrap;
+    }
+
+    .countdown-box {
+        flex-basis: calc(50% - 5px); /* Cada caixa ocupa 50% da largura, com menos espaço entre elas */
+        margin-bottom: 5px; /* Espaçamento reduzido entre as linhas */
     }
 
     .modal-small {

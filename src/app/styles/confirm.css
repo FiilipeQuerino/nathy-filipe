@@ -24,9 +24,9 @@ body {
     align-items: center;
     gap: 20px;
     width: 90%;
-    max-width: 500px;
+    max-width: 450px;
     background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
@@ -121,8 +121,9 @@ body {
 
 @media (max-width: 600px) {
     .form-container {
-        width: 95%; /* Reduz a largura da modal para caber melhor em telas menores */
-        padding: 15px;
+        width: 95%; /* Mantém a largura da modal responsiva */
+        max-width: 350px; /* Reduz ainda mais o tamanho em telas pequenas */
+        padding: 10px; /* Reduz o padding para otimizar o espaço */
     }
 
     .form-container input,

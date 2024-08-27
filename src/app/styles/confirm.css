@@ -24,7 +24,20 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-.form-container input, .form-container button {
+.input-group {
+    width: 100%;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 1rem;
+    color: darkolivegreen;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -34,14 +47,15 @@ body {
     box-sizing: border-box;
 }
 
-.form-container input {
-    border: 2px solid darkolivegreen;
-}
-
 .form-container button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
     background-color: white;
     color: darkolivegreen;
     border: 2px solid darkolivegreen;
+    border-radius: 50px;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -60,7 +74,7 @@ body {
 .response-options {
     display: flex;
     justify-content: space-evenly;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .response-options label {
@@ -93,11 +107,12 @@ body {
 .toast.show {
     visibility: visible;
     opacity: 1;
-    bottom: 50px; /* Ajusta para melhor visualização em dispositivos móveis */
+    bottom: 50px;
 }
 
 @media (max-width: 600px) {
-    .form-container input, .form-container button {
+    .form-container input,
+    .form-container button {
         padding: 8px;
         font-size: 1rem;
     }
@@ -107,5 +122,13 @@ body {
         margin-left: -100px;
         font-size: 15px;
         padding: 12px;
+    }
+
+    .input-group label {
+        font-size: 0.9rem;
+    }
+
+    .response-options label {
+        font-size: 1rem;
     }
 }

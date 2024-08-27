@@ -78,11 +78,13 @@ body {
 }
 
 .response-options label {
+    display: flex;
+    align-items: center; /* Alinha o texto com o checkbox */
     font-size: 1.2rem;
     color: darkolivegreen;
 }
 
-.response-options input {
+.response-options input[type="radio"] {
     margin-right: 10px;
 }
 

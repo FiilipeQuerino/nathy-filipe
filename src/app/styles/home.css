@@ -21,24 +21,24 @@ h2 {
 .countdown-container {
     display: flex;
     justify-content: center;
-    gap: 5px; /* Diminuir o espaçamento entre as caixas */
+    gap: 5px;
     margin-bottom: 20px;
-    flex-wrap: nowrap; /* Garante que as caixas fiquem em uma única linha */
+    flex-wrap: nowrap;
 }
 
 .countdown-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-basis: 20%; /* Ajusta a largura de cada caixa para caberem lado a lado */
+    flex-basis: 20%;
 }
 
 .modal-small {
     background: rgba(255, 255, 255, 0.9);
-    padding: 10px; /* Reduz o padding para caixas menores */
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
-    min-width: 60px; /* Reduz o tamanho mínimo das caixas */
+    min-width: 60px;
     min-height: 60px;
     display: flex;
     flex-direction: column;
@@ -47,23 +47,23 @@ h2 {
 }
 
 .countdown-number {
-    font-size: 1.5rem; /* Reduz o tamanho da fonte */
+    font-size: 1.5rem;
     font-weight: bold;
     color: darkolivegreen;
 }
 
 .countdown-label {
-    font-size: 0.8rem; /* Reduz o tamanho da fonte */
+    font-size: 0.8rem;
     font-weight: normal;
     color: #556B2F;
-    margin-top: 3px; /* Reduz o espaçamento superior */
+    margin-top: 3px;
 }
 
-/* Botões da página */
+/* Botões minimalistas */
 .buttons-container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     margin-top: 20px;
 }
 
@@ -71,68 +71,59 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 250px;
-    height: 100px;
-    background-color: white;
-    color: darkolivegreen;
-    border: 2px solid darkolivegreen;
-    border-radius: 50px;
-    font-size: 1.5rem;
+    padding: 12px 20px;
+    background-color: darkolivegreen;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
     text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .button:hover {
-    background-color: darkolivegreen;
-    color: white;
+    background-color: #455d27;
+    transform: translateY(-2px);
 }
 
 .button i {
-    font-size: 2rem;
-    color: darkolivegreen;
-    transition: color 0.3s ease;
-}
-
-.button:hover i {
-    color: white;
+    font-size: 1.2rem;
+    margin-right: 8px;
 }
 
 .button span {
-    margin-left: 10px;
-    font-size: 1.2rem;
+    margin-left: 5px;
+    font-size: 1rem;
     white-space: nowrap;
 }
 
 /* Adaptações para dispositivos móveis */
 @media (max-width: 600px) {
     .countdown-container {
-        gap: 3px; /* Reduz ainda mais o espaçamento entre as caixas */
+        gap: 3px;
     }
 
     .modal-small {
         padding: 8px;
-        min-width: 50px; /* Tamanho mínimo das caixas ainda menor */
+        min-width: 50px;
         min-height: 50px;
     }
 
     .countdown-number {
-        font-size: 1.3rem; /* Fonte menor para números */
+        font-size: 1.3rem;
     }
 
     .countdown-label {
-        font-size: 0.7rem; /* Fonte menor para os rótulos */
+        font-size: 0.7rem;
     }
 
     .button {
-        width: 200px;
-        height: 80px;
-        font-size: 1.2rem;
+        padding: 10px 15px;
+        font-size: 0.9rem;
     }
 
     .button i {
-        font-size: 1.8rem;
+        font-size: 1rem;
     }
 }

@@ -77,9 +77,71 @@ window.onclick = function(event) {
     }
 }
 
-function cardPaymentOption() {
-    showToast('Opção de pagamento com cartão em breve!');
+function showCardPaymentModal() {
+    // Fecha a modal atual
+    closeModal();
+
+    // Abre a nova modal do cartão de crédito
+    var cardPaymentModal = document.getElementById("cardPaymentModal");
+    cardPaymentModal.style.display = "block";
 }
+
+function enablePurchaseButton() {
+    const installments = document.getElementById("installments").value;
+    const purchaseButton = document.getElementById("purchaseButton");
+
+    // Habilita o botão de compra somente se uma opção de parcelamento for selecionada
+    if (installments) {
+        purchaseButton.disabled = false;
+    } else {
+        purchaseButton.disabled = true;
+    }
+}
+
+function makePurchase() {
+    const installments = document.getElementById("installments").value;
+    const selectedProduct = window.currentProductName; // Nome do presente
+    const productPrice = window.currentProductPrice; // Valor do presente
+
+    // Redireciona para o WhatsApp com a mensagem formatada
+    const whatsappNumber = "+554888365558";
+    const message = `Quero comprar o presente ${selectedProduct} com o valor de R$${productPrice},00 em ${installments} vezes. Espero meu link de pagamento.`;
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    // Fecha a modal
+    closeCardPaymentModal();
+
+    // Redireciona para o WhatsApp
+    window.location.href = whatsappURL;
+}
+
+function closeCardPaymentModal() {
+    var cardPaymentModal = document.getElementById("cardPaymentModal");
+    cardPaymentModal.style.display = "none";
+}
+
+// Fechar a modal ao clicar no "X" em ambas as modais
+document.querySelectorAll('.close').forEach(closeBtn => {
+    closeBtn.onclick = function() {
+        closeModal();
+        closeQRCodeModal();
+        closeCardPaymentModal();
+    }
+});
+
+// Fecha a modal ao clicar fora do conteúdo da modal
+window.onclick = function(event) {
+    var paymentModal = document.getElementById("paymentModal");
+    var qrCodeModal = document.getElementById("qrCodeModal");
+    var cardPaymentModal = document.getElementById("cardPaymentModal");
+    if (event.target == paymentModal) {
+        closeModal();
+    } else if (event.target == qrCodeModal) {
+        closeQRCodeModal();
+    } else if (event.target == cardPaymentModal) {
+        closeCardPaymentModal();
+    }
+};
 
 function closeModal() {
     var modal = document.getElementById("paymentModal");

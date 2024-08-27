@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <h3>${product.name}</h3>
                     <p>${product.description}</p>
                     <p><strong>Valor: R$${product.price},00</strong></p>
-                    <a href="#" onclick="showPaymentOptions(${product.price})">Comprar</a>
+                    <a href="#" onclick="showPaymentOptions(${product.price}); return false;">Comprar</a>
                 `;
                 
                 gallery.appendChild(item);
@@ -24,17 +24,16 @@ document.addEventListener("DOMContentLoaded", function() {
 function showPaymentOptions(productValue) {
     var modal = document.getElementById("paymentModal");
 
-    // Gerar o código Pix dinâmico com o valor específico do produto
-    const pixCode = generatePixCode(productValue); // Você deve implementar essa função ou usar uma chave fixa.
+    // Simulação da geração do código Pix dinâmico com o valor do produto
+    const pixCode = `00020126330014BR.GOV.BCB.PIX0111109853269485204000053039865802BR5925Nome Exemplo6009SAO PAULO${productValue}00`;
 
     window.currentPixLink = pixCode; // Define o Pix link como a chave Pix gerada
-    modal.style.display = "block"; // Exibe a modal
+    modal.style.display = "block"; // Exibe o modal
 }
 
 function copyPix() {
-    const pixKey = "109853269-48"; // Chave Pix fixa
-    navigator.clipboard.writeText(pixKey).then(function () {
-        showToast('Pix copiado: ' + pixKey);
+    navigator.clipboard.writeText(window.currentPixLink).then(function () {
+        showToast('Pix copiado: ' + window.currentPixLink);
         closeModal();
     }).catch(function (err) {
         showToast('Erro ao copiar Pix: ' + err);

@@ -14,41 +14,44 @@ body {
 
 .countdown-container {
     margin-bottom: 20px;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
-    max-width: 90%; /* Limita a largura máxima do contêiner */
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #countdown {
     display: flex;
     justify-content: center;
     gap: 20px;
-    font-size: 2rem;
-    color: darkolivegreen;
 }
 
 .countdown-item {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
+    color: darkolivegreen;
+    min-width: 80px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .countdown-item span {
-    display: block;
     font-size: 1rem;
     font-weight: normal;
     color: #556B2F;
+    margin-top: 5px;
 }
 
+/* Botões da página */
 .buttons-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-top: 20px; /* Adicionado para ajustar o espaçamento */
+    margin-top: 20px;
 }
 
 .button {

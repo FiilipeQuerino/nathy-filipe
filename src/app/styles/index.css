@@ -1,3 +1,7 @@
+:root {
+    --title-font-family: "Tangerine", cursive;
+}
+
 @keyframes bounce {
     0%,
     20%,
@@ -37,29 +41,32 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    height: auto;
     width: 90%;
-    max-width: 500px;
+    max-width: 600px;
     position: relative;
 }
 
 .title {
-    font-family: "Great Vibes", cursive;
-    font-size: 4rem;
-    color: darkolivegreen;
+    font-family: var(--title-font-family);
+    font-size: 8rem;
+    font-weight: 400;
+    color: rgb(48, 63, 22);
     margin-bottom: 15px;
 }
 
 .subtitle {
+    font-family: "Montserrat", sans-serif;
     font-size: 1.2rem;
-    color: #3d5226;
+    color: rgb(48, 63, 22);
     margin-bottom: 20px;
 }
 
 .date {
     font-family: "Cormorant SC", serif;
     font-size: 2.5rem;
-    color: darkolivegreen;
-    margin-bottom: 20px;
+    color: rgb(48, 63, 22);
+    margin: 0px;
 }
 
 .button {
@@ -70,7 +77,8 @@ body {
     border: none;
     margin-top: 20px;
     font-size: 4rem;
-    color: darkolivegreen;
+    color: rgb(48, 63, 22);
+
     transition: color 0.3s ease, transform 0.3s ease;
     text-decoration: none;
 }
@@ -82,7 +90,7 @@ body {
 }
 
 .button:hover {
-    color: #2e8b57;
+    color: darkolivegreen;
     transform: scale(1.1);
 }
 

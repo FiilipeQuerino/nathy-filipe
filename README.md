@@ -4,7 +4,7 @@ Bem-vindo ao site do casamento de Nathielly e Filipe. Este site foi criado para 
 
 ## 🌐 Acesse o Site
 
-Explore todas as informações sobre nosso casamento e confirme sua presença diretamente em nosso site:
+Explore nosso site:
 
 🌍 **[Nathy & Filipe - Site Oficial](https://nathy-filipe.vercel.app/)**
 

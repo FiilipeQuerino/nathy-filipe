@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("contentContainer").innerHTML = data;
 
                 if (isConfirmation) {
-                    // Adiciona o código específico da confirmação
                     addConfirmationJS();
                 }
             })
@@ -53,9 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const response = responseElement.value.trim();
 
-            console.log("Nome capturado:", name);
-            console.log("Resposta capturada:", response);
-
             fetch('https://script.google.com/macros/s/AKfycbz3wi1TacxhCiNDu37bq_uV0HkMpzXYp8uUorTz83OAAJkoRXQM5HvZtKyu62uftPQN/exec', {
                 method: 'POST',
                 mode: 'no-cors',
@@ -67,8 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(() => {
                 showToast('Confirmação enviada com sucesso!');
                 const whatsappMessage = `Olá%2C+aqui+é+${name}+e+${response === 'Sim' ? 'irei comparecer' : 'não poderei comparecer'} ao casamento.`;
-                console.log('Mensagem para WhatsApp:', whatsappMessage);
-                window.location.href = `https://wa.me/5548996193227?text=${whatsappMessage}`;
+                window.open(`https://wa.me/5548996193227?text=${whatsappMessage}`, '_blank');
 
                 // Carrega a seção de presentes após a confirmação
                 loadContent('giftgallery.html', false);
@@ -105,11 +100,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 body: JSON.stringify(data)
             })
                 .then(() => {
-                    alert('Confirmação enviada com sucesso!');
+                    showToast('Confirmação enviada com sucesso!');
                 })
                 .catch(error => {
                     console.error('Erro ao enviar os dados:', error);
-                    alert('Houve um erro ao enviar a confirmação. Por favor, tente novamente.');
+                    showToast('Houve um erro ao enviar a confirmação. Por favor, tente novamente.');
                 });
         }
     });

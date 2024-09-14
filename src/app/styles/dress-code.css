@@ -1,44 +1,22 @@
-/* .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-form {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
-.input-group {
-    margin-bottom: 25px; /* Aumenta o espaço entre os grupos de entrada */
+/* .input-group {
+    margin-bottom: 25px;
     width: 100%;
 }
 
 .input-group label {
     display: block;
-    font-size: 1.25rem; /* Aumenta o tamanho da fonte dos rótulos */
-    margin-bottom: 5px; /* Adiciona espaço abaixo dos rótulos */
+    font-size: 1.25rem;
+    margin-bottom: 5px;
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 12px; /* Aumenta o padding para um campo de entrada mais espaçoso */
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 1.125rem; /* Aumenta o tamanho da fonte do campo de entrada */
+    font-size: 1.125rem;
     box-sizing: border-box;
-}
+} */
 
 .response-options {
     display: flex;

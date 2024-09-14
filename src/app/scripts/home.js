@@ -62,9 +62,10 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(() => {
                 showToast('Confirmação enviada com sucesso!');
-                const whatsappMessage = `Olá%2C+aqui+é+${name}+e+${response === 'Sim' ? 'irei comparecer' : 'não poderei comparecer'} ao casamento.`;
-                window.open(`https://wa.me/5548996193227?text=${whatsappMessage}`, '_blank');
-
+                const whatsappMessage = `Olá, aqui é ${name} e ${response === 'Sim' ? 'irei comparecer' : 'não poderei comparecer'} ao casamento.`;
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+                window.open(`https://wa.me/5548996193227?text=${encodedMessage}`, '_blank');
+            
                 // Carrega a seção de presentes após a confirmação
                 loadContent('giftgallery.html', false);
             })
@@ -83,31 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 3000);
         }
     }
-
-    // document.getElementById('contentContainer').addEventListener('submit', function (event) {
-    //     event.preventDefault();
-
-    //     if (event.target.id === 'rsvp-form') {
-    //         const formData = new FormData(event.target);
-    //         const data = Object.fromEntries(formData.entries());
-
-    //         fetch('https://script.google.com/macros/s/AKfycbz3wi1TacxhCiNDu37bq_uV0HkMpzXYp8uUorTz83OAAJkoRXQM5HvZtKyu62uftPQN/exec', {
-    //             method: 'POST',
-    //             mode: 'no-cors',
-    //             headers: {
-    //                 'Content-Type': 'application/json'
-    //             },
-    //             body: JSON.stringify(data)
-    //         })
-    //             .then(() => {
-    //                 showToast('Confirmação enviada com sucesso!');
-    //             })
-    //             .catch(error => {
-    //                 console.error('Erro ao enviar os dados:', error);
-    //                 showToast('Houve um erro ao enviar a confirmação. Por favor, tente novamente.');
-    //             });
-    //     }
-    // });
 
     document.getElementById("confirmBtn").addEventListener('click', () => loadContent('confirm.html', true));
     document.getElementById("locationBtn").addEventListener('click', () => loadContent('location.html', false));

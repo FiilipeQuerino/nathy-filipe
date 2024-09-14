@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrossel de Fotos</title>
     <link rel="stylesheet" href="styles/carousel.css">
 </head>
+
 <body>
     <div id="photos" class="section">
         <div class="carousel">
@@ -14,13 +16,11 @@
                 <img src="../assets/foto02.jpg" alt="Foto 2" class="carousel-item">
                 <img src="../assets/foto03.jpg" alt="Foto 2" class="carousel-item">
             </div>
-            <button class="prev" onclick="prevSlide()">&#10094;</button>
-            <button class="next" onclick="nextSlide()">&#10095;</button>
         </div>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const carouselInner = document.querySelector('.carousel-inner');
             const slides = document.querySelectorAll('.carousel-item');
             let index = 0;
@@ -37,20 +37,13 @@
                 showSlide(index + 1);
             }
 
-            function prevSlide() {
-                showSlide(index - 1);
-            }
-
             // Automatic slide transition every 5 seconds
             setInterval(nextSlide, 5000);
-
-            // Make the buttons functional
-            document.querySelector('.prev').addEventListener('click', prevSlide);
-            document.querySelector('.next').addEventListener('click', nextSlide);
 
             // Show the initial slide
             showSlide(index);
         });
     </script>
 </body>
+
 </html>

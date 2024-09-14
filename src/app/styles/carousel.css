@@ -17,30 +17,14 @@
 .carousel-item {
     min-width: 100%;
     box-sizing: border-box;
+    /* Ajuste o tamanho das imagens conforme necessário */
+    width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
 }
 
+/* Remover os botões de navegação */
 .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 1;
+    display: none;
 }
 
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-@media (max-width: 600px) {
-    .prev, .next {
-        padding: 5px;
-    }
-}
+@media (max-width: 600px) {}

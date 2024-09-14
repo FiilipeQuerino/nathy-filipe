@@ -22,7 +22,7 @@
 .carousel-item img {
     width: 100%; /* Ajusta a largura para 100% da área disponível */
     height: auto; /* Mantém a proporção da imagem */
-    object-fit: cover; /* Ajusta a imagem para cobrir o espaço sem distorção */
+    object-fit: contain; /* Mostra a imagem inteira sem cortar */
     max-height: 80vh; /* Limita a altura máxima da imagem para 80% da altura da viewport */
 }
 

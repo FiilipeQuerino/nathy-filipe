@@ -18,32 +18,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const carouselInner = document.querySelector('.carousel-inner');
-            const slides = document.querySelectorAll('.carousel-item');
-            let index = 0;
-
-            function showSlide(n) {
-                if (n >= slides.length) index = 0;
-                else if (n < 0) index = slides.length - 1;
-                else index = n;
-
-                carouselInner.style.transform = `translateX(${-index * 100}%)`;
-            }
-
-            function nextSlide() {
-                showSlide(index + 1);
-            }
-
-            // Automatic slide transition every 5 seconds
-            setInterval(nextSlide, 5000);
-
-            // Show the initial slide
-            showSlide(index);
-        });
-    </script>
 </body>
-
 </html>

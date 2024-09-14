@@ -17,12 +17,21 @@
 .carousel-item {
     min-width: 100%;
     box-sizing: border-box;
-    width: 50%;
-    height: auto;
+}
+
+.carousel-item img {
+    width: 100%; /* Ajusta a largura para 100% da área disponível */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Ajusta a imagem para cobrir o espaço sem distorção */
+    max-height: 80vh; /* Limita a altura máxima da imagem para 80% da altura da viewport */
 }
 
 .prev, .next {
     display: none;
 }
 
-@media (max-width: 600px) {}
+@media (max-width: 600px) {
+    .carousel-item img {
+        max-height: 50vh; /* Reduz a altura máxima das imagens em dispositivos móveis */
+    }
+}

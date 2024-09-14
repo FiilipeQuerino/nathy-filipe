@@ -25,26 +25,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
     setInterval(updateCountdown, 1000);
 
-    function loadContent(url) {
+    function loadContent(url, scriptUrl) {
         fetch(url)
             .then(response => response.text())
             .then(data => {
                 document.getElementById("contentContainer").innerHTML = data;
+                if (scriptUrl) {
+                    // Remove any existing script tags for the new content
+                    const existingScripts = document.querySelectorAll("#contentContainer script");
+                    existingScripts.forEach(script => script.remove());
+
+                    // Add the new script
+                    const script = document.createElement("script");
+                    script.src = scriptUrl;
+                    document.body.appendChild(script);
+                }
             })
             .catch(error => console.error('Erro ao carregar conteúdo:', error));
     }
 
-    // Delegação de evento para o container principal
     document.getElementById('contentContainer').addEventListener('submit', function (event) {
         event.preventDefault();
 
-        // Verifica se o alvo do evento é o formulário de confirmação
         if (event.target.id === 'rsvp-form') {
-            // Código para enviar os dados do formulário
             const formData = new FormData(event.target);
             const data = Object.fromEntries(formData.entries());
 
-            // Envia os dados para o Google Sheets (ajuste a URL de acordo com o seu script)
             fetch('https://script.google.com/macros/s/AKfycbz3wi1TacxhCiNDu37bq_uV0HkMpzXYp8uUorTz83OAAJkoRXQM5HvZtKyu62uftPQN/exec', {
                 method: 'POST',
                 mode: 'no-cors',
@@ -54,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 body: JSON.stringify(data)
             })
                 .then(() => {
-                    // Mostra mensagem de sucesso
                     alert('Confirmação enviada com sucesso!');
                 })
                 .catch(error => {
@@ -64,11 +69,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    document.getElementById("confirmBtn").addEventListener('click', () => loadContent('confirm.html'));
+    document.getElementById("confirmBtn").addEventListener('click', () => loadContent('confirm.html', 'confirmation.js'));
     document.getElementById("locationBtn").addEventListener('click', () => loadContent('location.html'));
-    document.getElementById("giftBtn").addEventListener('click', () => { loadContent('giftgallery.html'); });
+    document.getElementById("giftBtn").addEventListener('click', () => loadContent('giftgallery.html'));
     document.getElementById("dressCodeBtn").addEventListener('click', () => loadContent('dress-code.html'));
 
-    // Inicializa com a seção de confirmação
-    loadContent('confirm.html');
+    // Inicializa com a seção de fotos
+    loadContent('carousel.html');
 });

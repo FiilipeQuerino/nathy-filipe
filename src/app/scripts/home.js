@@ -84,30 +84,30 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    document.getElementById('contentContainer').addEventListener('submit', function (event) {
-        event.preventDefault();
+    // document.getElementById('contentContainer').addEventListener('submit', function (event) {
+    //     event.preventDefault();
 
-        if (event.target.id === 'rsvp-form') {
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData.entries());
+    //     if (event.target.id === 'rsvp-form') {
+    //         const formData = new FormData(event.target);
+    //         const data = Object.fromEntries(formData.entries());
 
-            fetch('https://script.google.com/macros/s/AKfycbz3wi1TacxhCiNDu37bq_uV0HkMpzXYp8uUorTz83OAAJkoRXQM5HvZtKyu62uftPQN/exec', {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-                .then(() => {
-                    showToast('Confirmação enviada com sucesso!');
-                })
-                .catch(error => {
-                    console.error('Erro ao enviar os dados:', error);
-                    showToast('Houve um erro ao enviar a confirmação. Por favor, tente novamente.');
-                });
-        }
-    });
+    //         fetch('https://script.google.com/macros/s/AKfycbz3wi1TacxhCiNDu37bq_uV0HkMpzXYp8uUorTz83OAAJkoRXQM5HvZtKyu62uftPQN/exec', {
+    //             method: 'POST',
+    //             mode: 'no-cors',
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify(data)
+    //         })
+    //             .then(() => {
+    //                 showToast('Confirmação enviada com sucesso!');
+    //             })
+    //             .catch(error => {
+    //                 console.error('Erro ao enviar os dados:', error);
+    //                 showToast('Houve um erro ao enviar a confirmação. Por favor, tente novamente.');
+    //             });
+    //     }
+    // });
 
     document.getElementById("confirmBtn").addEventListener('click', () => loadContent('confirm.html', true));
     document.getElementById("locationBtn").addEventListener('click', () => loadContent('location.html', false));

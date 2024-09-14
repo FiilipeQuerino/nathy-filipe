@@ -17,12 +17,10 @@
 .carousel-item {
     min-width: 100%;
     box-sizing: border-box;
-    /* Ajuste o tamanho das imagens conforme necessário */
-    width: 100%;
-    height: auto; /* Mantém a proporção da imagem */
+    width: 50%;
+    height: auto;
 }
 
-/* Remover os botões de navegação */
 .prev, .next {
     display: none;
 }

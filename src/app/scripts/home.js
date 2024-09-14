@@ -1,6 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const weddingDate = new Date("2025-03-08T15:00:00").getTime();
-
+document.addEventListener("DOMContentLoaded", function () {
     const countdownElement = {
         days: document.getElementById("days"),
         hours: document.getElementById("hours"),
@@ -8,7 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
         seconds: document.getElementById("seconds")
     };
 
-    setInterval(function() {
+    const weddingDate = new Date("2025-03-08T15:00:00").getTime();
+
+    function updateCountdown() {
         const now = new Date().getTime();
         const distance = weddingDate - now;
 
@@ -21,40 +21,24 @@ document.addEventListener("DOMContentLoaded", function() {
         countdownElement.hours.textContent = hours;
         countdownElement.minutes.textContent = minutes;
         countdownElement.seconds.textContent = seconds;
-
-        if (distance < 0) {
-            clearInterval(interval);
-            document.getElementById("countdown").innerHTML = "O grande dia chegou!";
-        }
-    }, 1000);
-
-    // Controle dos modais
-    var giftModal = document.getElementById("giftListModal");
-    var locationModal = document.getElementById("locationModal");
-    var giftBtn = document.getElementById("giftListButton");
-    var locationBtn = document.getElementById("locationButton");
-    var closeBtns = document.getElementsByClassName("close");
-
-    giftBtn.onclick = function() {
-        giftModal.style.display = "block";
     }
 
-    locationBtn.onclick = function() {
-        locationModal.style.display = "block";
+    setInterval(updateCountdown, 1000);
+
+    function loadContent(url) {
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("contentContainer").innerHTML = data;
+            })
+            .catch(error => console.error('Erro ao carregar conteúdo:', error));
     }
 
-    for (let i = 0; i < closeBtns.length; i++) {
-        closeBtns[i].onclick = function() {
-            giftModal.style.display = "none";
-            locationModal.style.display = "none";
-        }
-    }
+    document.getElementById("confirmBtn").addEventListener('click', () => loadContent('confirm.html'));
+    document.getElementById("locationBtn").addEventListener('click', () => loadContent('location.html'));
+    document.getElementById("giftBtn").addEventListener('click', () => { loadContent('giftgallery.html'); });    
+    document.getElementById("dressCodeBtn").addEventListener('click', () => loadContent('dress-code.html'));
 
-    window.onclick = function(event) {
-        if (event.target == giftModal) {
-            giftModal.style.display = "none";
-        } else if (event.target == locationModal) {
-            locationModal.style.display = "none";
-        }
-    }
+    // Inicializa com a seção de confirmação
+    loadContent('confirm.html');
 });

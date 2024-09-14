@@ -82,7 +82,6 @@ button {
     justify-content: center;
     gap: 8px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 20px; /* Adiciona margem superior para o botão */
 }
 
 button:hover {

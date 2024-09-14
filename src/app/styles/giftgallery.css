@@ -69,31 +69,6 @@ input[type="text"] {
     font-size: 1.125rem; /* Aumenta o tamanho da fonte das opções */
 }
 
-button {
-    background-color: #556B2F; /* Dark Olive Green */
-    color: white;
-    border: none;
-    padding: 12px 25px; /* Aumenta o padding para um botão mais espaçoso */
-    border-radius: 4px;
-    font-size: 1.125rem; /* Aumenta o tamanho da fonte do botão */
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 20px; /* Adiciona margem superior para o botão */
-}
-
-button:hover {
-    background-color: #455d27; /* Slightly darker shade for hover */
-    transform: translateY(-2px); /* Subtle lift effect */
-}
-
-button:active {
-    background-color: #3b4d1c; /* Even darker shade for active state */
-    transform: translateY(0); /* Reset lift effect */
-}
 
 .toast {
     position: fixed;

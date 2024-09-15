@@ -108,3 +108,11 @@
 #sendWhatsAppBtn:hover {
     background-color: #1da85d;
 }
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}

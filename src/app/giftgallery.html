@@ -6,15 +6,33 @@
 <!-- Modal de Pagamento -->
 <div id="paymentModal" class="modal">
     <div class="modal-content">
+        <!-- Botão de fechar modal -->
         <span id="closeModalBtn" class="close">&times;</span>
         <h2>Escolha o método de pagamento</h2>
-        <div id="cardPayment"></div>
+
+        <!-- Opções de pagamento com ícones -->
+        <div class="payment-options">
+            <button id="pixPaymentBtn">
+                <i class="fas fa-qrcode"></i> Pagar com Pix
+            </button>
+            <button id="creditCardPaymentBtn">
+                <i class="fas fa-credit-card"></i> Pagar com Cartão de Crédito
+            </button>
+        </div>
+
+        <!-- Campo de link para Pix -->
         <label for="pixLink">Link para pagamento Pix:</label>
         <input type="text" id="pixLink" readonly>
-        <button id="sendWhatsAppBtn">Enviar pelo WhatsApp</button>
+
+        <!-- Botão de envio para o WhatsApp -->
+        <button id="sendWhatsAppBtn">
+            <i class="fab fa-whatsapp"></i> Enviar pelo WhatsApp
+        </button>
     </div>
 </div>
 
+<!-- Carregar o CSS e Font Awesome para os ícones -->
 <head>
     <link rel="stylesheet" href="../styles/giftgallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>

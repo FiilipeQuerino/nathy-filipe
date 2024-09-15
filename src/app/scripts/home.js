@@ -150,10 +150,10 @@ document.addEventListener("DOMContentLoaded", function () {
         window.open(`https://wa.me/5548998365558?text=${encodedMessage}`, '_blank');
     }
 
-    // Função para fechar o modal de pagamento
+    document.getElementById('closeModal').addEventListener('click', closeModal);
+
     function closeModal() {
-        const modal = document.getElementById('paymentModal');
-        modal.style.display = 'none';
+        document.getElementById('paymentModal').style.display = 'none';
     }
 
     // Adicionar eventos de clique para navegação

@@ -1,2 +1,20 @@
-<link rel="stylesheet" href="../styles/giftgallery.css">
-<script src="../scripts/giftgallery.js"></script>
+<div id="giftGallerySection">
+    <h2>Galeria de Presentes</h2>
+    <div id="giftGallery" class="gift-gallery"></div>
+</div>
+
+<!-- Modal de Pagamento -->
+<div id="paymentModal" class="modal">
+    <div class="modal-content">
+        <span id="closeModalBtn" class="close">&times;</span>
+        <h2>Escolha o método de pagamento</h2>
+        <div id="cardPayment"></div>
+        <label for="pixLink">Link para pagamento Pix:</label>
+        <input type="text" id="pixLink" readonly>
+        <button id="sendWhatsAppBtn">Enviar pelo WhatsApp</button>
+    </div>
+</div>
+
+<head>
+    <link rel="stylesheet" href="path/to/your/css/file.css">
+</head>

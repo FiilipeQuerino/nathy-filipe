@@ -41,6 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (url === 'carousel.html') {
                     addCarouselJS();
                 }
+
+                // Carregar a galeria de presentes
+                if (url === 'giftgallery.html') {
+                    loadGiftGallery();
+                }
             })
             .catch(error => console.error('Erro ao carregar conteúdo:', error));
     }
@@ -70,52 +75,85 @@ document.addEventListener("DOMContentLoaded", function () {
         showSlide(index);
     }
 
-    // Função de adicionar lógica de confirmação
-    function addConfirmationJS() {
-        document.getElementById('rsvp-form').addEventListener('submit', function (e) {
-            e.preventDefault();
+    // Função para carregar e exibir a galeria de presentes
+    function loadGiftGallery() {
+        fetch('src/app/data/products.json')
+            .then(response => response.json())
+            .then(gifts => {
+                const giftGallery = document.getElementById('giftGallery');
+                giftGallery.innerHTML = ''; // Limpar galeria antes de carregar
 
-            const name = document.getElementById('name').value.trim();
-            const responseElement = document.querySelector('input[name="response"]:checked');
+                gifts.forEach(gift => {
+                    // Cria os elementos de cada presente
+                    const giftCard = document.createElement('div');
+                    giftCard.classList.add('gift-card');
+                    giftCard.innerHTML = `
+                        <img src="${gift.image}" alt="${gift.name}" class="gift-image">
+                        <h3>${gift.name}</h3>
+                        <p>${gift.description}</p>
+                        <p>Preço: R$ ${gift.price.toFixed(2)}</p>
+                        <button class="buy-btn" data-pix="${gift.linkPix}" data-price="${gift.price}">Comprar</button>
+                    `;
 
-            if (!responseElement) {
-                showToast('Por favor, selecione Sim ou Não.');
-                return;
-            }
-
-            const response = responseElement.value.trim();
-
-            fetch('https://script.google.com/macros/s/AKfycbz3wi1TacxhCiNDu37bq_uV0HkMpzXYp8uUorTz83OAAJkoRXQM5HvZtKyu62uftPQN/exec', {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ "name": name, "response": response })
-            })
-                .then(() => {
-                    showToast('Confirmação enviada com sucesso!');
-                    const whatsappMessage = `Olá, aqui é ${name} e ${response === 'Sim' ? 'irei comparecer' : 'não poderei comparecer'} ao casamento.`;
-                    const encodedMessage = encodeURIComponent(whatsappMessage);
-                    window.open(`https://wa.me/5548996193227?text=${encodedMessage}`, '_blank');
-
-                    // Carrega a seção de presentes após a confirmação
-                    loadContent('giftgallery.html', false);
-                })
-                .catch(error => {
-                    console.error('Erro ao enviar os dados para o Google Sheets:', error);
-                    showToast('Houve um erro ao enviar a confirmação. Por favor, tente novamente.');
+                    // Adicionar o card na galeria
+                    giftGallery.appendChild(giftCard);
                 });
-        });
 
-        function showToast(message) {
-            const toast = document.getElementById("toast");
-            toast.textContent = message;
-            toast.className = "toast show";
-            setTimeout(function () {
-                toast.className = toast.className.replace("show", "");
-            }, 3000);
+                // Adicionar eventos de clique aos botões "Comprar"
+                document.querySelectorAll('.buy-btn').forEach(button => {
+                    button.addEventListener('click', function () {
+                        const pixLink = this.getAttribute('data-pix');
+                        const price = parseFloat(this.getAttribute('data-price'));
+
+                        // Mostrar modal de pagamento
+                        showPaymentModal(pixLink, price);
+                    });
+                });
+            })
+            .catch(error => console.error('Erro ao carregar o JSON:', error));
+    }
+
+    // Função para exibir o modal de pagamento
+    function showPaymentModal(pixLink, price) {
+        const modal = document.getElementById('paymentModal');
+        const pixLinkElement = document.getElementById('pixLink');
+        const cardPaymentElement = document.getElementById('cardPayment');
+
+        pixLinkElement.value = pixLink;
+
+        // Exibir o número de parcelas para pagamento com cartão para valores acima de R$300
+        if (price > 300) {
+            cardPaymentElement.innerHTML = `
+                <label for="installments">Escolha o número de parcelas:</label>
+                <select id="installments">
+                    <option value="1">1x de R$ ${price.toFixed(2)}</option>
+                    <option value="2">2x de R$ ${(price / 2).toFixed(2)}</option>
+                    <option value="3">3x de R$ ${(price / 3).toFixed(2)}</option>
+                    <option value="4">4x de R$ ${(price / 4).toFixed(2)}</option>
+                    <option value="5">5x de R$ ${(price / 5).toFixed(2)}</option>
+                </select>
+            `;
+        } else {
+            cardPaymentElement.innerHTML = `<p>Pagamento disponível em até 1x de R$ ${price.toFixed(2)}</p>`;
         }
+
+        modal.style.display = 'block';
+    }
+
+    // Função para enviar mensagem pelo WhatsApp
+    function sendWhatsAppMessage() {
+        const pixLink = document.getElementById('pixLink').value;
+        const installments = document.getElementById('installments') ? document.getElementById('installments').value : '1';
+
+        const whatsappMessage = `Olá, gostaria de pagar o presente em ${installments}x. Aqui está o link do Pix: ${pixLink}`;
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        window.open(`https://wa.me/5548998365558?text=${encodedMessage}`, '_blank');
+    }
+
+    // Função para fechar o modal de pagamento
+    function closeModal() {
+        const modal = document.getElementById('paymentModal');
+        modal.style.display = 'none';
     }
 
     // Adicionar eventos de clique para navegação
@@ -126,4 +164,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Inicializa com a seção de carrossel
     loadContent('carousel.html', false);
+
+    // Adicionar evento para o botão de fechar modal
+    document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+
+    // Adicionar evento para o botão de enviar WhatsApp
+    document.getElementById('sendWhatsAppBtn').addEventListener('click', sendWhatsAppMessage);
 });

@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Função para carregar e exibir a galeria de presentes
     function loadGiftGallery() {
-        fetch('src/app/data/products.json')
+        fetch('../data/products.json')
             .then(response => response.json())
             .then(gifts => {
                 const giftGallery = document.getElementById('giftGallery');

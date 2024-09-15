@@ -117,22 +117,22 @@ document.addEventListener("DOMContentLoaded", function () {
     function showPaymentModal(pixLink, price) {
         const modal = document.getElementById('paymentModal');
         const pixLinkElement = document.getElementById('pixLink');
-        const cardPaymentElement = document.getElementById('cardPayment');
+        const cardPaymentElement = document.getElementById('cardPayment'); // ID atualizado para corresponder ao HTML
 
         pixLinkElement.value = pixLink;
 
         // Exibir o número de parcelas para pagamento com cartão para valores acima de R$300
         if (price > 300) {
             cardPaymentElement.innerHTML = `
-                <label for="installments">Escolha o número de parcelas:</label>
-                <select id="installments">
-                    <option value="1">1x de R$ ${price.toFixed(2)}</option>
-                    <option value="2">2x de R$ ${(price / 2).toFixed(2)}</option>
-                    <option value="3">3x de R$ ${(price / 3).toFixed(2)}</option>
-                    <option value="4">4x de R$ ${(price / 4).toFixed(2)}</option>
-                    <option value="5">5x de R$ ${(price / 5).toFixed(2)}</option>
-                </select>
-            `;
+            <label for="installments">Escolha o número de parcelas:</label>
+            <select id="installments">
+                <option value="1">1x de R$ ${price.toFixed(2)}</option>
+                <option value="2">2x de R$ ${(price / 2).toFixed(2)}</option>
+                <option value="3">3x de R$ ${(price / 3).toFixed(2)}</option>
+                <option value="4">4x de R$ ${(price / 4).toFixed(2)}</option>
+                <option value="5">5x de R$ ${(price / 5).toFixed(2)}</option>
+            </select>
+        `;
         } else {
             cardPaymentElement.innerHTML = `<p>Pagamento disponível em até 1x de R$ ${price.toFixed(2)}</p>`;
         }

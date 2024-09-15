@@ -81,6 +81,12 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.json())
             .then(gifts => {
                 const giftGallery = document.getElementById('giftGallery');
+
+                if (!giftGallery) {
+                    console.error('Elemento "giftGallery" não encontrado.');
+                    return;
+                }
+
                 giftGallery.innerHTML = ''; // Limpar galeria antes de carregar
 
                 gifts.forEach(gift => {
@@ -88,12 +94,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     const giftCard = document.createElement('div');
                     giftCard.classList.add('gift-card');
                     giftCard.innerHTML = `
-                        <img src="${gift.image}" alt="${gift.name}" class="gift-image">
-                        <h3>${gift.name}</h3>
-                        <p>${gift.description}</p>
-                        <p>Preço: R$ ${gift.price.toFixed(2)}</p>
-                        <button class="buy-btn" data-pix="${gift.linkPix}" data-price="${gift.price}">Comprar</button>
-                    `;
+                    <img src="${gift.image}" alt="${gift.name}" class="gift-image">
+                    <h3>${gift.name}</h3>
+                    <p>${gift.description}</p>
+                    <p>Preço: R$ ${gift.price.toFixed(2)}</p>
+                    <button class="buy-btn" data-pix="${gift.linkPix}" data-price="${gift.price}">Comprar</button>
+                `;
 
                     // Adicionar o card na galeria
                     giftGallery.appendChild(giftCard);
@@ -112,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(error => console.error('Erro ao carregar o JSON:', error));
     }
+
 
     // Função para exibir o modal de pagamento
     function showPaymentModal(pixLink, price) {

@@ -1,12 +1,5 @@
-/* Reseta os estilos padrão */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Montserrat', sans-serif; /* Usando Montserrat como fonte padrão */
+    font-family: 'Montserrat', sans-serif; /* Fonte Montserrat para todo o site */
     background-color: #f5f5f5;
     color: #333;
     margin: 0;
@@ -14,9 +7,12 @@ body {
     overflow-x: hidden; /* Remove scroll lateral */
 }
 
-/* Ajustes de fonte */
-h1, h2, h3 {
-    font-family: 'Tangerine', cursive; /* Usando Tangerine para títulos */
+h1, h2, h3, .title {
+    font-family: 'Tangerine', cursive; /* Mantendo Tangerine nos títulos */
+}
+
+.subtitle, .date, p, a, input, textarea, button {
+    font-family: 'Montserrat', sans-serif; /* Usando Montserrat no texto comum, formulários e botões */
 }
 
 section {

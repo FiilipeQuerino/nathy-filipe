@@ -4,7 +4,7 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Remove scroll lateral */
+    overflow-x: hidden;
 }
 
 h1, h2, h3, .title {
@@ -116,40 +116,37 @@ button:hover {
     font-size: 24px;
 }
 
-/* Seções maiores para cada bloco */
 section {
-    min-height: 100vh; /* Cada seção ocupa pelo menos a altura da tela */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/* Mapa Google Maps */
 .map-container {
     text-align: center;
     margin-top: 20px;
-    width: 100%; /* O container do mapa ocupa 100% da largura */
-    max-width: 100%; /* Evita que o container ultrapasse a tela */
-    overflow: hidden; /* Garante que nenhum conteúdo extra cause scroll */
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .map-container iframe {
-    width: 100%; /* O iframe (mapa) se ajusta à largura da tela */
-    height: 300px; /* Altura do mapa ajustada para telas menores */
+    width: 100%;
+    height: 300px;
     border: none;
     display: block;
 }
 
-/* Para garantir que o mapa seja responsivo em diferentes tamanhos de tela */
 @media only screen and (max-width: 768px) {
     .map-container iframe {
-        height: 250px; /* Ajusta a altura para telas menores */
+        height: 250px;
     }
 }
 
 @media only screen and (max-width: 500px) {
     .map-container iframe {
-        height: 200px; /* Reduz ainda mais a altura para telas muito pequenas */
+        height: 200px;
     }
 }

@@ -1,3 +1,4 @@
+/* Estilo geral do body */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -10,7 +11,7 @@ body {
     text-align: center;
     color: #333;
     margin-top: 20px;
-    font-size: 2.5rem; /* Aumenta o tamanho do título */
+    font-size: 2.5rem; /* Tamanho do título */
 }
 
 .form-container {
@@ -27,7 +28,7 @@ form {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px; /* Aumenta o padding para mais espaço interno */
+    padding: 30px; /* Padding interno do formulário */
     width: 100%;
     box-sizing: border-box;
     display: flex;
@@ -35,29 +36,31 @@ form {
     align-items: center;
 }
 
+/* Grupo de entrada */
 .input-group {
-    margin-bottom: 25px; /* Aumenta o espaço entre os grupos de entrada */
+    margin-bottom: 25px; /* Espaço entre os grupos de entrada */
     width: 100%;
 }
 
 .input-group label {
     display: block;
-    font-size: 1.25rem; /* Aumenta o tamanho da fonte dos rótulos */
-    margin-bottom: 5px; /* Adiciona espaço abaixo dos rótulos */
+    font-size: 1.25rem; /* Tamanho da fonte dos rótulos */
+    margin-bottom: 5px; /* Espaço abaixo dos rótulos */
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 12px; /* Aumenta o padding para um campo de entrada mais espaçoso */
+    padding: 12px; /* Espaço interno do campo de entrada */
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 1.125rem; /* Aumenta o tamanho da fonte do campo de entrada */
+    font-size: 1.125rem; /* Tamanho da fonte */
     box-sizing: border-box;
 }
 
+/* Opções de resposta */
 .response-options {
     display: flex;
-    flex-direction: column; /* Coloca as opções em coluna */
+    flex-direction: column; /* As opções são organizadas em coluna */
     align-items: center;
     gap: 15px;
     width: 100%;
@@ -66,34 +69,39 @@ input[type="text"] {
 .response-options label {
     display: flex;
     align-items: center;
-    font-size: 1.125rem; /* Aumenta o tamanho da fonte das opções */
+    font-size: 1.125rem; /* Tamanho da fonte */
 }
 
+/* Estilo do botão */
 button {
     background-color: #556B2F; /* Dark Olive Green */
     color: white;
     border: none;
-    padding: 12px 25px; /* Aumenta o padding para um botão mais espaçoso */
+    padding: 12px 25px; /* Padding interno do botão */
     border-radius: 4px;
-    font-size: 1.125rem; /* Aumenta o tamanho da fonte do botão */
+    font-size: 1.125rem; /* Tamanho da fonte */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Garante que o botão ocupe toda a largura disponível */
+    max-width: 300px; /* Define uma largura máxima para o botão */
 }
 
+/* Hover e estado ativo dos botões */
 button:hover {
-    background-color: #455d27; /* Slightly darker shade for hover */
-    transform: translateY(-2px); /* Subtle lift effect */
+    background-color: #455d27; /* Cor mais escura no hover */
+    transform: translateY(-2px); /* Efeito de elevação no hover */
 }
 
 button:active {
-    background-color: #3b4d1c; /* Even darker shade for active state */
-    transform: translateY(0); /* Reset lift effect */
+    background-color: #3b4d1c; /* Cor mais escura no estado ativo */
+    transform: translateY(0); /* Remove o efeito de elevação no clique */
 }
 
+/* Estilo do toast (mensagem de sucesso) */
 .toast {
     position: fixed;
     bottom: 20px;
@@ -101,12 +109,26 @@ button:active {
     transform: translateX(-50%);
     background-color: #556B2F; /* Dark Olive Green */
     color: white;
-    padding: 12px 20px; /* Aumenta o padding para o toast */
+    padding: 12px 20px;
     border-radius: 4px;
     display: none;
-    font-size: 1rem; /* Aumenta o tamanho da fonte do toast */
+    font-size: 1rem;
 }
 
 .toast.show {
     display: block;
+}
+
+/* Ajustes responsivos para telas menores */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 10px;
+        width: 100%;
+    }
+
+    button {
+        font-size: 1rem; /* Tamanho da fonte ajustado */
+        padding: 10px 20px; /* Padding menor em dispositivos móveis */
+        max-width: none; /* Remove a largura máxima */
+    }
 }

@@ -62,7 +62,8 @@ input[type="text"] {
 }
 
 /* Estilo do botão */
-button {
+/* Alterando para uma classe específica */
+.confirm-button {
     background-color: #556B2F;
     color: white;
     border: none;
@@ -78,13 +79,12 @@ button {
     transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Hover e estado ativo no botão */
-button:hover {
+.confirm-button:hover {
     background-color: #455d27;
     transform: translateY(-2px);
 }
 
-button:active {
+.confirm-button:active {
     background-color: #3b4d1c;
 }
 

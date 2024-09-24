@@ -5,19 +5,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* Alinhamento vertical */
     text-align: center;
     background-color: #f9f9f9; /* Fundo claro para contraste */
+    box-sizing: border-box; /* Garantir que o padding não ultrapasse os limites */
 }
 
 .section h2 {
     font-size: 2rem;
     color: darkolivegreen;
+    margin-bottom: 20px; /* Espaçamento entre o título e o conteúdo */
 }
 
+/* Estilização dos contêineres de botões */
 .buttons-container {
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os botões */
 }
 
+/* Estilo para os botões */
 .button {
     padding: 15px 30px;
     background-color: darkolivegreen;
@@ -27,19 +35,40 @@
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .button:hover {
     background-color: #556B2F;
 }
 
+/* Ajuste dos ícones dentro dos botões */
+.button i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Ajustes para telas menores (dispositivos móveis) */
 @media (max-width: 600px) {
     .section {
         padding: 20px;
+        min-height: auto; /* Permite que a altura seja ajustável em telas menores */
     }
 
     .button {
         padding: 10px 20px;
         font-size: 1rem;
+    }
+
+    .button i {
+        font-size: 1rem; /* Ícones menores em dispositivos móveis */
+    }
+
+    /* Ajuste no espaçamento dos títulos */
+    .section h2 {
+        font-size: 1.6rem; /* Tamanho menor para títulos */
+        margin-bottom: 15px;
     }
 }

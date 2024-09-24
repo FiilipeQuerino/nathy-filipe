@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../styles/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,29 +19,43 @@
         <p class="subtitle">CONVIDAM PARA A CELEBRAÇÃO DE SEU CASAMENTO</p>
         <p class="date">08 • 03 • 25</p>
         <p class="date">15:00</p>
-        <a href="#" id="homeLink" class="button">
+        <a href="#sections" class="button" id="inviteButton">
             <i class="far fa-envelope"></i>
         </a>
     </div>
     
-    <div id="content-container"></div> <!-- Conteúdo dinâmico será carregado aqui -->
+    <!-- Seções abaixo -->
+    <div id="sections">
+        <section id="homeSection" class="section">
+            <h2>Home</h2>
+            <!-- Conteúdo da seção Home -->
+        </section>
+        
+        <section id="confirmSection" class="section">
+            <h2>Confirmação de Presença</h2>
+            <!-- Conteúdo da seção Confirmação -->
+        </section>
+        
+        <section id="giftSection" class="section">
+            <h2>Lista de Presentes</h2>
+            <!-- Conteúdo da seção Presentes -->
+        </section>
+        
+        <section id="dressCodeSection" class="section">
+            <h2>Dress Code</h2>
+            <!-- Conteúdo da seção Dress Code -->
+        </section>
+    </div>
+
     <div class="footer-img"></div>
 
     <script>
-        // Função para carregar conteúdo dinamicamente
-        function loadContent(page) {
-            fetch(page)
-                .then(response => response.text())
-                .then(html => {
-                    document.getElementById('content-container').innerHTML = html;
-                })
-                .catch(error => console.error('Erro ao carregar o conteúdo:', error));
-        }
+        // Função para rolar suavemente até uma seção
+        document.getElementById('inviteButton').addEventListener('click', function(event) {
+            event.preventDefault(); // Previne o comportamento padrão do link
 
-        // Adicionando evento ao botão do convite
-        document.getElementById('homeLink').addEventListener('click', function(event) {
-            event.preventDefault(); // Impede o link de recarregar a página
-            loadContent('home.html'); // Carrega a página home
+            // Rolar até a próxima seção (a primeira seção de conteúdo)
+            document.getElementById('sections').scrollIntoView({ behavior: 'smooth' });
         });
     </script>
 </body>

@@ -5,41 +5,34 @@ document.addEventListener("DOMContentLoaded", function() {
     const giftBtn = document.getElementById('giftBtn');
     const dressCodeBtn = document.getElementById('dressCodeBtn');
 
-    // Seções
-    const confirmSection = document.getElementById('confirmSection');
-    const locationSection = document.getElementById('locationSection');
-    const giftSection = document.getElementById('giftSection');
-    const dressCodeSection = document.getElementById('dressCodeSection');
-
-    // Função para esconder todas as seções
-    function hideAllSections() {
-        confirmSection.style.display = 'none';
-        locationSection.style.display = 'none';
-        giftSection.style.display = 'none';
-        dressCodeSection.style.display = 'none';
+    // Seção onde o conteúdo será carregado
+    const contentContainer = document.getElementById('content-container');
+    
+    // Função para carregar conteúdo dinamicamente
+    function loadContent(page) {
+        fetch(page)
+            .then(response => response.text())
+            .then(html => {
+                contentContainer.innerHTML = html; // Insere o conteúdo HTML carregado
+                contentContainer.scrollIntoView({ behavior: 'smooth' }); // Rola para a seção
+            })
+            .catch(error => console.error('Erro ao carregar o conteúdo:', error));
     }
 
-    // Função para exibir a seção com scroll suave
-    function showSection(section) {
-        hideAllSections();
-        section.style.display = 'block';
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Eventos de clique para os botões
+    // Eventos de clique para carregar as seções
     confirmBtn.addEventListener('click', function() {
-        showSection(confirmSection); // Exibe a seção de confirmação
-    });
-
-    locationBtn.addEventListener('click', function() {
-        showSection(locationSection);
+        loadContent('confirm.html'); // Carrega a página de confirmação
     });
 
     giftBtn.addEventListener('click', function() {
-        showSection(giftSection);
+        loadContent('giftgallery.html'); // Carrega a página de lista de presentes
     });
 
     dressCodeBtn.addEventListener('click', function() {
-        showSection(dressCodeSection);
+        loadContent('dresscode.html'); // Carrega a página de dress code
+    });
+
+    locationBtn.addEventListener('click', function() {
+        loadContent('location.html'); // Exemplo de carregamento de localização (se houver um arquivo)
     });
 });

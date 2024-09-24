@@ -1,182 +1,45 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('../data/products.json')
-        .then(response => response.json())
-        .then(products => {
-            const gallery = document.getElementById('gallery');
-            products.forEach(product => {
-                const item = document.createElement('div');
-                item.classList.add('gallery-item');
+    const gallery = document.getElementById('gallery');
 
-                item.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}">
-                    <h3>${product.name}</h3>
-                    <p>${product.description}</p>
-                    <p><strong>Valor: R$${product.price},00</strong></p>
-                    <a href="#" onclick="showPaymentOptions('${product.linkPix}', '${product.name}', ${product.price}); return false;">Comprar</a>
-                `;
-                
-                gallery.appendChild(item);
-            });
+    fetch('../data/products.json') // Certifique-se de que o caminho está correto
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao carregar os produtos');
+            }
+            return response.json();
         })
-        .catch(error => console.error('Erro ao carregar os produtos:', error));
-});
+        .then(products => {
+            if (products.length === 0) {
+                gallery.innerHTML = "<p>Nenhum presente disponível no momento.</p>";
+            } else {
+                products.forEach(product => {
+                    const item = createGalleryItem(product);
+                    gallery.appendChild(item);
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            gallery.innerHTML = "<p>Erro ao carregar os presentes. Tente novamente mais tarde.</p>";
+        });
 
-function showPaymentOptions(linkPix) {
-    var modal = document.getElementById("paymentModal");
-
-    // Definindo o linkPix como o código do Pix atual
-    window.currentPixLink = linkPix || "Código Pix padrão caso o campo esteja vazio";
-    
-    modal.style.display = "block";
-}
-
-function copyPix() {
-    navigator.clipboard.writeText(window.currentPixLink).then(function () {
-        showToast('Pix copiado: ' + window.currentPixLink);
-        closeModal();
-    }).catch(function (err) {
-        showToast('Erro ao copiar Pix: ' + err);
-    });
-}
-
-function showQRCode() {
-    var qrCodeContainer = document.getElementById("qrCodeContainer");
-    qrCodeContainer.style.display = "block"; // Exibe o QR Code
-}
-
-function showQRCodeModal() {
-    // Fecha a modal atual
-    closeModal();
-
-    // Abre a nova modal do QR Code
-    var qrCodeModal = document.getElementById("qrCodeModal");
-    qrCodeModal.style.display = "block";
-}
-
-// Fecha a modal ao clicar no "X" em ambas as modais
-document.querySelectorAll('.close').forEach(closeBtn => {
-    closeBtn.onclick = function() {
-        closeModal();
-        closeQRCodeModal();
+    function createGalleryItem(product) {
+        const item = document.createElement('div');
+        item.classList.add('gallery-item');
+        item.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+            <p><strong>Valor: R$${product.price},00</strong></p>
+            <a href="#" onclick="showPaymentOptions('${product.linkPix}', '${product.name}', ${product.price}); return false;">Comprar</a>
+        `;
+        return item;
     }
 });
-
-function closeQRCodeModal() {
-    var qrCodeModal = document.getElementById("qrCodeModal");
-    qrCodeModal.style.display = "none";
-}
-
-// Fecha a modal ao clicar fora do conteúdo da modal
-window.onclick = function(event) {
-    var paymentModal = document.getElementById("paymentModal");
-    var qrCodeModal = document.getElementById("qrCodeModal");
-    if (event.target == paymentModal) {
-        closeModal();
-    } else if (event.target == qrCodeModal) {
-        closeQRCodeModal();
-    }
-}
-
-function showCardPaymentModal() {
-    // Fecha a modal atual
-    closeModal();
-
-    // Abre a nova modal do cartão de crédito
-    var cardPaymentModal = document.getElementById("cardPaymentModal");
-    cardPaymentModal.style.display = "block";
-}
-
-function enablePurchaseButton() {
-    const installments = document.getElementById("installments").value;
-    const purchaseButton = document.getElementById("purchaseButton");
-
-    // Habilita o botão de compra somente se uma opção de parcelamento for selecionada
-    if (installments) {
-        purchaseButton.disabled = false;
-    } else {
-        purchaseButton.disabled = true;
-    }
-}
-
-function makePurchase() {
-    const installments = document.getElementById("installments").value;
-    const selectedProduct = window.currentProductName; // Nome do presente
-    const productPrice = window.currentProductPrice; // Valor do presente
-
-    // Redireciona para o WhatsApp com a mensagem formatada
-    const whatsappNumber = "+554888365558";
-    const message = `Quero comprar o presente ${selectedProduct} com o valor de R$${productPrice},00 em ${installments} vezes. Espero meu link de pagamento.`;
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-    // Fecha a modal
-    closeCardPaymentModal();
-
-    // Redireciona para o WhatsApp
-    window.location.href = whatsappURL;
-}
-
-function closeCardPaymentModal() {
-    var cardPaymentModal = document.getElementById("cardPaymentModal");
-    cardPaymentModal.style.display = "none";
-}
-
-// Fechar a modal ao clicar no "X" em ambas as modais
-document.querySelectorAll('.close').forEach(closeBtn => {
-    closeBtn.onclick = function() {
-        closeModal();
-        closeQRCodeModal();
-        closeCardPaymentModal();
-    }
-});
-
-// Fecha a modal ao clicar fora do conteúdo da modal
-window.onclick = function(event) {
-    var paymentModal = document.getElementById("paymentModal");
-    var qrCodeModal = document.getElementById("qrCodeModal");
-    var cardPaymentModal = document.getElementById("cardPaymentModal");
-    if (event.target == paymentModal) {
-        closeModal();
-    } else if (event.target == qrCodeModal) {
-        closeQRCodeModal();
-    } else if (event.target == cardPaymentModal) {
-        closeCardPaymentModal();
-    }
-};
 
 function showPaymentOptions(linkPix, productName, productPrice) {
     window.currentPixLink = linkPix || "Código Pix padrão";
-    window.currentProductName = productName; // Armazena o nome do produto
-    window.currentProductPrice = productPrice; // Armazena o valor do produto
-    var modal = document.getElementById("paymentModal");
-    modal.style.display = "block";
-}
-
-function closeModal() {
-    var modal = document.getElementById("paymentModal");
-    modal.style.display = "none";
-    var qrCodeContainer = document.getElementById("qrCodeContainer");
-    qrCodeContainer.style.display = "none"; // Esconde o QR Code ao fechar o modal
-}
-
-// Fechar o modal ao clicar no "X"
-var closeBtn = document.getElementsByClassName("close")[0];
-closeBtn.onclick = function () {
-    closeModal();
-}
-
-// Fechar o modal ao clicar fora do conteúdo do modal
-window.onclick = function (event) {
-    var modal = document.getElementById("paymentModal");
-    if (event.target == modal) {
-        closeModal();
-    }
-}
-
-function showToast(message) {
-    var toast = document.getElementById("toast");
-    toast.textContent = message;
-    toast.className = "toast show";
-    setTimeout(function () {
-        toast.className = toast.className.replace("show", "");
-    }, 3000);
+    window.currentProductName = productName;
+    window.currentProductPrice = productPrice;
+    document.getElementById("paymentModal").style.display = "block";
 }

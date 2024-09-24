@@ -7,7 +7,6 @@
     <title>Casamento de Nathielly e Filipe</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="../styles/index.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">  
@@ -20,11 +19,31 @@
         <p class="subtitle">CONVIDAM PARA A CELEBRAÇÃO DE SEU CASAMENTO</p>
         <p class="date">08 • 03 • 25</p>
         <p class="date">15:00</p>
-        <a href="home.html" class="button">
+        <a href="#" id="homeLink" class="button">
             <i class="far fa-envelope"></i>
         </a>
     </div>
+    
+    <div id="content-container"></div> <!-- Conteúdo dinâmico será carregado aqui -->
     <div class="footer-img"></div>
+
+    <script>
+        // Função para carregar conteúdo dinamicamente
+        function loadContent(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('content-container').innerHTML = html;
+                })
+                .catch(error => console.error('Erro ao carregar o conteúdo:', error));
+        }
+
+        // Adicionando evento ao botão do convite
+        document.getElementById('homeLink').addEventListener('click', function(event) {
+            event.preventDefault(); // Impede o link de recarregar a página
+            loadContent('home.html'); // Carrega a página home
+        });
+    </script>
 </body>
 
 </html>

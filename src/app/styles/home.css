@@ -1,3 +1,4 @@
+/* Reseta os estilos padrão */
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif; /* Usando Montserrat como fonte padrão */
     background-color: #f5f5f5;
     color: #333;
     margin: 0;
@@ -13,7 +14,11 @@ body {
     overflow-x: hidden; /* Remove scroll lateral */
 }
 
-/* Layout responsivo geral */
+/* Ajustes de fonte */
+h1, h2, h3 {
+    font-family: 'Tangerine', cursive; /* Usando Tangerine para títulos */
+}
+
 section {
     padding: 20px;
     margin-bottom: 20px;
@@ -77,10 +82,12 @@ button:hover {
 .map-container {
     text-align: center;
     margin-top: 20px;
+    width: 100%; /* Garante que o container tenha 100% da largura */
 }
 
 .map-container iframe {
     width: 100%; /* Mapa ocupará toda a largura da tela */
+    max-width: 100%; /* Evita quebra em telas pequenas */
     height: 300px; /* Altura do mapa ajustada para telas menores */
     border: none;
 }

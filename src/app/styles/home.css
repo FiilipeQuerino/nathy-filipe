@@ -74,18 +74,21 @@ button:hover {
     background-color: #6b8e23;
 }
 
-/* Mapa Google Maps */
 .map-container {
-    text-align: center;
-    margin-top: 20px;
-    width: 100%; /* Garante que o container tenha 100% da largura */
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Mantém a proporção 16:9 do mapa */
+    height: 0;
+    overflow: hidden;
 }
 
 .map-container iframe {
-    width: 100%; /* Mapa ocupará toda a largura da tela */
-    max-width: 100%; /* Evita quebra em telas pequenas */
-    height: 300px; /* Altura do mapa ajustada para telas menores */
-    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 /* Barra de navegação fixa com ícones */

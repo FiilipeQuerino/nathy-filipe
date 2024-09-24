@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         section.scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Eventos de clique
+    // Eventos de clique para os botões
     confirmBtn.addEventListener('click', function() {
         showSection(confirmSection);
     });

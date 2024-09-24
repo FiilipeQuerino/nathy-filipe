@@ -1,9 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
     color: #333;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Remove scroll lateral */
+}
+
+/* Layout responsivo geral */
+section {
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 100%; /* Para evitar o overflow */
 }
 
 h1 {
@@ -11,20 +25,17 @@ h1 {
     color: #556b2f; /* Verde Oliva */
 }
 
-section {
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
 #confirmacao, #presentes, #localizacao, #dress-code, #recados {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 0 auto;
     padding: 20px;
+    width: 100%;
+    max-width: 600px; /* Limite de largura para centralizar em telas maiores */
+    margin: 0 auto;
 }
 
+/* Input e botões */
 input, textarea {
     width: 100%;
     padding: 10px;
@@ -40,6 +51,7 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    width: 100%; /* Botões ocupam toda a largura */
 }
 
 button:hover {
@@ -54,17 +66,55 @@ button:hover {
     padding: 10px;
     border-radius: 4px;
     text-decoration: none;
+    width: 100%;
 }
 
 .botao-presente:hover {
     background-color: #6b8e23;
 }
 
+/* Mapa Google Maps */
 .map-container {
     text-align: center;
     margin-top: 20px;
 }
 
-.botoes-local button {
-    margin: 10px;
+.map-container iframe {
+    width: 100%; /* Mapa ocupará toda a largura da tela */
+    height: 300px; /* Altura do mapa ajustada para telas menores */
+    border: none;
+}
+
+/* Barra de navegação fixa com ícones */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #556b2f; /* Verde Oliva */
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 1000; /* Garantir que fique sobre o conteúdo */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar a i {
+    font-size: 24px;
+}
+
+/* Seções maiores para cada bloco */
+section {
+    min-height: 100vh; /* Cada seção ocupa pelo menos a altura da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

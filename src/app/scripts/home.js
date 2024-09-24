@@ -1,39 +1,33 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Botões do menu
-    const confirmBtn = document.getElementById('confirmBtn');
-    const locationBtn = document.getElementById('locationBtn');
-    const giftBtn = document.getElementById('giftBtn');
-    const dressCodeBtn = document.getElementById('dressCodeBtn');
-
-    // Seção onde o conteúdo será carregado
-    const contentContainer = document.getElementById('content-container');
-    
-    // Função para carregar conteúdo dinamicamente
-    function loadContent(page) {
-        fetch(page)
-            .then(response => response.text())
-            .then(html => {
-                contentContainer.innerHTML = html;
-                contentContainer.scrollIntoView({ behavior: 'smooth' });
-                contentContainer.classList.add('active'); // Aplica a classe active para mostrar a seção
-            })
-            .catch(error => console.error('Erro ao carregar o conteúdo:', error));
+// Função para confirmar presença e salvar no localStorage
+function confirmarPresenca() {
+    const nome = document.getElementById('nome').value;
+    if (nome) {
+        localStorage.setItem('convidado', nome);
+        alert('Presença confirmada, obrigado!');
+        // Redireciona para a seção de presentes
+        document.getElementById('presentes').scrollIntoView();
+    } else {
+        alert('Por favor, informe seu nome!');
     }
+}
 
-    // Eventos de clique para carregar as seções
-    confirmBtn.addEventListener('click', function() {
-        loadContent('confirm.html');
-    });
+// Função para abrir o Google Maps
+function abrirMaps() {
+    window.open('https://goo.gl/maps/Kiosque', '_blank');
+}
 
-    giftBtn.addEventListener('click', function() {
-        loadContent('giftgallery.html');
-    });
+// Função para abrir o local em 3D
+function abrir3D() {
+    window.open('https://santacatarina360.github.io/KiosqueDigoeMoni/', '_blank');
+}
 
-    dressCodeBtn.addEventListener('click', function() {
-        loadContent('dresscode.html');
-    });
-
-    locationBtn.addEventListener('click', function() {
-        loadContent('location.html');
-    });
-});
+// Função para enviar recado
+function enviarRecado() {
+    const recado = document.getElementById('mensagem').value;
+    if (recado) {
+        alert('Recado enviado! Obrigado pelo carinho.');
+        document.getElementById('mensagem').value = ''; // Limpa o campo
+    } else {
+        alert('Por favor, escreva um recado!');
+    }
+}

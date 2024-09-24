@@ -8,6 +8,7 @@ Explore nosso site:
 
 🌍 **[Nathy & Filipe - Site Oficial](https://nathy-filipe.vercel.app/)**
 
+🌍 **[Nathy & Filipe - Site Oficial](https://nathy-filipe-v2.vercel.app/)**
 
 ## 📂 Estrutura do Projeto
 

@@ -1,134 +1,119 @@
-/* Estilo geral do body */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f9f9f9;
     margin: 0;
     padding: 0;
     color: #333;
-}
-
-.page-title {
-    text-align: center;
-    color: #333;
-    margin-top: 20px;
-    font-size: 2.5rem; /* Tamanho do título */
-}
-
-.form-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    max-width: 600px;
-    margin: 0 auto;
+    min-height: 100vh;
 }
 
-form {
+/* Título da página */
+.page-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Container do formulário */
+.form-container {
     background-color: #fff;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px; /* Padding interno do formulário */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 400px;
 }
 
 /* Grupo de entrada */
 .input-group {
-    margin-bottom: 25px; /* Espaço entre os grupos de entrada */
-    width: 100%;
+    margin-bottom: 15px;
 }
 
 .input-group label {
     display: block;
-    font-size: 1.25rem; /* Tamanho da fonte dos rótulos */
-    margin-bottom: 5px; /* Espaço abaixo dos rótulos */
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #333;
 }
 
 input[type="text"] {
     width: 100%;
-    padding: 12px; /* Espaço interno do campo de entrada */
+    padding: 10px;
+    font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 1.125rem; /* Tamanho da fonte */
     box-sizing: border-box;
 }
 
 /* Opções de resposta */
 .response-options {
     display: flex;
-    flex-direction: column; /* As opções são organizadas em coluna */
-    align-items: center;
-    gap: 15px;
-    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
 }
 
 .response-options label {
-    display: flex;
-    align-items: center;
-    font-size: 1.125rem; /* Tamanho da fonte */
+    font-size: 1rem;
+    color: #333;
 }
 
 /* Estilo do botão */
 button {
-    background-color: #556B2F; /* Dark Olive Green */
+    background-color: #556B2F;
     color: white;
     border: none;
-    padding: 12px 25px; /* Padding interno do botão */
+    padding: 12px;
+    font-size: 1rem;
     border-radius: 4px;
-    font-size: 1.125rem; /* Tamanho da fonte */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    width: 100%; /* Garante que o botão ocupe toda a largura disponível */
-    max-width: 300px; /* Define uma largura máxima para o botão */
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Hover e estado ativo dos botões */
+/* Hover e estado ativo no botão */
 button:hover {
-    background-color: #455d27; /* Cor mais escura no hover */
-    transform: translateY(-2px); /* Efeito de elevação no hover */
+    background-color: #455d27;
+    transform: translateY(-2px);
 }
 
 button:active {
-    background-color: #3b4d1c; /* Cor mais escura no estado ativo */
-    transform: translateY(0); /* Remove o efeito de elevação no clique */
+    background-color: #3b4d1c;
 }
 
-/* Estilo do toast (mensagem de sucesso) */
+/* Estilo do toast */
 .toast {
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #556B2F; /* Dark Olive Green */
+    background-color: #556B2F;
     color: white;
-    padding: 12px 20px;
+    padding: 10px 20px;
     border-radius: 4px;
     display: none;
-    font-size: 1rem;
 }
 
 .toast.show {
     display: block;
 }
 
-/* Ajustes responsivos para telas menores */
+/* Responsividade para telas menores */
 @media (max-width: 600px) {
     .form-container {
-        padding: 10px;
-        width: 100%;
+        width: 90%;
+        padding: 15px;
     }
 
     button {
-        font-size: 1rem; /* Tamanho da fonte ajustado */
-        padding: 10px 20px; /* Padding menor em dispositivos móveis */
-        max-width: none; /* Remove a largura máxima */
+        padding: 10px;
+        font-size: 0.9rem;
     }
 }

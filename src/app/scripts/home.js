@@ -1,4 +1,13 @@
-// Função para confirmar presença e salvar no localStorage
+document.querySelectorAll('.navbar a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
 function confirmarPresenca() {
     const nome = document.getElementById('nome').value;
     if (nome) {

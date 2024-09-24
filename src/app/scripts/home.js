@@ -1,60 +1,42 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const weddingDate = new Date("2025-03-08T15:00:00").getTime();
+document.querySelectorAll('.navbar a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
 
-    const countdownElement = {
-        days: document.getElementById("days"),
-        hours: document.getElementById("hours"),
-        minutes: document.getElementById("minutes"),
-        seconds: document.getElementById("seconds")
-    };
-
-    setInterval(function() {
-        const now = new Date().getTime();
-        const distance = weddingDate - now;
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        countdownElement.days.textContent = days;
-        countdownElement.hours.textContent = hours;
-        countdownElement.minutes.textContent = minutes;
-        countdownElement.seconds.textContent = seconds;
-
-        if (distance < 0) {
-            clearInterval(interval);
-            document.getElementById("countdown").innerHTML = "O grande dia chegou!";
-        }
-    }, 1000);
-
-    // Controle dos modais
-    var giftModal = document.getElementById("giftListModal");
-    var locationModal = document.getElementById("locationModal");
-    var giftBtn = document.getElementById("giftListButton");
-    var locationBtn = document.getElementById("locationButton");
-    var closeBtns = document.getElementsByClassName("close");
-
-    giftBtn.onclick = function() {
-        giftModal.style.display = "block";
-    }
-
-    locationBtn.onclick = function() {
-        locationModal.style.display = "block";
-    }
-
-    for (let i = 0; i < closeBtns.length; i++) {
-        closeBtns[i].onclick = function() {
-            giftModal.style.display = "none";
-            locationModal.style.display = "none";
-        }
-    }
-
-    window.onclick = function(event) {
-        if (event.target == giftModal) {
-            giftModal.style.display = "none";
-        } else if (event.target == locationModal) {
-            locationModal.style.display = "none";
-        }
-    }
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
+
+function confirmarPresenca() {
+    const nome = document.getElementById('nome').value;
+    if (nome) {
+        localStorage.setItem('convidado', nome);
+        alert('Presença confirmada, obrigado!');
+        // Redireciona para a seção de presentes
+        document.getElementById('presentes').scrollIntoView();
+    } else {
+        alert('Por favor, informe seu nome!');
+    }
+}
+
+// Função para abrir o Google Maps
+function abrirMaps() {
+    window.open('https://goo.gl/maps/Kiosque', '_blank');
+}
+
+// Função para abrir o local em 3D
+function abrir3D() {
+    window.open('https://santacatarina360.github.io/KiosqueDigoeMoni/', '_blank');
+}
+
+// Função para enviar recado
+function enviarRecado() {
+    const recado = document.getElementById('mensagem').value;
+    if (recado) {
+        alert('Recado enviado! Obrigado pelo carinho.');
+        document.getElementById('mensagem').value = ''; // Limpa o campo
+    } else {
+        alert('Por favor, escreva um recado!');
+    }
+}

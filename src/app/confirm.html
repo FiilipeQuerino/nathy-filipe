@@ -11,11 +11,12 @@
 
 <body>
     <h2 class="page-title">Confirmação de Presença</h2>
+    
     <div class="form-container">
         <form id="rsvp-form">
             <div class="input-group">
                 <label for="name">Nome completo</label>
-                <input type="text" name="name" id="name" placeholder="Escreva seu nome completo" required>
+                <input type="text" id="name" placeholder="Digite seu nome completo" required>
             </div>
             <div class="input-group">
                 <label>Você irá ao evento?</label>
@@ -29,10 +30,11 @@
                 </div>
             </div>
             <button type="submit">
-                <i class="fas fa-check"></i> Confirmar Resposta
+                <i class="fas fa-check"></i> Confirmar
             </button>
         </form>
     </div>
+    
     <div id="toast" class="toast">Confirmação enviada com sucesso!</div>
     <script src="../scripts/confirm.js"></script>
 </body>

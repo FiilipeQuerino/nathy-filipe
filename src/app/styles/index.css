@@ -115,6 +115,19 @@ a {
     /* Opacidade */
 }
 
+.section {
+    width: 100%;
+    min-height: 100vh; /* Cada seção ocupa 100% da altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#sections {
+    margin-top: 50px; /* Espaçamento entre o convite e as seções */
+}
+
 /* Media query para telas menores, como celulares */
 @media only screen and (max-width: 500px) {
     .content {

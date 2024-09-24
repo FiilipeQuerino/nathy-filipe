@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const gallery = document.getElementById('gallery');
 
-    fetch('../data/products.json') // Certifique-se de que o caminho está correto
+    fetch('../data/products.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Erro ao carregar os produtos');

@@ -13,26 +13,27 @@ document.addEventListener("DOMContentLoaded", function() {
         fetch(page)
             .then(response => response.text())
             .then(html => {
-                contentContainer.innerHTML = html; // Insere o conteúdo HTML carregado
-                contentContainer.scrollIntoView({ behavior: 'smooth' }); // Rola para a seção
+                contentContainer.innerHTML = html;
+                contentContainer.scrollIntoView({ behavior: 'smooth' });
+                contentContainer.classList.add('active'); // Aplica a classe active para mostrar a seção
             })
             .catch(error => console.error('Erro ao carregar o conteúdo:', error));
     }
 
     // Eventos de clique para carregar as seções
     confirmBtn.addEventListener('click', function() {
-        loadContent('confirm.html'); // Carrega a página de confirmação
+        loadContent('confirm.html');
     });
 
     giftBtn.addEventListener('click', function() {
-        loadContent('giftgallery.html'); // Carrega a página de lista de presentes
+        loadContent('giftgallery.html');
     });
 
     dressCodeBtn.addEventListener('click', function() {
-        loadContent('dresscode.html'); // Carrega a página de dress code
+        loadContent('dresscode.html');
     });
 
     locationBtn.addEventListener('click', function() {
-        loadContent('location.html'); // Exemplo de carregamento de localização (se houver um arquivo)
+        loadContent('location.html');
     });
 });

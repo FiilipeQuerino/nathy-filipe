@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Eventos de clique para os botões
     confirmBtn.addEventListener('click', function() {
-        showSection(confirmSection);
+        showSection(confirmSection); // Exibe a seção de confirmação
     });
 
     locationBtn.addEventListener('click', function() {

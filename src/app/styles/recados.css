@@ -1,0 +1,43 @@
+/* Seção de Recados */
+#recados {
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#recados h1 {
+    color: #556b2f;
+    margin-bottom: 20px;
+}
+
+#recados textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+    height: 100px;
+}
+
+#recados button {
+    background-color: #556b2f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+#recados button:hover {
+    background-color: #6b8e23;
+}

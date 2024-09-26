@@ -1,0 +1,81 @@
+/* Seção de Dress Code */
+#dress-code {
+    padding: 60px 20px;
+    background-color: #fdfdfd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Fonte moderna */
+}
+
+#dress-code h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#dress-code p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Galeria de Fotos */
+.galeria {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.galeria img {
+    width: calc(33% - 20px);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Adiciona profundidade */
+}
+
+/* Texto de destaque */
+.destaque {
+    font-weight: 700;
+    color: #556b2f;
+    font-size: 20px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsividade */
+@media only screen and (max-width: 768px) {
+    .galeria img {
+        width: calc(50% - 15px);
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .galeria img {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #dress-code h1 {
+        font-size: 24px;
+    }
+
+    #dress-code p {
+        font-size: 16px;
+    }
+
+    .destaque {
+        font-size: 18px;
+    }
+}

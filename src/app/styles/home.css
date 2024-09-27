@@ -1,0 +1,296 @@
+/* Estilos globais */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Impede o scroll horizontal */
+    box-sizing: border-box;
+    background-image: url('../assets/fundo.jpg'); /* Imagem de fundo */
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    text-align: center;
+    color: #556b2f;
+}
+
+/* Aumentando o espaçamento para evitar proximidade com a navbar */
+section {
+    padding: 40px 20px; /* Aumentado o padding superior e inferior */
+    margin-bottom: 50px; /* Espaçamento maior entre as seções */
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco translúcido */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    text-align: center;
+    backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+}
+
+/* Botões */
+button, .botao-presente {
+    background-color: #556b2f;
+    color: white;
+    padding: 12px 25px; /* Aumenta o padding para maior área clicável */
+    border: none;
+    border-radius: 8px; /* Mais arredondado para visual moderno */
+    cursor: pointer;
+    font-size: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+}
+
+button i, .botao-presente i {
+    font-size: 18px;
+}
+
+button:hover, .botao-presente:hover {
+    background-color: #6b8e23;
+}
+
+.botao-presente {
+    text-decoration: none;
+    width: auto;
+}
+
+/* Estilo do banner de cookies */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    display: none; /* Inicialmente escondido */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+.cookie-banner p {
+    display: inline-block;
+    margin: 0;
+    padding-right: 10px;
+}
+
+.cookie-banner button {
+    background-color: #556b2f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cookie-banner button:hover {
+    background-color: #6b8e23;
+}
+
+/* Botoes de Localização */
+.botoes-local {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Garante que os botões fiquem em mais de uma linha em telas menores */
+}
+
+/* Estilos do input e textarea */
+textarea, input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Navbar com ícones */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(85, 107, 47, 0.9); /* Verde oliva com transparência */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.navbar a:hover {
+    background-color: rgba(107, 142, 35, 0.9); /* Tom mais claro no hover */
+    transform: scale(1.1);
+}
+
+.navbar a i {
+    font-size: 24px; /* Tamanho dos ícones */
+}
+
+/* Toast */
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+}
+
+.toast.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+/* Media queries para dispositivos móveis */
+@media only screen and (max-width: 768px) {
+    button, .botao-presente {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .navbar a i {
+        font-size: 18px;
+    }
+
+    .product-card {
+        max-width: 90%; /* Aumenta a largura do produto para quase preencher a tela */
+    }
+
+    .product-actions {
+        flex-direction: column; /* Alinha os botões verticalmente */
+        gap: 15px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    button, .botao-presente {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .navbar a {
+        font-size: 18px;
+    }
+
+    .timer {
+        flex-wrap: wrap; /* Em dispositivos móveis, os números podem ir para a próxima linha */
+        gap: 15px; /* Reduz o espaçamento entre os itens do cronômetro */
+    }
+
+    .time-item {
+        width: 60px; /* Menor tamanho em dispositivos móveis */
+    }
+
+    .product-card {
+        max-width: 100%; /* A largura do produto ocupa toda a tela */
+        padding: 15px;
+    }
+
+    .product-name {
+        font-size: 1.2rem;
+    }
+
+    .product-description {
+        font-size: 0.9rem;
+    }
+
+    .product-price {
+        font-size: 1.1rem;
+    }
+
+    .botao-magalu, .botao-pix {
+        font-size: 14px; /* Ajusta o tamanho da fonte dos botões */
+    }
+
+    section {
+        padding: 15px;
+        margin-bottom: 40px;
+    }
+
+    .cookie-banner {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+/* Media queries para telas menores que 400px */
+@media only screen and (max-width: 400px) {
+    section {
+        margin-bottom: 50px; /* Maior espaçamento inferior entre as seções */
+    }
+
+    /* Ajustes adicionais para a lista de produtos */
+    .product-card {
+        max-width: 100%; /* O produto ocupa toda a largura da tela */
+        padding: 10px; /* Reduz o padding em telas muito pequenas */
+    }
+
+    .product-name {
+        font-size: 1.1rem; /* Ajusta o tamanho da fonte do nome do produto */
+    }
+
+    .product-description {
+        font-size: 0.85rem; /* Reduz o tamanho da descrição */
+    }
+
+    .product-price {
+        font-size: 1rem; /* Ajusta o tamanho do preço */
+    }
+
+    .botao-magalu, .botao-pix {
+        font-size: 12px; /* Ajusta o tamanho da fonte dos botões */
+        padding: 8px; /* Menor padding nos botões */
+    }
+
+    .pix-code {
+        font-size: 1rem;
+    }
+
+    .cookie-banner {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+/* Elimina qualquer possível scroll horizontal */
+* {
+    box-sizing: border-box;
+}

@@ -108,6 +108,16 @@
         </div>
     </section>
 
+    <!-- Modal para exibir o aviso sobre PIX -->
+    <div id="pix-modal" class="modal">
+        <div class="modal-content">
+            <span id="fechar-modal" class="close">&times;</span>
+            <h2>PIX Copiado!</h2>
+            <p>O código do PIX foi copiado. Agora, vá ao aplicativo do seu banco e realize o pagamento.</p>
+            <p class="pix-code"></p>
+        </div>
+    </div>
+
     <!-- Seção Localização -->
     <section id="localizacao">
         <h1>Veja Onde Vamos Dizer Sim</h1>
@@ -146,10 +156,12 @@
     <!-- Seção de Recados -->
     <section id="recados">
         <h1>Deixe um Recado para os Noivos</h1>
-        <textarea id="mensagem" placeholder="Escreva seu recado aqui..."></textarea>
-        <button type="button" onclick="enviarRecado()">
+        <p>Aqui você pode nos deixar um recado com palavras de carinho e amor. Ficaremos felizes em ler todas as mensagens especiais enviadas por vocês!</p>
+        <textarea id="mensagem" placeholder="Escreva seu recado aqui..." required></textarea>
+        <button type="button" id="enviar-recado">
             <i class="fa fa-envelope"></i> Enviar Recado
         </button>
+        <div id="recados-lista"></div> <!-- Onde os recados vão aparecer -->
     </section>
 
     <!-- Botão de Voltar ao Topo -->
@@ -164,6 +176,7 @@
     <script src="scripts/toast.js"></script>
     <script src="scripts/scroll.js"></script>
     <script src="scripts/dress-code.js"></script>
+    <script src="scripts/recados.js"></script>
 </body>
 
 </html>

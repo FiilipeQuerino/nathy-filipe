@@ -1,0 +1,100 @@
+#cronometro {
+    height: 100vh; /* Ocupa toda a altura da tela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    padding-bottom: 80px; /* Espaçamento extra no fim para mostrar parte da próxima seção */
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.texto-cronometro {
+    max-width: 700px;
+    margin: 30px auto;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #444;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+#confirmacao {
+    padding-top: 80px; /* Parte da seção de confirmação será visível acima */
+}
+
+#cronometro h1 {
+    color: #556b2f; /* Verde oliva */
+    margin-bottom: 20px;
+}
+
+.timer {
+    display: flex;
+    justify-content: center; /* Alinha os números do cronômetro no centro */
+    gap: 20px; /* Espaçamento entre os itens do cronômetro */
+}
+
+.time-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 10px;
+    width: 80px; /* Tamanho menor para manter a compactação */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.time-item span {
+    font-size: 2rem;
+    color: #556b2f; /* Verde oliva */
+    font-weight: bold;
+}
+
+.time-item p {
+    font-size: 14px;
+    color: #333;
+}
+
+.texto-cronometro p {
+    margin-bottom: 15px; /* Espaçamento entre os parágrafos */
+}
+
+
+.timer {
+    gap: 10px; /* Reduz ainda mais o espaçamento entre os itens */
+}
+
+.time-item {
+    width: 50px; /* Tamanho menor dos itens para se ajustar a telas muito pequenas */
+    padding: 5px; /* Reduz o padding para telas menores */
+}
+
+.time-item span {
+    font-size: 1.5rem; /* Tamanho menor da fonte dos números */
+}
+
+.time-item p {
+    font-size: 12px; /* Tamanho menor da fonte das legendas */
+}
+
+/* Ajustes para dispositivos móveis */
+@media only screen and (max-width: 768px) {
+    .texto-cronometro {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .texto-cronometro {
+        font-size: 15px;
+        padding: 8px 10px;
+    }
+}

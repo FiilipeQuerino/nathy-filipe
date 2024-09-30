@@ -43,20 +43,44 @@
     animation-delay: 1s;
 }
 
-/* Coração ao redor das letras */
+/* Desenhar o coração ao redor das letras */
 .coracao {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 0;
-    height: 0;
+    width: 100px;
+    height: 100px;
     background-color: transparent;
-    border-radius: 50%;
-    border: 2px solid #ff69b4;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0); /* Inicialmente pequeno */
     opacity: 0;
     animation: formarCoracao 2.5s ease forwards;
     animation-delay: 2s;
+}
+
+.coracao::before, .coracao::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: 5px solid #556b2f; /* Verde oliva */
+    border-radius: 50%;
+}
+
+.coracao::before {
+    left: -50px;
+    top: 0;
+    border-right: none;
+    border-bottom: none;
+    transform: rotate(-45deg);
+}
+
+.coracao::after {
+    right: -50px;
+    top: 0;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(45deg);
 }
 
 /* Imagem do casal abaixo da animação */
@@ -80,18 +104,11 @@
 
 @keyframes formarCoracao {
     0% {
-        width: 0;
-        height: 0;
+        transform: translate(-50%, -50%) scale(0); /* Pequeno no início */
         opacity: 0;
     }
-    50% {
-        width: 200px;
-        height: 200px;
-        opacity: 0.5;
-    }
     100% {
-        width: 150px;
-        height: 150px;
+        transform: translate(-50%, -50%) scale(1); /* Tamanho final do coração */
         opacity: 1;
     }
 }
@@ -103,8 +120,13 @@
     }
 
     .coracao {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .coracao::before, .coracao::after {
+        width: 80px;
+        height: 80px;
     }
 
     .img-casal {

@@ -169,7 +169,7 @@ a {
     }
 
     .title {
-        font-size: 2rem;
+        font-size: 3rem; /* Aumentado de 2rem para 3rem */
     }
 
     .subtitle {
@@ -203,7 +203,7 @@ a {
     }
 
     .title {
-        font-size: 1.8rem;
+        font-size: 2.5rem; /* Aumentado de 1.8rem para 2.5rem */
     }
 
     .subtitle {
@@ -227,4 +227,3 @@ a {
         height: 85px;
     }
 }
-

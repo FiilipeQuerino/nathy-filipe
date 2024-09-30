@@ -43,16 +43,17 @@
     animation-delay: 1s;
 }
 
-/* Desenhar o coração ao redor das letras */
+/* Desenhar o coração corretamente */
 .coracao {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100px;
     height: 100px;
-    background-color: transparent;
     transform: translate(-50%, -50%) scale(0); /* Inicialmente pequeno */
     opacity: 0;
+    background-color: #556b2f; /* Verde oliva */
+    transform: rotate(45deg); /* Rotaciona o quadrado para fazer o coração */
     animation: formarCoracao 2.5s ease forwards;
     animation-delay: 2s;
 }
@@ -62,25 +63,18 @@
     position: absolute;
     width: 100px;
     height: 100px;
-    background-color: transparent;
-    border: 5px solid #556b2f; /* Verde oliva */
+    background-color: #556b2f; /* Verde oliva */
     border-radius: 50%;
 }
 
 .coracao::before {
-    left: -50px;
-    top: 0;
-    border-right: none;
-    border-bottom: none;
-    transform: rotate(-45deg);
+    top: -50px; /* Move o círculo para o topo */
+    left: 0;
 }
 
 .coracao::after {
-    right: -50px;
+    left: 50px; /* Move o segundo círculo para a direita */
     top: 0;
-    border-left: none;
-    border-bottom: none;
-    transform: rotate(45deg);
 }
 
 /* Imagem do casal abaixo da animação */

@@ -11,27 +11,30 @@
     position: relative;
 }
 
-/* Animação das letras "N" e "F" */
+/* Container da animação de letras e coração */
 .animacao-container {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
     margin-bottom: 40px;
+    height: 200px;
+    width: 200px;
 }
 
+/* Estilo das letras "N" e "F" */
 .letras {
     font-family: 'Playfair Display', serif;
     font-size: 80px;
-    color: #556b2f;
-    position: relative;
+    color: #556b2f; /* Verde oliva */
+    z-index: 2; /* Garante que as letras fiquem acima do coração */
+    position: absolute;
+    display: flex;
+    gap: 10px;
 }
 
 .letra-n, .letra-f {
-    display: inline-block;
     opacity: 0;
-    transform: translateY(-50px);
     animation: aparecer 1.5s ease forwards;
 }
 
@@ -43,38 +46,61 @@
     animation-delay: 1s;
 }
 
-/* Desenhar o coração corretamente */
-.coracao {
+/* Estilo e animação do coração */
+.heart {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100px;
     height: 100px;
-    transform: translate(-50%, -50%) scale(0); /* Inicialmente pequeno */
-    opacity: 0;
     background-color: #556b2f; /* Verde oliva */
-    transform: rotate(45deg); /* Rotaciona o quadrado para fazer o coração */
-    animation: formarCoracao 2.5s ease forwards;
-    animation-delay: 2s;
+    transform: rotate(-45deg);
+    transform-origin: center center;
+    animation: beat 1s infinite;
+    z-index: 1; /* Fica atrás das letras */
 }
 
-.coracao::before, .coracao::after {
+.heart:after {
     content: "";
     position: absolute;
     width: 100px;
     height: 100px;
-    background-color: #556b2f; /* Verde oliva */
+    top: 0;
+    left: 50px;
+    background-color: #556b2f;
     border-radius: 50%;
 }
 
-.coracao::before {
-    top: -50px; /* Move o círculo para o topo */
+.heart:before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: -50px;
     left: 0;
+    background-color: #556b2f;
+    border-radius: 50%;
 }
 
-.coracao::after {
-    left: 50px; /* Move o segundo círculo para a direita */
-    top: 0;
+/* Animação de batimento do coração */
+@keyframes beat {
+    0% {
+        transform: scale(1) rotate(-45deg);
+    }
+    50% {
+        transform: scale(0.9) rotate(-45deg);
+    }
+    100% {
+        transform: scale(1) rotate(-45deg);
+    }
+}
+
+/* Animação de aparição das letras */
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Imagem do casal abaixo da animação */
@@ -88,37 +114,18 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Animações */
-@keyframes aparecer {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes formarCoracao {
-    0% {
-        transform: translate(-50%, -50%) scale(0); /* Pequeno no início */
-        opacity: 0;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1); /* Tamanho final do coração */
-        opacity: 1;
-    }
-}
-
 /* Ajustes para dispositivos móveis */
 @media only screen and (max-width: 500px) {
     .letras {
         font-size: 60px;
     }
 
-    .coracao {
+    .heart {
         width: 80px;
         height: 80px;
     }
 
-    .coracao::before, .coracao::after {
+    .heart:before, .heart:after {
         width: 80px;
         height: 80px;
     }

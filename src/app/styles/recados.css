@@ -1,8 +1,7 @@
 /* Seção de Recados */
 #recados {
     padding: 50px 20px;
-    background-color: #fafafa;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    background-color: #f9f9f9;
     max-width: 700px;
     margin: 30px auto;
     text-align: center;
@@ -69,6 +68,9 @@
     margin-top: 30px;
     text-align: left;
     font-family: 'Helvetica Neue', sans-serif;
+    max-height: 400px; /* Limita a altura */
+    overflow-y: auto; /* Adiciona rolagem para muitos recados */
+    padding-right: 10px; /* Evita que a barra de rolagem sobreponha o conteúdo */
 }
 
 /* Estilização dos itens de recado */
@@ -76,24 +78,26 @@
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 20px;
+    padding: 15px;
     margin-bottom: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.3s ease;
+    font-family: 'Lora', serif;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    font-family: 'Lora', serif;
+    transition: box-shadow 0.3s ease;
     position: relative;
-    padding-top: 40px; /* Espaço para ícone decorativo */
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 /* Nome do remetente */
 .recado-item strong {
     font-size: 18px;
-    color: #556b2f; /* Verde oliva */
+    color: #6b8e23; /* Verde oliva */
     font-weight: bold;
     display: block;
+    margin-bottom: 5px;
 }
 
 /* Texto do recado */
@@ -102,18 +106,10 @@
     font-size: 16px;
     line-height: 1.6;
     margin: 0;
-}
-
-/* Ícone decorativo de coração */
-.recado-item::before {
-    content: "\f004"; /* Código do ícone de coração */
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    color: #ff69b4; /* Rosa delicado */
-    font-size: 24px;
-    position: absolute;
-    top: 10px;
-    left: 20px;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 4px solid #6b8e23; /* Estilo de balão de conversa */
 }
 
 /* Efeito de hover */

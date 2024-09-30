@@ -1,19 +1,22 @@
 /* Seção de Recados */
 #recados {
     padding: 50px 20px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     max-width: 700px;
     margin: 30px auto;
     text-align: center;
     font-family: 'Helvetica Neue', sans-serif;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
 }
 
 #recados h1 {
-    color: #556b2f; /* Verde oliva */
+    color: #6b8e23; /* Verde oliva suave */
     margin-bottom: 20px;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
+    font-family: 'Playfair Display', serif; /* Fonte clássica */
 }
 
 #recados p {
@@ -21,6 +24,7 @@
     margin-bottom: 20px;
     color: #666;
     line-height: 1.6;
+    font-family: 'Lora', serif; /* Estilo mais refinado */
 }
 
 #recados textarea {
@@ -42,7 +46,7 @@
 }
 
 #recados button {
-    background-color: #556b2f; /* Verde oliva */
+    background-color: #6b8e23; /* Verde oliva mais claro */
     color: white;
     padding: 12px 25px;
     border: none;
@@ -57,40 +61,64 @@
 }
 
 #recados button:hover {
-    background-color: #6b8e23; /* Verde oliva mais claro */
+    background-color: #556b2f; /* Verde oliva escuro */
 }
 
+/* Lista de Recados */
 #recados-lista {
     margin-top: 30px;
     text-align: left;
     font-family: 'Helvetica Neue', sans-serif;
 }
 
+/* Estilização dos itens de recado */
 .recado-item {
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Lora', serif;
+    position: relative;
+    padding-top: 40px; /* Espaço para ícone decorativo */
 }
 
-.recado-item:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
+/* Nome do remetente */
 .recado-item strong {
+    font-size: 18px;
     color: #556b2f; /* Verde oliva */
     font-weight: bold;
     display: block;
-    margin-bottom: 5px;
 }
 
+/* Texto do recado */
 .recado-item p {
     color: #333;
     font-size: 16px;
-    line-height: 1.4;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Ícone decorativo de coração */
+.recado-item::before {
+    content: "\f004"; /* Código do ícone de coração */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #ff69b4; /* Rosa delicado */
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+/* Efeito de hover */
+.recado-item:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Animação de fade-in */

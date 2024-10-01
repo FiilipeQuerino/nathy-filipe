@@ -9,24 +9,29 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify({ "nome": name, "recado": recado })
         })
         .then(() => {
-            showToast('Recado enviado com sucesso!');
-            document.getElementById('mensagem').value = '';
+            showRecadoToast('Recado enviado com sucesso!');
+            document.getElementById('mensagem').value = ''; // Limpa o campo de recado após o envio
             listarRecados(); // Atualiza a lista de recados
         })
         .catch(error => {
             console.error('Erro ao enviar os dados para o Google Sheets:', error);
-            showToast('Houve um erro ao enviar o recado. Por favor, tente novamente.');
+            showRecadoToast('Houve um erro ao enviar o recado. Tente novamente.');
         });
     }
 
     document.getElementById('enviar-recado').addEventListener('click', function () {
-        const nome = document.getElementById('nome-recado').value;
-        const recado = document.getElementById('mensagem').value;
+        const nome = localStorage.getItem('nome'); // Pega o nome salvo no localStorage
+        const recado = document.getElementById('mensagem').value.trim();
 
-        if (nome && recado) {
+        if (!nome) {
+            showRecadoToast('Por favor, confirme sua presença antes de enviar um recado.');
+            return;
+        }
+
+        if (recado) {
             enviarParaGoogleSheets(nome, recado);
         } else {
-            showToast('Por favor, preencha todos os campos antes de enviar.');
+            showRecadoToast('Por favor, escreva um recado antes de enviar.');
         }
     });
 
@@ -38,24 +43,31 @@ document.addEventListener('DOMContentLoaded', function () {
             recadosLista.innerHTML = ''; // Limpa a lista antes de renderizar novos recados
 
             data.forEach(item => {
-                // Criar o elemento de recado com a formatação correta
                 const recadoElemento = document.createElement('div');
-                recadoElemento.classList.add('recado-item'); // Adiciona a classe para estilização
+                recadoElemento.classList.add('recado-item');
 
-                // Inserir o HTML para o nome e o recado
                 recadoElemento.innerHTML = `
                     <strong>${item.nome}:</strong>
                     <p>${item.recado}</p>
                 `;
 
-                // Adicionar o recado à lista de recados
                 recadosLista.appendChild(recadoElemento);
             });
         })
         .catch(error => {
             console.error('Erro ao buscar os recados:', error);
-            showToast('Houve um erro ao carregar os recados.');
+            showRecadoToast('Houve um erro ao carregar os recados.');
         });
+    }
+
+    // Função para exibir o toast personalizado para recados
+    function showRecadoToast(message) {
+        const toast = document.getElementById('recado-toast');
+        toast.innerText = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000); // O toast será exibido por 3 segundos
     }
 
     // Chamar a função para listar os recados quando a página carregar

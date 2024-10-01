@@ -1,5 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('rsvp-form').addEventListener('submit', function (e) {
+    const form = document.getElementById('rsvp-form');
+    const phoneSection = document.getElementById('phone-section');
+    const phoneInput = document.getElementById('phone');
+    const responseRadios = document.querySelectorAll('input[name="response"]');
+
+    // Função para mostrar ou esconder o campo de celular
+    responseRadios.forEach(radio => {
+        radio.addEventListener('change', function () {
+            if (this.value === 'Sim') {
+                phoneSection.style.display = 'block';
+                phoneInput.required = true;
+            } else {
+                phoneSection.style.display = 'none';
+                phoneInput.required = false;
+            }
+        });
+    });
+
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
 
         const name = document.getElementById('name').value.trim();
@@ -11,27 +29,31 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         const response = responseElement.value.trim();
+        const phone = phoneInput.value.trim();
+
+        if (response === 'Sim' && !phone) {
+            showToast('Por favor, insira seu número de celular.');
+            return;
+        }
+
         localStorage.setItem('nome', name);
         localStorage.setItem('resposta', response);
+        localStorage.setItem('celular', phone);
 
-        // Enviar dados para o Google Sheets
-        enviarParaGoogleSheets(name, response);
-
-        // Enviar mensagem para o WhatsApp
-        const whatsappMessage = `Olá%2C+aqui+é+${name}+e+${response === 'Sim' ? 'irei comparecer' : 'não poderei comparecer'} ao casamento.`;
-        abrirWhatsApp(whatsappMessage);
+        enviarParaGoogleSheets(name, response, phone);
+        // abrirWhatsApp(`Olá%2C+aqui+é+${name}+e+${response === 'Sim' ? 'irei comparecer' : 'não poderei comparecer'} ao casamento.`);
     });
 });
 
 // Função para enviar dados para o Google Sheets
-function enviarParaGoogleSheets(name, response) {
-    fetch('https://script.google.com/macros/s/AKfycbz3wi1TacxhCiNDu37bq_uV0HkMpzXYp8uUorTz83OAAJkoRXQM5HvZtKyu62uftPQN/exec', {
+function enviarParaGoogleSheets(name, response, phone) {
+    fetch('https://script.google.com/macros/s/AKfycbzQ_Qh1po3gU2mXkkfw5wWdf6dP0GIObEcniHUqdZIosuPx7csyQGhZhC8vs0PovoSX/exec', {
         method: 'POST',
         mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ "name": name, "response": response })
+        body: JSON.stringify({ "name": name, "response": response, "phone": phone })
     })
     .then(() => {
         showToast('Confirmação enviada com sucesso!');
@@ -40,21 +62,4 @@ function enviarParaGoogleSheets(name, response) {
         console.error('Erro ao enviar os dados para o Google Sheets:', error);
         showToast('Houve um erro ao enviar a confirmação. Por favor, tente novamente.');
     });
-}
-
-// Função para abrir o WhatsApp
-function abrirWhatsApp(mensagem) {
-    const whatsappUrl = `https://wa.me/5548996193227?text=${mensagem}`;
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-    if (isMobile) {
-        window.location.href = whatsappUrl;
-    } else {
-        const newWindow = window.open(whatsappUrl, '_blank');
-        if (newWindow) {
-            newWindow.focus();
-        } else {
-            alert("Por favor, permita pop-ups para abrir o WhatsApp.");
-        }
-    }
 }

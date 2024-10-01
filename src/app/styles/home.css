@@ -78,8 +78,7 @@ textarea, input {
     font-size: 24px; /* Tamanho dos ícones */
 }
 
-/* Toast */
-.toast {
+.recado-toast {
     visibility: hidden;
     min-width: 250px;
     background-color: #333;
@@ -92,11 +91,13 @@ textarea, input {
     left: 50%;
     bottom: 30px;
     transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.5s, visibility 0.5s;
 }
 
-.toast.show {
+.recado-toast.show {
     visibility: visible;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    opacity: 1;
 }
 
 @keyframes fadein {

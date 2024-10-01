@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     productList.addEventListener('click', function (e) {
         if (e.target && e.target.classList.contains('botao-pix')) {
             const pixCode = e.target.getAttribute('data-pix');
-            showPixModal(pixCode);
+            showPixModal(pixCode);  // Chama a modal com o código PIX
         }
     });
 });
@@ -60,24 +60,27 @@ function renderProduct(product, container) {
 
 function showPixModal(pixCode) {
     const modal = document.getElementById('pix-modal');
+
+    // Não mostrar o código PIX, apenas a mensagem de que foi copiado
     const modalText = document.querySelector('.pix-code');
-    modalText.textContent = pixCode;
+    modalText.textContent = ''; // Limpa qualquer exibição do PIX
 
-    if (modal.style.display === 'none' || !modal.style.display) {
-        modal.style.display = 'flex';
-    }
+    modal.style.display = 'flex'; // Exibe a modal
 
+    // Fechar modal e mostrar o toast após o fechamento
     document.getElementById('fechar-modal').onclick = function () {
         modal.style.display = 'none';
+        showPixToast('Código PIX copiado. Cole no seu app bancário.'); // Toast após fechar
     };
 
     window.onclick = function (event) {
         if (event.target === modal) {
             modal.style.display = 'none';
+            showPixToast('Código PIX copiado. Cole no seu app bancário.');
         }
     };
 
-    copiarPix(pixCode);
+    copiarPix(pixCode);  // Copia o código PIX para a área de transferência
 }
 
 function copiarPix(pixCode) {
@@ -87,9 +90,29 @@ function copiarPix(pixCode) {
     tempInput.select();
     document.execCommand('copy');
     document.body.removeChild(tempInput);
-    showToast('Código PIX copiado. Cole no seu app bancário.');
 }
 
+// Função para exibir o toast da seção de compras
+function showPixToast(message) {
+    const toast = document.getElementById('pix-toast');
+    toast.innerText = message;
+    toast.classList.add('show');
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000); // O toast será exibido por 3 segundos
+}
+
+document.getElementById('fechar-modal').onclick = function () {
+    const modal = document.getElementById('pix-modal');
+    modal.style.display = 'none';
+};
+
+window.onclick = function (event) {
+    const modal = document.getElementById('pix-modal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+};
 
 document.getElementById('fechar-modal').onclick = function () {
     const modal = document.getElementById('pix-modal');

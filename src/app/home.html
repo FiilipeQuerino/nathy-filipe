@@ -88,20 +88,26 @@
             confirme se você vai poder comparecer para garantirmos que teremos cadeiras, comida, e alegria suficientes
             para todos!</p>
 
-        <form id="rsvp-form">
-            <input type="text" id="name" placeholder="Seu nome" required>
-
-            <div class="radio-group">
-                <label for="yes">
-                    <input type="radio" id="yes" name="response" value="Sim" required> Sim, eu vou
-                </label>
-                <label for="no">
-                    <input type="radio" id="no" name="response" value="Não" required> Não, não poderei ir
-                </label>
-            </div>
-
-            <button type="submit">Confirmar Presença</button>
-        </form>
+            <form id="rsvp-form">
+                <input type="text" id="name" placeholder="Seu nome" required>
+            
+                <div class="radio-group">
+                    <label for="yes">
+                        <input type="radio" id="yes" name="response" value="Sim" required> Sim, eu vou
+                    </label>
+                    <label for="no">
+                        <input type="radio" id="no" name="response" value="Não" required> Não, não poderei ir
+                    </label>
+                </div>
+            
+                <!-- Campo de número de celular e a explicação -->
+                <div id="phone-section" style="display:none;">
+                    <p>Informe o seu número de celular para futuras confirmações.</p>
+                    <input type="tel" id="phone" placeholder="Seu número de celular" pattern="[0-9]{11}">
+                </div>
+            
+                <button type="submit">Confirmar Presença</button>
+            </form>
 
         <!-- Mensagem de Toast para feedback -->
         <div id="toast" class="toast"></div>

@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (entry.isIntersecting) {
                 document.querySelector('.letra-n').style.animationPlayState = 'running';
                 document.querySelector('.letra-f').style.animationPlayState = 'running';
-                document.querySelector('.coracao').style.animationPlayState = 'running';
             }
         });
     }, { threshold: 0.5 });

@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Ocupa toda a altura da tela */
+    height: 20vh; /* Ocupa toda a altura da tela */
     background-color: #fff;
     text-align: center;
     padding: 50px 0;
@@ -43,39 +43,6 @@
     animation-delay: 1s;
 }
 
-/* Desenhar o coração corretamente */
-.coracao {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    transform: translate(-50%, -50%) scale(0); /* Inicialmente pequeno */
-    opacity: 0;
-    background-color: #556b2f; /* Verde oliva */
-    transform: rotate(45deg); /* Rotaciona o quadrado para fazer o coração */
-    animation: formarCoracao 2.5s ease forwards;
-    animation-delay: 2s;
-}
-
-.coracao::before, .coracao::after {
-    content: "";
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background-color: #556b2f; /* Verde oliva */
-    border-radius: 50%;
-}
-
-.coracao::before {
-    top: -50px; /* Move o círculo para o topo */
-    left: 0;
-}
-
-.coracao::after {
-    left: 50px; /* Move o segundo círculo para a direita */
-    top: 0;
-}
 
 /* Animações */
 @keyframes aparecer {
@@ -111,20 +78,10 @@
         width: 80px;
         height: 80px;
     }
-
-    .img-casal {
-        width: 80%;
-        max-width: 300px;
-    }
 }
 
 @media only screen and (max-width: 400px) {
     .letras {
         font-size: 50px;
-    }
-
-    .img-casal {
-        width: 90%;
-        max-width: 250px;
     }
 }

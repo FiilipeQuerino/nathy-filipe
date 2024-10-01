@@ -57,6 +57,19 @@
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
+#phone-section {
+    margin-top: 15px;
+}
+
+#phone-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
 #presentes {
     padding-top: 80px;
 }

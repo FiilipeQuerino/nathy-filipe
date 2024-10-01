@@ -68,16 +68,6 @@
     .letras {
         font-size: 60px;
     }
-
-    .coracao {
-        width: 80px;
-        height: 80px;
-    }
-
-    .coracao::before, .coracao::after {
-        width: 80px;
-        height: 80px;
-    }
 }
 
 @media only screen and (max-width: 400px) {

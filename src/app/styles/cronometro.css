@@ -1,9 +1,9 @@
 #cronometro {
-    height: 100vh; /* Ocupa toda a altura da tela */
+    height: 60vh; /* Ocupa toda a altura da tela */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centraliza o conteúdo verticalmente */
-    padding-bottom: 80px; /* Espaçamento extra no fim para mostrar parte da próxima seção */
+    padding-bottom: 50px; /* Espaçamento extra no fim para mostrar parte da próxima seção */
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
@@ -65,7 +65,6 @@
 .texto-cronometro p {
     margin-bottom: 15px; /* Espaçamento entre os parágrafos */
 }
-
 
 .timer {
     gap: 10px; /* Reduz ainda mais o espaçamento entre os itens */

@@ -16,6 +16,12 @@
     margin-bottom: 20px; /* Espaço abaixo da foto do casal */
 }
 
+.foto-casal img {
+    max-width: 100%;
+    height: auto;
+    width: 400px;
+}
+
 /* Animação das letras "N" e "F" */
 .animacao-container {
     position: relative;
@@ -63,10 +69,16 @@
     .letras {
         font-size: 60px;
     }
+    .foto-casal img {
+        width: 90%; /* Ajuste da largura da imagem para caber melhor na tela menor */
+    }
 }
 
 @media only screen and (max-width: 400px) {
     .letras {
         font-size: 50px;
+    }
+    .foto-casal img {
+        width: 85%; /* Reduz um pouco mais a largura da imagem para telas muito pequenas */
     }
 }

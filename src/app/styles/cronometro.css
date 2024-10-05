@@ -1,5 +1,5 @@
 #cronometro {
-    height: 60vh; /* Ocupa toda a altura da tela */
+    height: 65vh; /* Ocupa toda a altura da tela */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centraliza o conteúdo verticalmente */
@@ -12,7 +12,10 @@
 
 .texto-cronometro {
     max-width: 700px;
-    margin: 30px auto;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
     font-size: 18px;
     line-height: 1.5;
     color: #444;
@@ -96,4 +99,15 @@
         font-size: 15px;
         padding: 8px 10px;
     }
+}
+
+@media only screen and (max-width: 400px) {
+    .contador {
+        font-size: 14px;
+        padding: 10px;
+      }
+    
+      .contador-secao {
+        margin: 5px 0;
+      }
 }

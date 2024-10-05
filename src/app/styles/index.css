@@ -128,6 +128,24 @@ a {
     margin-top: 50px; /* Espaçamento entre o convite e as seções */
 }
 
+.versiculo {
+    font-family: "Tangerine", cursive;
+    font-size: 2rem;
+    color: rgba(48, 63, 22, 0.8);
+    font-weight: 700;
+    margin: 40px 0 20px 0; /* Aumenta a margem superior */
+    line-height: 1.4;
+    padding: 0 15px; /* Adiciona espaçamento para telas menores */
+}
+
+.versiculo-numero {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    color: rgba(48, 63, 22, 0.6);
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
 /* Media query para telas menores que 768px */
 @media only screen and (max-width: 768px) {
     .content {
@@ -158,6 +176,14 @@ a {
 
     .footer-img {
         height: 150px;
+    }
+
+    .versiculo {
+        font-size: 1.5rem;
+        margin-top: 30px;
+    }
+    .versiculo-numero {
+        font-size: 0.9rem;
     }
 }
 
@@ -193,6 +219,14 @@ a {
         height: 95px;
         opacity: 0.8;
     }
+
+    .versiculo {
+        font-size: 1.3rem;
+        margin-top: 25px;
+    }
+    .versiculo-numero {
+        font-size: 0.8rem;
+    }
 }
 
 /* Media query para telas menores que 400px */
@@ -225,5 +259,13 @@ a {
 
     .footer-img {
         height: 85px;
+    }
+
+    .versiculo {
+        font-size: 1.2rem;
+        margin-top: 20px;
+    }
+    .versiculo-numero {
+        font-size: 0.7rem;
     }
 }

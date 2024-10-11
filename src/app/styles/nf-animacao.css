@@ -1,3 +1,7 @@
+:root {
+    --title-font-family: "Tangerine", cursive;
+}
+
 /* Container da Animação */
 #nf-animacao {
     display: flex;
@@ -57,7 +61,7 @@
 }
 
 .versiculo {
-    font-family: "Tangerine", cursive;
+    font-family: var(--title-font-family);
     font-size: 2rem;
     color: rgb(48, 63, 22);
     font-weight: 700;
@@ -67,7 +71,7 @@
 }
 
 .versiculo-numero {
-    font-family: "Tangerine", cursive;
+    font-family: var(--title-font-family);
     font-size: 1rem;
     color: rgb(48, 63, 22);
     font-style: italic;

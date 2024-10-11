@@ -129,7 +129,7 @@ a {
 }
 
 .versiculo {
-    font-family: "Tangerine", cursive;
+    font-family: var(--title-font-family);
     font-size: 2rem;
     color: rgb(48, 63, 22);
     font-weight: 700;

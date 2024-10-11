@@ -51,7 +51,7 @@ textarea, input {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(85, 107, 47, 0.9); /* Verde oliva com transparência */
+    background-color: rgb(48, 63, 22); /* Verde oliva com transparência */
     display: flex;
     justify-content: space-around;
     align-items: center;

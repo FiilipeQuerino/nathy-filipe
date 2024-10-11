@@ -32,7 +32,7 @@
 }
 
 #cronometro h1 {
-    color: #556b2f; /* Verde oliva */
+    color: rgb(48, 63, 22);
     margin-bottom: 20px;
 }
 
@@ -56,7 +56,7 @@
 
 .time-item span {
     font-size: 2rem;
-    color: #556b2f; /* Verde oliva */
+    color: rgb(48, 63, 22);
     font-weight: bold;
 }
 

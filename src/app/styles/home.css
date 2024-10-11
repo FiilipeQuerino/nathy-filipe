@@ -14,7 +14,7 @@ body {
 
 h1 {
     text-align: center;
-    color: #556b2f;
+    color: rgb(48, 63, 22);
 }
 
 /* Aumentando o espaçamento para evitar proximidade com a navbar */
@@ -70,7 +70,7 @@ textarea, input {
 }
 
 .navbar a:hover {
-    background-color: rgba(107, 142, 35, 0.9); /* Tom mais claro no hover */
+    background-color: rgb(48, 63, 22); /* Tom mais claro no hover */
     transform: scale(1.1);
 }
 

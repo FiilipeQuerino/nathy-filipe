@@ -7,6 +7,10 @@
     font-family: var(--title-font-family-2);
 }
 
+#presentes h {
+    font-size: 40px;
+}
+
 .map-container {
     position: relative;
     width: 100%;

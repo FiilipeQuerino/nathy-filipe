@@ -7,6 +7,10 @@
     font-family: var(--title-font-family-2);
 }
 
+#localizacao h {
+    font-size: 40px;
+}
+
 .product-card {
     background-color: white;
     padding: 60px 20px;

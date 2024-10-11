@@ -3,11 +3,11 @@
     --title-font-family-2: "Montserrat", sans-serif;
 }
 
-#localizacao p {
+#presentes p {
     font-family: var(--title-font-family-2);
 }
 
-#localizacao h1 {
+#presentes h1 {
     font-size: 40px;
 }
 

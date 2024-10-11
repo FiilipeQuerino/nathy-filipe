@@ -90,7 +90,7 @@
 button, .botao-presente {
     background-color: rgb(48, 63, 22);
     color: white;
-    padding: 15px 25px; /* Aumenta o padding para maior área clicável */
+    padding: 10px 25px; /* Aumenta o padding para maior área clicável */
     border: none;
     border-radius: 8px; /* Mais arredondado para visual moderno */
     cursor: pointer;

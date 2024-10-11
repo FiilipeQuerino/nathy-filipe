@@ -11,7 +11,7 @@
 }
 
 #recados h1 {
-    color: #6b8e23; /* Verde oliva suave */
+    color: rgb(48, 63, 22);
     margin-bottom: 20px;
     font-size: 30px;
     font-weight: bold;
@@ -40,12 +40,12 @@
 }
 
 #recados textarea:focus {
-    border-color: #556b2f; /* Verde oliva */
+    border-color: rgb(48, 63, 22);
     outline: none;
 }
 
 #recados button {
-    background-color: #6b8e23; /* Verde oliva mais claro */
+    background-color: rgb(48, 63, 22);
     color: white;
     padding: 12px 25px;
     border: none;
@@ -94,7 +94,7 @@
 /* Nome do remetente */
 .recado-item strong {
     font-size: 18px;
-    color: #6b8e23; /* Verde oliva */
+    color: rgb(48, 63, 22);
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
@@ -109,7 +109,7 @@
     background-color: #f4f4f4;
     padding: 10px;
     border-radius: 6px;
-    border-left: 4px solid #6b8e23; /* Estilo de balão de conversa */
+    border-left: 4px solid rgb(48, 63, 22);
 }
 
 /* Efeito de hover */

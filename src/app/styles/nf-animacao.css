@@ -37,7 +37,7 @@
 .letras {
     font-family: 'Playfair Display', serif;
     font-size: 80px;
-    color: #556b2f;
+    color: rgb(48, 63, 22);
     position: relative;
 }
 
@@ -67,7 +67,7 @@
 }
 
 .versiculo-numero {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Tangerine", cursive;
     font-size: 1rem;
     color: rgb(48, 63, 22);
     font-style: italic;

@@ -31,7 +31,7 @@
 
 .botoes-local button,
 .botoes-local a.botao-local {
-    background-color: #6b8e23; /* Verde oliva suave */
+    background-color: rgb(48, 63, 22); /* Verde oliva suave */
     color: white;
     padding: 12px 25px;
     border: none;

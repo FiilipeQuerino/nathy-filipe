@@ -29,12 +29,12 @@
 .product-price {
     font-size: 16px;
     font-weight: bold;
-    color: #556b2f;
+    color: rgb(48, 63, 22);
     margin-bottom: 15px;
 }
 
 .product-actions button {
-    background-color: #556b2f;
+    background-color: rgb(48, 63, 22);
     color: white;
     padding: 10px 20px;
     border: none;
@@ -79,7 +79,7 @@
 }
 
 button, .botao-presente {
-    background-color: #556b2f;
+    background-color: rgb(48, 63, 22);
     color: white;
     padding: 12px 25px; /* Aumenta o padding para maior área clicável */
     border: none;

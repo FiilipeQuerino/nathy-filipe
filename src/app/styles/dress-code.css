@@ -46,7 +46,7 @@
 /* Texto de destaque */
 .destaque {
     font-weight: 700;
-    color: #556b2f;
+    color: rgb(48, 63, 22);
     font-size: 20px;
     margin-top: 20px;
     text-transform: uppercase;

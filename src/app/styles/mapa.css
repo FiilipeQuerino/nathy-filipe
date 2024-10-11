@@ -1,4 +1,12 @@
-/* Seção de Mapa Delicada */
+:root {
+    --title-font-family: "Tangerine", cursive;
+    --title-font-family-2: "Montserrat", sans-serif;
+}
+
+#presentes p {
+    font-family: var(--title-font-family-2);
+}
+
 .map-container {
     position: relative;
     width: 100%;

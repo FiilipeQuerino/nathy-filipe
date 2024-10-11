@@ -1,6 +1,11 @@
-/* Estilos globais */
+:root {
+    --title-font-family: "Tangerine", cursive;
+}
+
+
+
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--title-font-family);
     background-color: #f5f5f5;
     color: #333;
     margin: 0;

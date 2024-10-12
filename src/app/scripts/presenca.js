@@ -66,7 +66,7 @@ function enviarParaGoogleSheets(name, response, phone) {
     })
         .then(() => {
             showToast('Confirmação enviada com sucesso!');
-            rolarParaProximaSecao(); 
+            setTimeout(rolarParaProximaSecao, 2000);
         })
         .catch(error => {
             console.error('Erro ao enviar os dados para o Google Sheets:', error);

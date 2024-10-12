@@ -47,7 +47,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Função para rolar até a próxima seção
     function rolarParaProximaSecao() {
-        nextSection.scrollIntoView({ behavior: 'smooth' });
+        const nextSection = document.getElementById('presentes'); // Seleciona a próxima seção
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: 'smooth' }); // Rola suavemente até a próxima seção
+        }
     }
 });
 

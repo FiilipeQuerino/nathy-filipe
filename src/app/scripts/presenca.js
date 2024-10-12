@@ -42,7 +42,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         enviarParaGoogleSheets(name, response, phone);
         // abrirWhatsApp(`Olá%2C+aqui+é+${name}+e+${response === 'Sim' ? 'irei comparecer' : 'não poderei comparecer'} ao casamento.`);
+        rolarParaProximaSecao();
     });
+
+    // Função para rolar até a próxima seção
+    function rolarParaProximaSecao() {
+        nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
 });
 
 // Função para enviar dados para o Google Sheets
@@ -55,11 +61,11 @@ function enviarParaGoogleSheets(name, response, phone) {
         },
         body: JSON.stringify({ "name": name, "response": response, "phone": phone })
     })
-    .then(() => {
-        showToast('Confirmação enviada com sucesso!');
-    })
-    .catch(error => {
-        console.error('Erro ao enviar os dados para o Google Sheets:', error);
-        showToast('Houve um erro ao enviar a confirmação. Por favor, tente novamente.');
-    });
+        .then(() => {
+            showToast('Confirmação enviada com sucesso!');
+        })
+        .catch(error => {
+            console.error('Erro ao enviar os dados para o Google Sheets:', error);
+            showToast('Houve um erro ao enviar a confirmação. Por favor, tente novamente.');
+        });
 }

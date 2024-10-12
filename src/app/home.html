@@ -108,12 +108,13 @@
                 <!-- Campo de número de celular e a explicação -->
                 <div id="phone-section" style="display:none;">
                     <p>Informe o seu número de celular para futuras confirmações.</p>
-                    <input type="tel" id="phone" placeholder="Seu número de celular" pattern="[0-9]{11}">
+                    <input type="tel" id="phone" placeholder="Seu número de celular"
+                            pattern="(\(\d{2}\)\s?)?\d{4,5}-?\d{4}" 
+                            title="Formatos aceitos: (48) 99619-3227, 48996193227 ou 996193227">
                 </div>
             
                 <button type="submit">Confirmar Presença</button>
-            </form>
-            
+            </form>          
 
         <!-- Mensagem de Toast para feedback -->
         <div id="toast" class="toast"></div>

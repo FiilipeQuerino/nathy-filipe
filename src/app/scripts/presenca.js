@@ -42,17 +42,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
         enviarParaGoogleSheets(name, response, phone);
         // abrirWhatsApp(`Olá%2C+aqui+é+${name}+e+${response === 'Sim' ? 'irei comparecer' : 'não poderei comparecer'} ao casamento.`);
-        rolarParaProximaSecao();
     });
 
-    // Função para rolar até a próxima seção
-    function rolarParaProximaSecao() {
-        const nextSection = document.getElementById('presentes'); // Seleciona a próxima seção
-        if (nextSection) {
-            nextSection.scrollIntoView({ behavior: 'smooth' }); // Rola suavemente até a próxima seção
-        }
-    }
 });
+
+// Função para rolar até a próxima seção
+function rolarParaProximaSecao() {
+    const nextSection = document.getElementById('presentes'); // Seleciona a próxima seção
+    if (nextSection) {
+        nextSection.scrollIntoView({ behavior: 'smooth' }); // Rola suavemente até a próxima seção
+    }
+}
 
 // Função para enviar dados para o Google Sheets
 function enviarParaGoogleSheets(name, response, phone) {
@@ -66,6 +66,7 @@ function enviarParaGoogleSheets(name, response, phone) {
     })
         .then(() => {
             showToast('Confirmação enviada com sucesso!');
+            rolarParaProximaSecao(); 
         })
         .catch(error => {
             console.error('Erro ao enviar os dados para o Google Sheets:', error);

@@ -1,5 +1,6 @@
 :root {
     --title-font-family: "Tangerine", cursive;
+    --title-font-family-2: "Montserrat", sans-serif;
 }
 
 #recados {
@@ -26,7 +27,7 @@
     margin-bottom: 20px;
     color: #666;
     line-height: 1.6;
-    font-family: var(--title-font-family);
+    font-family: var(--title-font-family-2);
 }
 
 #recados textarea {

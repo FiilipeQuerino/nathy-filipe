@@ -34,6 +34,7 @@
 
 /* Botões de Localização Delicados */
 .botoes-local {
+    font-family: var(--title-font-family-2);
     display: flex;
     justify-content: center;
     gap: 20px;

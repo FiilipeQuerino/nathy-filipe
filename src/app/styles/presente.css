@@ -28,19 +28,19 @@
 }
 
 .product-name {
-    font-size: 18px;
+    font-size: 19px;
     color: #333;
     margin-bottom: 10px;
 }
 
 .product-description {
-    font-size: 14px;
+    font-size: 16px;
     color: #666;
     margin-bottom: 15px;
 }
 
 .product-price {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bold;
     color: rgb(48, 63, 22);
     margin-bottom: 15px;
@@ -92,6 +92,7 @@
 }
 
 button, .botao-presente {
+    font-family: var(--title-font-family-2);
     background-color: rgb(48, 63, 22);
     color: white;
     padding: 10px 25px; /* Aumenta o padding para maior área clicável */

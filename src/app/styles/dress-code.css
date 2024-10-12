@@ -22,6 +22,7 @@
 }
 
 #dress-code p {
+    font-family: var(--title-font-family-2);
     font-size: 18px;
     color: #666;
     line-height: 1.7;

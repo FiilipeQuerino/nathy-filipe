@@ -1,9 +1,12 @@
 #cronometro {
-    height: 65vh; /* Ocupa toda a altura da tela */
+    height: 65vh;
+    /* Ocupa toda a altura da tela */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centraliza o conteúdo verticalmente */
-    padding-bottom: 50px; /* Espaçamento extra no fim para mostrar parte da próxima seção */
+    justify-content: center;
+    /* Centraliza o conteúdo verticalmente */
+    padding-bottom: 50px;
+    /* Espaçamento extra no fim para mostrar parte da próxima seção */
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
@@ -28,7 +31,8 @@
 
 
 #confirmacao {
-    padding-top: 80px; /* Parte da seção de confirmação será visível acima */
+    padding-top: 80px;
+    /* Parte da seção de confirmação será visível acima */
 }
 
 #cronometro h1 {
@@ -39,8 +43,10 @@
 
 .timer {
     display: flex;
-    justify-content: center; /* Alinha os números do cronômetro no centro */
-    gap: 20px; /* Espaçamento entre os itens do cronômetro */
+    justify-content: center;
+    /* Alinha os números do cronômetro no centro */
+    gap: 20px;
+    /* Espaçamento entre os itens do cronômetro */
 }
 
 .time-item {
@@ -51,7 +57,8 @@
     background-color: #f5f5f5;
     border-radius: 8px;
     padding: 10px;
-    width: 80px; /* Tamanho menor para manter a compactação */
+    width: 80px;
+    /* Tamanho menor para manter a compactação */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -67,48 +74,59 @@
 }
 
 .texto-cronometro p {
-    margin-bottom: 17px; /* Espaçamento entre os parágrafos */
+    margin-bottom: 17px;
+    /* Espaçamento entre os parágrafos */
 }
 
 .timer {
-    gap: 10px; /* Reduz ainda mais o espaçamento entre os itens */
+    gap: 10px;
+    /* Reduz ainda mais o espaçamento entre os itens */
 }
 
 .time-item {
-    width: 50px; /* Tamanho menor dos itens para se ajustar a telas muito pequenas */
-    padding: 5px; /* Reduz o padding para telas menores */
+    width: 50px;
+    /* Tamanho menor dos itens para se ajustar a telas muito pequenas */
+    padding: 5px;
+    /* Reduz o padding para telas menores */
 }
 
 .time-item span {
-    font-size: 1.5rem; /* Tamanho menor da fonte dos números */
+    font-size: 1.5rem;
+    /* Tamanho menor da fonte dos números */
 }
 
 .time-item p {
-    font-size: 14px; /* Tamanho menor da fonte das legendas */
+    font-size: 14px;
+    /* Tamanho menor da fonte das legendas */
 }
 
 /* Ajustes para dispositivos móveis */
 @media only screen and (max-width: 768px) {
     .texto-cronometro {
-        font-size: 18px;
+        font-size: 20px;
         padding: 10px 15px;
     }
 }
 
 @media only screen and (max-width: 500px) {
     .texto-cronometro {
-        font-size: 17px;
+        font-size: 19px;
         padding: 8px 10px;
     }
 }
 
 @media only screen and (max-width: 400px) {
+    .texto-cronometro {
+        font-size: 18px;
+        padding: 8px 10px;
+    }
+
     .contador {
         font-size: 16px;
         padding: 10px;
-      }
-    
-      .contador-secao {
+    }
+
+    .contador-secao {
         margin: 5px 0;
-      }
+    }
 }

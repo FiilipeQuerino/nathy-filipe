@@ -34,6 +34,7 @@
 }
 
 .radio-group {
+    font-family: var(--title-font-family-2);
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
@@ -45,6 +46,7 @@
 }
 
 .radio-group input {
+
     margin-right: 8px;
 }
 

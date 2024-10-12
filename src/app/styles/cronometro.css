@@ -56,18 +56,18 @@
 }
 
 .time-item span {
-    font-size: 2rem;
+    font-size: 4rem;
     color: rgb(48, 63, 22);
     font-weight: bold;
 }
 
 .time-item p {
-    font-size: 14px;
+    font-size: 18px;
     color: #333;
 }
 
 .texto-cronometro p {
-    margin-bottom: 15px; /* Espaçamento entre os parágrafos */
+    margin-bottom: 17px; /* Espaçamento entre os parágrafos */
 }
 
 .timer {
@@ -84,27 +84,27 @@
 }
 
 .time-item p {
-    font-size: 12px; /* Tamanho menor da fonte das legendas */
+    font-size: 14px; /* Tamanho menor da fonte das legendas */
 }
 
 /* Ajustes para dispositivos móveis */
 @media only screen and (max-width: 768px) {
     .texto-cronometro {
-        font-size: 16px;
+        font-size: 18px;
         padding: 10px 15px;
     }
 }
 
 @media only screen and (max-width: 500px) {
     .texto-cronometro {
-        font-size: 15px;
+        font-size: 17px;
         padding: 8px 10px;
     }
 }
 
 @media only screen and (max-width: 400px) {
     .contador {
-        font-size: 14px;
+        font-size: 16px;
         padding: 10px;
       }
     

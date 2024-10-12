@@ -52,6 +52,7 @@
 
 /* Toast */
 .toast {
+    font-family: var(--title-font-family-2);
     visibility: hidden;
     min-width: 250px;
     background-color: #333;

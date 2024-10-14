@@ -103,18 +103,6 @@ a {
     text-decoration: none;
 }
 
-.footer-img {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 190px;
-    /* background: url('../assets/mato.png') repeat-x; */
-    background-size: contain;
-    opacity: 0.8;
-    /* Opacidade */
-}
-
 .section {
     width: 100%;
     min-height: 100vh; /* Cada seção ocupa 100% da altura da tela */
@@ -175,15 +163,7 @@ a {
     }
 
     .footer-img {
-        height: 150px;
-    }
-
-    .versiculo {
-        font-size: 1.5rem;
-        margin-top: 30px;
-    }
-    .versiculo-numero {
-        font-size: 0.9rem;
+        height: 10px;
     }
 }
 
@@ -216,16 +196,7 @@ a {
     }
 
     .footer-img {
-        height: 95px;
-        opacity: 0.8;
-    }
-
-    .versiculo {
-        font-size: 1.3rem;
-        margin-top: 25px;
-    }
-    .versiculo-numero {
-        font-size: 0.8rem;
+        height: 9px;
     }
 }
 
@@ -258,14 +229,6 @@ a {
     }
 
     .footer-img {
-        height: 85px;
-    }
-
-    .versiculo {
-        font-size: 1.2rem;
-        margin-top: 20px;
-    }
-    .versiculo-numero {
-        font-size: 0.7rem;
+        height: 8px;
     }
 }

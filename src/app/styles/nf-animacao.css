@@ -95,11 +95,11 @@
     }
 
     .versiculo {
-        font-size: 0.11rem;
+        font-size: 3rem;
         margin-top: 30px;
     }
     .versiculo-numero {
-        font-size: 0.9rem;
+        font-size: 0.10rem;
     }   
 }
 
@@ -113,11 +113,11 @@
     }
 
     .versiculo {
-        font-size: 0.10rem;
+        font-size: 2rem;
         margin-top: 25px;
     }
     .versiculo-numero {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 }
 
@@ -130,10 +130,10 @@
     }
 
     .versiculo {
-        font-size: 0.9rem;
+        font-size: 1rem;
         margin-top: 20px;
     }
     .versiculo-numero {
-        font-size: 0.7rem;
+        font-size: 0.9rem;
     }
 }

@@ -107,21 +107,21 @@
 /* Ajustes para dispositivos móveis */
 @media only screen and (max-width: 768px) {
     .texto-cronometro {
-        font-size: 20px;
+        font-size: 21px;
         padding: 10px 15px;
     }
 }
 
 @media only screen and (max-width: 500px) {
     .texto-cronometro {
-        font-size: 19px;
+        font-size: 20px;
         padding: 8px 10px;
     }
 }
 
 @media only screen and (max-width: 400px) {
     .texto-cronometro {
-        font-size: 18px;
+        font-size: 19px;
         padding: 8px 10px;
     }
 

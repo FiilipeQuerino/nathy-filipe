@@ -142,6 +142,10 @@ button i, .botao-presente i {
     padding-top: 80px;
 }
 
+.modal-content p {
+    font-family: var(--title-font-family-2);
+}
+
 @media only screen and (max-width: 768px) {
     .product-card {
         padding: 15px;

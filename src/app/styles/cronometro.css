@@ -49,6 +49,10 @@
     /* Espaçamento entre os itens do cronômetro */
 }
 
+.time-item p {
+    font-size: 17px;
+}
+
 .time-item {
     display: flex;
     flex-direction: column;
@@ -74,7 +78,7 @@
 }
 
 .texto-cronometro p {
-    margin-bottom: 17px;
+    margin-bottom: 19px;
     /* Espaçamento entre os parágrafos */
 }
 

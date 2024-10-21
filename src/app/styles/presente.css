@@ -93,6 +93,10 @@
     cursor: pointer;
 }
 
+.botao-presente {
+    margin: 10px 5px;
+}
+
 button, .botao-presente {
     font-family: var(--title-font-family-2);
     background-color: rgb(48, 63, 22);
